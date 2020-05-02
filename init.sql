@@ -60,7 +60,9 @@ CREATE TABLE Sessions (
 
 
 --done
-CREATE TABLE MWS (MWSId Integer primary key);
+CREATE TABLE MWS (
+    MWSId Integer primary key
+);
 
 --done
 CREATE TABLE Customer (
@@ -158,8 +160,8 @@ create table PartTimeRiders (
 
 --done
 CREATE TABLE WWS (
-    WWSid Integer,
-    DayOfWeek Integer,
+    WWSid Integer check (WWSid > 0),
+    DayOfWeek Integer check ((DayOfWeek >= 1) and (DayOfWeek <= 7)),
 	riderid Integer,
     primary key (WWSid),
 	FOREIGN KEY(riderid) REFERENCES parttimeriders (riderid)
@@ -232,6 +234,15 @@ CREATE TABLE staffLogin (
     PRIMARY KEY (staffid),
     foreign Key (Restaurant_name) references Restaurants(rname)
 );
+
+CREATE TABLE managerLogin (
+    Username text NOT NULL,
+    Password text NOT NULL,
+    managerid Integer,
+    PRIMARY KEY (managerid)
+);
+
+
 
 
 
