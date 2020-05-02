@@ -39,6 +39,9 @@ var customerProfileRouter = require('./routes/customerProfile');
 var orderFoodRouter = require('./routes/orderFood');
 var checkoutRouter = require('./routes/checkout');
 
+var riderRouter = require('./routes/rider');
+var riderNewRouter = require('./routes/riderNew');
+var riderProfileRouter = require('./routes/riderProfile');
 
 var staffRouter = require('./routes/staff');
 var staffNewRouter = require('./routes/staffNew');
@@ -96,6 +99,10 @@ app.use('/customerNew', customerNewRouter);
 app.use('/customerProfile', customerProfileRouter);
 app.use('/orderFood', orderFoodRouter);
 app.use('/checkout',checkoutRouter);
+
+app.use('/rider', riderRouter);
+app.use('/riderNew', riderNewRouter);
+app.use('/riderProfile', riderProfileRouter);
 
 app.use('/staff', staffRouter);
 app.use('/staffNew', staffNewRouter);
