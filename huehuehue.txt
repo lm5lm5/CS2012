@@ -1,0 +1,29 @@
+2 variables:
+local: res.render('customer', { title: 'Get Cid', error: null});
+shared:
+sessions -> shared variables different web pages
+1) set up session
+2) js: var sess = req.session
+
+to use:
+sess.variablename = value; (set sess.variablename to be value)
+var value2 = sess.variablename; (set value of value2 to be the value of sess.variablename)
+
+3)To use sess variable in your webpage:
+
+js: router.get(
+
+...
+sess = req.session;
+res.render('customer', { title: 'Get Cid', local_variablename: sess.error});
+
+ejs: YOu want to use the variable
+
+<html>...
+
+ <% if (error != null) { %> 
+		<script>
+		alert(`<%= local_variable  %>`)
+	</script>
+  
+  <% } %>
