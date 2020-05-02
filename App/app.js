@@ -30,6 +30,7 @@ var formsRouter = require('./routes/forms');
 
 /* --- V6: Modify Database  --- */
 var insertRouter = require('./routes/insert');
+var insertRouter = require('./routes/insert_restaurants');
 /* ---------------------------- */
 
 var customerRouter = require('./routes/customer');
@@ -38,6 +39,9 @@ var customerProfileRouter = require('./routes/customerProfile');
 var orderFoodRouter = require('./routes/orderFood');
 var checkoutRouter = require('./routes/checkout');
 
+
+var staffRouter = require('./routes/staff');
+var staffNewRouter = require('./routes/staffNew');
 var app = express();
 
 // session
@@ -84,6 +88,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/insert', insertRouter);
+app.use('/insert_restaurants', insertRouter);
 /* ---------------------------- */
 
 app.use('/customer', customerRouter);
@@ -92,6 +97,8 @@ app.use('/customerProfile', customerProfileRouter);
 app.use('/orderFood', orderFoodRouter);
 app.use('/checkout',checkoutRouter);
 
+app.use('/staff', staffRouter);
+app.use('/staffNew', staffNewRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
