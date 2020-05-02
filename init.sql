@@ -1,3 +1,5 @@
+
+
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
 
@@ -71,7 +73,7 @@ CREATE TABLE WWS (
 CREATE TABLE Customer (
     Cid int PRIMARY KEY,
     Reward_pts int default 0,
-    CC_no int,
+    CC_no text,
     FirstLoc text,
     SecondLoc text,
     ThirdLoc text,
@@ -212,4 +214,23 @@ CREATE TABLE customerLogin (
     Unique(Username),
     foreign Key (cid) references Customer(cid)
 );
+
+CREATE TABLE riderLogin (
+    Username text NOT NULL,
+    Password text NOT NULL,
+    riderid Integer,
+    PRIMARY KEY (riderid),
+    Unique(Username),
+    foreign Key (riderid) references Riders(riderid)
+);
+
+
+CREATE TABLE staffLogin (
+    Username text NOT NULL,
+    Password text NOT NULL,
+    staffid Integer,
+    PRIMARY KEY (staffid),
+    Unique(Username)
+);
+
 
