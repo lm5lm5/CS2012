@@ -66,14 +66,56 @@
 
 	<h2>Food available today:</h2>
 
-	<table class="table">
+
+	<script>
+		function myFunction() {
+
+			// Declare variables 
+			var input = document.getElementById("Findfood");
+			var filter = input.value.toUpperCase();
+			var table = document.getElementById("foodlistthing");
+			var trs = table.tBodies[0].getElementsByTagName("tr");
+
+			// Loop through first tbody's rows
+			for (var i = 0; i < trs.length; i++) {
+
+				// define the row's cells
+				var tds = trs[i].getElementsByTagName("td");
+
+				// hide the row
+				trs[i].style.display = "none";
+
+				// loop through row cells
+				for (var i2 = 0; i2 < tds.length; i2++) {
+
+					// if there's a match
+					if (tds[i2].innerHTML.toUpperCase().indexOf(filter) > -1) {
+
+						// show the row
+						trs[i].style.display = "";
+
+						// skip to the next row
+						continue;
+
+					}
+				}
+			}
+
+		}
+
+	</script>
+
+	<input id="Findfood" type="text" onkeyup="myFunction()" placeholder="Search for food"/>
+	<table class="table" id="foodlistthing">
 		<thead>
 			<tr>
 				<th scope="col">Food name</th>
 				<th scope="col">Restaurant name</th>
 				<th scope="col">Price</th>
+				<th scope="col">Reviews</th>
 				<th scope="col">Available</th>
 				<th scope="col">Number</th>
+				<th scope="col">Add</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -83,6 +125,9 @@
 					<td><%= foodlist[i].fname%></td>
 					<td><%= foodlist[i].rname%></td>
 					<td><%= foodlist[i].price%></td>
+					<td>
+						<a href="/reviews?fname=<%= foodlist[i].fname%>&rname=<%= foodlist[i].rname%>">Reviews</a>
+					</td>
 					<td>
 						<% if (foodlist[i].isavailable == true) { %>
 						Yes
@@ -108,6 +153,8 @@
 						<button type="submit" class="btn btn-primary">Add</button>
 						<% }%>
 					</td>
+					
+
 
 				</form>
 

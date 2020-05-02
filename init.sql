@@ -232,7 +232,3 @@ CREATE TABLE staffLogin (
     PRIMARY KEY (staffid),
     Unique(Username)
 );
-
-
-
-

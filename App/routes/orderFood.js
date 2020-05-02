@@ -149,6 +149,7 @@ router.post('/', function (req, res, next) {
   SELECT f.isavailable into availabilityCheck
   FROM consists c, foods f
   WHERE new.fname = f.fname
+  AND new.rname = f.rname
   AND c.coid = new.coid
   AND c.fname = f.fname;
   
