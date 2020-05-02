@@ -1,4 +1,4 @@
-
+-- Updated 1 may 1am changed cc_no into text instead of int
 
 DROP SCHEMA public CASCADE;
 CREATE SCHEMA public;
@@ -61,13 +61,6 @@ CREATE TABLE Sessions (
 
 --done
 CREATE TABLE MWS (MWSId Integer primary key);
-
---done
-CREATE TABLE WWS (
-    WWSid Integer,
-    DayOfWeek Integer,
-    primary key (WWSid)
-);
 
 --done
 CREATE TABLE Customer (
@@ -160,9 +153,16 @@ CREATE TABLE Reviews (
 --done
 create table PartTimeRiders (
     riderid Integer primary key REFERENCES Riders on delete cascade,
-    wwsid int not null,
-    foreign key (wwsid) references WWS(wwsid),
     weeklybasesalary Integer
+);
+
+--done
+CREATE TABLE WWS (
+    WWSid Integer,
+    DayOfWeek Integer,
+	riderid Integer,
+    primary key (WWSid),
+	FOREIGN KEY(riderid) REFERENCES parttimeriders (riderid)
 );
 
 --done
@@ -232,5 +232,7 @@ CREATE TABLE staffLogin (
     PRIMARY KEY (staffid),
     Unique(Username)
 );
+
+
 
 
