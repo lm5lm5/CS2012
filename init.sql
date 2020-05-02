@@ -224,15 +224,14 @@ CREATE TABLE riderLogin (
     foreign Key (riderid) references Riders(riderid)
 );
 
-
 CREATE TABLE staffLogin (
     Username text NOT NULL,
     Password text NOT NULL,
+    Restaurant_name text not null,
     staffid Integer,
     PRIMARY KEY (staffid),
-    Unique(Username)
+    foreign Key (Restaurant_name) references Restaurants(rname)
 );
-
 
 
 
