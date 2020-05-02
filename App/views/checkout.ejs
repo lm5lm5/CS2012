@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Page Title -->
+	<title>CS2102 Modifying Database</title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+
+	<!-- CSS for Styling -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<!-- JavaScript for Interactivity -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+		integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+		crossorigin="anonymous"></script>
+
+	<!-- ADDED JavaScript -->
+	<script src="javascripts/checkoutScript.js"></script>
+</head>
+
+<body>
+	<h1><%= title%></h1>
+	<h2>Your food list:</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Food name</th>
+				<th scope="col">Restaurant name</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for(var i=0; i<ownfoodlist.length; i++) { %>
+			<tr>
+				<td><%= ownfoodlist[i].fname%></td>
+				<td><%= ownfoodlist[i].rname%></td>
+				<td><%= ownfoodlist[i].price%></td>
+			</tr>
+			<% } %>
+		</tbody>
+	</table>
+	<h3>Food Price: <%= ownfoodlist[0].total_cost%></h3>
+	<h2>Checkout information</h2>
+	<form id="html_form" action="checkout" role="form" method="post">
+
+		<div class="form-group">
+			<label for="Payment">Choose payment method:</label>
+			<select id="payment">
+				<option value="Cash">Cash</option>
+				<option value="Credit Card">Credit Card</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="delivery">Delivery location</label>
+			<input type="text" class="form-control" id="delivery" name="delivery" aria-describedby="delivery">
+		</div>
+
+		<div class="form-group">
+			<label for="delivery2">Choose past location:</label>
+			<select id="delivery2" onchange="myFunction()">
+				<option value="<%= ownfoodlist[0].firstloc%>"><%= ownfoodlist[0].firstloc%></option>
+				<option value="<%= ownfoodlist[0].secondloc%>"><%= ownfoodlist[0].secondloc%></option>
+				<option value="<%= ownfoodlist[0].thirdloc%>"><%= ownfoodlist[0].thirdloc%></option>
+				<option value="<%= ownfoodlist[0].fourthloc%>"><%= ownfoodlist[0].fourthloc%></option>
+				<option value="<%= ownfoodlist[0].fifthloc%>"><%= ownfoodlist[0].fifthloc%></option>
+			</select>
+		</div>
+		<h2>Final cost:  <%= ownfoodlist[0].total_cost%></h2>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	
+
+	<script>
+		(function () {
+			window.addEventListener('load', function () {
+				var forms = [document.getElementById('html_form')];
+				var validation = Array.prototype.filter.call(forms, function (form) {
+					form.addEventListener('submit', check, false);
+				});
+			}, false);
+		})();
+		function myFunction() {
+var x = document.getElementById("delivery2").value;
+document.getElementById("delivery").value = x;
+  }
+	</script>
+</body>
+
+</html>
