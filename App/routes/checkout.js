@@ -24,24 +24,45 @@ router.get('/', function (req, res, next) {
 		res.redirect('/orderFood');
 	}
 	else {
-		var sql_checkout = `SELECT * FROM customer JOIN foodlists USING (cid) JOIN consists USING (flid) JOIN foods USING (fname) WHERE flid =`
-		var sql_checkout_full = sql_checkout + sess.flid;
+		var date2 = new Date();
+		console.log("True time " + date2);
 
+		var sql_checkout = `SELECT * FROM customer JOIN foodlists USING (cid) JOIN consists USING (flid) JOIN foods USING (fname,rname) JOIN food_categories using (category) JOIN  (restaurants JOIN promotions USING (promoid)) USING (rname) WHERE flid =`
+		var sql_checkout_full = sql_checkout + sess.flid;
+		var rewardpts = req.query.points;
+
+		console.log(sql_checkout_full);
 
 		pool.query(sql_checkout_full, (err, data2) => {
-			res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, total_cost: 0, price: data2.rows[0].total_cost });
+			var date3 = new Date(data2.rows[0].startdate)
+			var date4 = new Date(data2.rows[0].enddate)
+			console.log("NIggs time: " + date3);
+			var noOfItems = data2.rowCount;
+			var fee = noOfItems * 5;
+			var resdiscount = 0;
+			if (date2 > date3 && date2 < date4) {
+				resdiscount = data2.rows[0].discount;
+			}
+
+
+			res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: fee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount });
 		});
 
 
-		
+
 	}
 });
 
 // POST
 router.post('/', function (req, res, next) {
 	// Retrieve Information
+	sess = req.session;
 	var deliverylocation = req.body.delivery;
 	var payment = req.body.payment;
+	var costthing = req.body.costthing3;
+	var deliveryfee = req.body.deliveryfeething;
+
+
 
 	var sql_insertlocation = `CREATE or replace procedure newlocation (locationthing text, checkcid integer)
 	AS $$
@@ -80,7 +101,74 @@ router.post('/', function (req, res, next) {
 	
 	end
 	$$ language plpgsql;
+	call newlocation ('
 	`
+	var sql_insertlocation2 = sql_insertlocation + deliverylocation + `'` + sess.user + `);`;
+
+	var datecurrent = new Date();
+
+	// current date
+	// adjust 0 before single digit date
+	var day = ("0" + datecurrent.getDate()).slice(-2);
+
+	// current month
+	var month = ("0" + (datecurrent.getMonth() + 1)).slice(-2);
+
+	// current year
+	var year = datecurrent.getFullYear();
+
+	// current hours
+	let hours = datecurrent.getHours();
+
+	// current minutes
+	let minutes = datecurrent.getMinutes();
+
+	// current seconds
+	let seconds = datecurrent.getSeconds();
+
+	var fulldate = `'` + year + "-" + month + "-" + day + `'`;
+
+	var fulldate_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
+
+	var rideridthing = Math.floor(
+		Math.random() * (301 - 0) + 0
+	)
+
+	var insertdeliversql = `CREATE or replace procedure newdid(deliverything numeric, date1 text, date2 text, date3 text, date4 text, date5 text, rideridthing)
+	AS $$
+	
+	declare
+		didthing integer;
+	
+	begin
+	
+	SELECT (coalesce(max(did), 0)+1) into didthing FROM Delivers;
+
+	insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (didthing, deliverything, date1, date2, date3, date4, date5, rideridthing, null); 
+	end
+	$$ language plpgsql;`
+
+
+
+
+
+
+
+
+	pool.query(sql_checkout_full, (err, data2) => {
+		var date3 = new Date(data2.rows[0].startdate)
+		var date4 = new Date(data2.rows[0].enddate)
+		console.log("NIggs time: " + date3);
+		var noOfItems = data2.rowCount;
+		var fee = noOfItems * 5;
+		var resdiscount = 0;
+		if (date2 > date3 && date2 < date4) {
+			resdiscount = data2.rows[0].discount;
+		}
+
+
+		res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: fee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount });
+	});
 
 	// Construct Specific SQL Query
 	// var insert_query = sql_query + '\'' + ccNo + '\', \'' + username + '\', \'' + password + '\')';
@@ -112,7 +200,7 @@ router.post('/', function (req, res, next) {
 	// 			console.log(req.session.user);
 	// 			res.redirect('/');
 	// 		});
-			
+
 	// 	}
 
 	// });

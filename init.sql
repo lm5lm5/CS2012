@@ -29,7 +29,7 @@ create table Promotions(
     promoId Integer primary key,
     descriptionPromo varchar(200),
     discount decimal,
-    startDate DATE,
+    startDate date,
     endDate Date
 );
 
@@ -100,8 +100,16 @@ create table Delivers (
 create table Restaurants(
     rname varchar(100) NOT NULL,
     promoId Integer,
+    minimalCost Integer NOT NULL,
     FOREIGN KEY (promoId) REFERENCES Promotions (promoId),
     primary key(rname)
+);
+
+CREATE TABLE Food_categories (
+    category VARCHAR(60),
+    category_meaning text UNIQUE NOT NULL,
+    PRIMARY KEY (category)
+
 );
 
 --done
@@ -110,7 +118,7 @@ create table Foods(
     rname varchar(100) NOT NULL,
     dailyLimit Integer,
     isavailable boolean,
-    category VARCHAR(60),
+    category VARCHAR(60) references Food_categories (category),
     price decimal,
     primary key(fname, rname),
     FOREIGN KEY (rname) REFERENCES Restaurants (rname) on delete cascade
@@ -122,12 +130,13 @@ create table Foodlists(
     Cid int not null references Customer(cid),
     Riderid int,
     Promoid int,
-    Order_time time,
+    Order_time date,
     Restaurant_name text,
     Payment_method text,
     Total_cost numeric default 0,
     Delivery_location text,
-    Did INt Unique,
+    Did integer,
+    unique(flId, Did),
     FOREIGN KEY (Did) REFERENCES Delivers(Did)
 );
 
@@ -224,11 +233,13 @@ CREATE TABLE riderLogin (
     foreign Key (riderid) references Riders(riderid)
 );
 
-
 CREATE TABLE staffLogin (
     Username text NOT NULL,
     Password text NOT NULL,
+    Restaurant_name text not null,
     staffid Integer,
     PRIMARY KEY (staffid),
-    Unique(Username)
+    foreign Key (Restaurant_name) references Restaurants(rname)
 );
+
+

@@ -31,6 +31,7 @@
 		<thead>
 			<tr>
 				<th scope="col">Food name</th>
+				<th scope="col">Category</th>
 				<th scope="col">Restaurant name</th>
 				<th scope="col">Price</th>
 				<th scope="col">Delete</th>
@@ -40,6 +41,7 @@
 			<% for(var i=0; i<ownfoodlist.length; i++) { %>
 			<tr>
 				<td><%= ownfoodlist[i].fname%></td>
+				<td><%= ownfoodlist[i].category_meaning%></td>
 				<td><%= ownfoodlist[i].rname%></td>
 				<td><%= ownfoodlist[i].price%></td>
 				<td>
@@ -58,10 +60,27 @@
 		</tbody>
 	</table>
 	<h3>Total cost: <%= totalcost %></h3>
+	<% if (canbuy == true) { %>
 	<form method="POST" action="orderFood" name="checkoutFood">
+		<% if (ownfoodlist[0].reward_pts > 0) { %>
+			Choose number of reward points: 
+		<input type="range" name="rewardnumbertobuy" id="rewardnumbertobuy" value="0" min="0"
+			max="<%= ownfoodlist[0].reward_pts%>" oninput="rewardId.value = 	rewardnumbertobuy.value">
+		<output name="rewardId" id="rewardId" for="rewardnumbertobuy">0</output>
+		<script>
+			document.registrationForm.rewardnumbertobuy.oninput = function () {
+				document.checkoutFood.rewardId.value = document.Foodlist.numbertobuy.value;
+			}
+		</script>
+		<% } else { %>
+		<input type="hidden" name="rewardnumbertobuy" value=0 />
+		<% } %>
 		<input type="hidden" name="action" value="Checkout" />
-		<button type="submit">Checkout</button>
+		<button type="submit" class="btn btn-primary">Checkout</button>
 	</form>
+	<% }  else {%>
+		<h2>Minimum order to buy is $<%= minimalcost1%></h2>
+		<% } %>
 	<% } %>
 
 	<h2>Food available today:</h2>
@@ -86,7 +105,7 @@
 				trs[i].style.display = "none";
 
 				// loop through row cells
-				for (var i2 = 0; i2 < tds.length; i2++) {
+				for (var i2 = 0; i2 < 3; i2++) {
 
 					// if there's a match
 					if (tds[i2].innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -105,11 +124,13 @@
 
 	</script>
 
-	<input id="Findfood" type="text" onkeyup="myFunction()" placeholder="Search for food"/>
+	<input id="Findfood" type="text" onkeyup="myFunction()" placeholder="Search by food, category or restaurant name"
+		style="width: 1000px;" />
 	<table class="table" id="foodlistthing">
 		<thead>
 			<tr>
 				<th scope="col">Food name</th>
+				<th scope="col">Category</th>
 				<th scope="col">Restaurant name</th>
 				<th scope="col">Price</th>
 				<th scope="col">Reviews</th>
@@ -123,6 +144,7 @@
 			<tr>
 				<form method="POST" action="orderFood" name="Foodlist">
 					<td><%= foodlist[i].fname%></td>
+					<td><%= foodlist[i].category_meaning%></td>
 					<td><%= foodlist[i].rname%></td>
 					<td><%= foodlist[i].price%></td>
 					<td>
@@ -153,7 +175,7 @@
 						<button type="submit" class="btn btn-primary">Add</button>
 						<% }%>
 					</td>
-					
+
 
 
 				</form>
