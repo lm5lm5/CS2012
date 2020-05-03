@@ -29,7 +29,7 @@ create table Promotions(
     promoId Integer primary key,
     descriptionPromo varchar(200),
     discount decimal,
-    startDate DATE,
+    startDate date,
     endDate Date
 );
 
