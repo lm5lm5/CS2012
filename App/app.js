@@ -116,17 +116,13 @@ app.use('/riderPastDeliveries', riderPastDeliveriesRouter);
 
 app.use('/staff', staffRouter);
 app.use('/staffNew', staffNewRouter);
-<<<<<<< HEAD
-
 app.use('/manager', managerRouter);
 //app.use('/managerNew', managerNewRouter);
-=======
 app.use('/restaurantProfile', restaurantProfileRouter);
 app.use('/addFood', addFoodRouter);
 app.use('/addPromotion', addPromotionRouter);
 
 
->>>>>>> 92956d46a9ccff627c5fe66ed13bba5377d2e597
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
