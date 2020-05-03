@@ -100,6 +100,7 @@ create table Delivers (
 create table Restaurants(
     rname varchar(100) NOT NULL,
     promoId Integer,
+    minimalCost Integer NOT NULL,
     FOREIGN KEY (promoId) REFERENCES Promotions (promoId),
     primary key(rname)
 );
