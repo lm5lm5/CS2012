@@ -2593,7 +2593,7 @@ insert into riderLogin (username, password, riderid) values ('jhammondt', 'C1WlE
 insert into riderLogin (username, password, riderid) values ('rsenneru', 'jQgBPUTm', 31);
 insert into riderLogin (username, password, riderid) values ('swallesv', 'BSMfJ6kbq6b', 32);
 insert into riderLogin (username, password, riderid) values ('cplakw', 'S2GpW97stM21', 33);
-insert into riderLogin (username, password, riderid) values ('dosoriox', 'ARk3W8x', 34);
+insert into riderLogin (username, password, riderid) values ('qq', 'qq', 34);
 insert into riderLogin (username, password, riderid) values ('cbedwardy', 'kRoHOOJn', 35);
 insert into riderLogin (username, password, riderid) values ('kdrinanz', 'XiY1TNk', 36);
 insert into riderLogin (username, password, riderid) values ('bdewar10', 'B47DVuflPxkC', 37);

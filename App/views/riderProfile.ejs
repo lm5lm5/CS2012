@@ -25,20 +25,34 @@
 
 <body>
 	<h1>Welcome, <%= sess.name%></h1>
-	<p>Welcome to hell</p><br />
-	<p>by: Chan Chee Yong
+	<p>Your weekly summary</p><br />
+	<p>Keep up the good work!</p>
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">Matric</th>
 					<th scope="col">Name</th>
-					<th scope="col">Faculty</th>
-					<th scope="col">Faculty</th>
+					<th scope="col">Rider Id</th>
+					<th scope="col">Status</th>
+					<th scope="col">Number of deliveries</th>
+					<th scope="col">Total working hours</th>
+					<th scope="col">Salary (weekly)</th>
 				</tr>
-				
 			</thead>
+			<tbody>
+				<% for(var i=0; i<riderdata.length; i++) { %>
+				<tr>
+					<td><%= riderdata[i].ridername%></td>
+					<td><%= riderdata[i].riderid%></td>
+					<td><%= riderdata[i].status%></td>
+					<td><%= riderdata[i].numofdeliveries%></td>
+					<td><%= riderdata[i].totalhours%></td>
+					<td><%= riderdata[i].totalsalary%></td>
+				</tr>
+				<% } %>
+			</tbody>
 		</table>
-
+	<p><a href="/riderPastDeliveries">Click here to view your past deliveries</a></p>
+	<p><a href="/rider">Click here to logout</a></p>
 </body>
 
 </html>

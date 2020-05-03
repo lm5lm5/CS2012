@@ -42,6 +42,7 @@ var checkoutRouter = require('./routes/checkout');
 var riderRouter = require('./routes/rider');
 var riderNewRouter = require('./routes/riderNew');
 var riderProfileRouter = require('./routes/riderProfile');
+var riderPastDeliveriesRouter = require('./routes/riderPastDeliveries');
 
 var staffRouter = require('./routes/staff');
 var staffNewRouter = require('./routes/staffNew');
@@ -103,6 +104,7 @@ app.use('/checkout',checkoutRouter);
 app.use('/rider', riderRouter);
 app.use('/riderNew', riderNewRouter);
 app.use('/riderProfile', riderProfileRouter);
+app.use('/riderPastDeliveries', riderPastDeliveriesRouter);
 
 app.use('/staff', staffRouter);
 app.use('/staffNew', staffNewRouter);
