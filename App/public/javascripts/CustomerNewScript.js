@@ -14,14 +14,14 @@ function check(event) {
 	
 	// Simple Check
 	if(ccNo.length != 8) {
-		alert("Invalid cid no");
+		alert("Invalid cc no");
 		event.preventDefault();
 		event.stopPropagation();
 		return false;
 	}
-	var isnum = /^\d+$/.test(ccMo);
+	var isnum = /^\d+$/.test(ccNo);
 	if(isnum == false) {
-		alert("Invalid cid no");
+		alert("Invalid cc no");
 		event.preventDefault();
 		event.stopPropagation();
 		return false;

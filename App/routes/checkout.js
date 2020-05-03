@@ -103,7 +103,7 @@ router.post('/', function (req, res, next) {
 	$$ language plpgsql;
 	call newlocation ('
 	`
-	var sql_insertlocation2 = sql_insertlocation + deliverylocation + `'` + sess.user + `);`;
+	var sql_insertlocation2 = sql_insertlocation + deliverylocation + `', ` + sess.user + `);`;
 
 	var datecurrent = new Date();
 
@@ -118,23 +118,23 @@ router.post('/', function (req, res, next) {
 	var year = datecurrent.getFullYear();
 
 	// current hours
-	let hours = datecurrent.getHours();
+	var hours = datecurrent.getHours();
 
 	// current minutes
-	let minutes = datecurrent.getMinutes();
+	var minutes = datecurrent.getMinutes();
 
 	// current seconds
-	let seconds = datecurrent.getSeconds();
+	var seconds = datecurrent.getSeconds();
 
 	var fulldate = `'` + year + "-" + month + "-" + day + `'`;
 
-	var fulldate_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
+	const fulldate_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
 
 	var rideridthing = Math.floor(
 		Math.random() * (301 - 0) + 0
 	)
 
-	var insertdeliversql = `CREATE or replace procedure newdid(deliverything numeric, date1 text, date2 text, date3 text, date4 text, date5 text, rideridthing)
+	var insertdeliversql = `CREATE or replace procedure newdid(deliverything numeric, date1 timestamp, date2 timestamp, date3 timestamp, date4 timestamp, date5 timestamp, rideridthing integer)
 	AS $$
 	
 	declare
@@ -145,8 +145,89 @@ router.post('/', function (req, res, next) {
 	SELECT (coalesce(max(did), 0)+1) into didthing FROM Delivers;
 
 	insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (didthing, deliverything, date1, date2, date3, date4, date5, rideridthing, null); 
+
 	end
-	$$ language plpgsql;`
+	$$ language plpgsql;
+	call newdid(`
+
+	var dategr = new Date();
+	dategr.setMinutes(dategr.getMinutes() + 10);
+	console.log("LOLOL WTD IS " + dategr);
+	// adjust 0 before single digit date
+	var day = ("0" + dategr.getDate()).slice(-2);
+	// current month
+	var month = ("0" + (dategr.getMonth() + 1)).slice(-2);
+	// current year
+	var year = dategr.getFullYear();
+	// current hours
+	var hours = dategr.getHours();
+	// current minutes
+	var minutes = dategr.getMinutes();
+	// current seconds
+	var seconds = dategr.getSeconds();
+	const fulldategr_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
+
+	var datear = dategr;
+	datear.setHours(datear.getHours() + 1);
+	// adjust 0 before single digit date
+	var day = ("0" + datear.getDate()).slice(-2);
+	// current month
+	var month = ("0" + (datear.getMonth() + 1)).slice(-2);
+	// current year
+	var year = datear.getFullYear();
+	// current hours
+	var hours = datear.getHours();
+	// current minutes
+	var minutes = datear.getMinutes();
+	// current seconds
+	var seconds = datear.getSeconds();
+	const fulldatear_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
+
+	var datelr = datear;
+	datelr.setMinutes(datelr.getMinutes() + 20);
+	// adjust 0 before single digit date
+	var day = ("0" + datelr.getDate()).slice(-2);
+	// current month
+	var month = ("0" + (datelr.getMonth() + 1)).slice(-2);
+	// current year
+	var year = datelr.getFullYear();
+	// current hours
+	var hours = datelr.getHours();
+	// current minutes
+	var minutes = datelr.getMinutes();
+	// current seconds
+	var seconds = datelr.getSeconds();
+	const fulldatelr_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
+
+	var datedo = datelr;
+	datedo.setHours(datedo.getHours() + 2);
+	// adjust 0 before single digit date
+	var day = ("0" + datedo.getDate()).slice(-2);
+	// current month
+	var month = ("0" + (datedo.getMonth() + 1)).slice(-2);
+	// current year
+	var year = datedo.getFullYear();
+	// current hours
+	var hours = datedo.getHours();
+	// current minutes
+	var minutes = datedo.getMinutes();
+	// current seconds
+	var seconds = datedo.getSeconds();
+	const fulldatedo_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
+
+	var rewardptsused = req.body.rewardptsused;
+
+	// var updatefoodlist_sql = `Update foodlist
+	// SET payment_method = '`+ payment  + `', delivery_location = '` + deliverylocation + `', order_time = ` + fulldate + `, total_cost =` + costthing + `, did = ` + did
+
+	var update_rewartpts_sql = `Update customer
+	Set reward_pts = reward_pts - ` + rewardptsused +
+	` WHERE cid = ` + sess.user + `;`;
+
+	var full_sql_thing = insertdeliversql + deliveryfee + `, ` +  fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `);` + sql_insertlocation2 +  update_rewartpts_sql;
+
+
+	console.log(full_sql_thing);
 
 
 
@@ -155,20 +236,20 @@ router.post('/', function (req, res, next) {
 
 
 
-	pool.query(sql_checkout_full, (err, data2) => {
-		var date3 = new Date(data2.rows[0].startdate)
-		var date4 = new Date(data2.rows[0].enddate)
-		console.log("NIggs time: " + date3);
-		var noOfItems = data2.rowCount;
-		var fee = noOfItems * 5;
-		var resdiscount = 0;
-		if (date2 > date3 && date2 < date4) {
-			resdiscount = data2.rows[0].discount;
-		}
+	// pool.query(sql_checkout_full, (err, data2) => {
+	// 	var date3 = new Date(data2.rows[0].startdate)
+	// 	var date4 = new Date(data2.rows[0].enddate)
+	// 	console.log("NIggs time: " + date3);
+	// 	var noOfItems = data2.rowCount;
+	// 	var fee = noOfItems * 5;
+	// 	var resdiscount = 0;
+	// 	if (date2 > date3 && date2 < date4) {
+	// 		resdiscount = data2.rows[0].discount;
+	// 	}
 
 
-		res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: fee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount });
-	});
+	// 	res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: fee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount });
+	// });
 
 	// Construct Specific SQL Query
 	// var insert_query = sql_query + '\'' + ccNo + '\', \'' + username + '\', \'' + password + '\')';
