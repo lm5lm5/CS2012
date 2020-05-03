@@ -19,6 +19,31 @@ var sql_query = 'insert into Restaurants (rname, promoid, minimalCost) values';
 // 	res.render('insert_restaurants', { title: 'add a new restaurant' });
 // });
 
+var sql_query = `CREATE or REPLACE procedure changePromotion (rnamething text, promotionthing Integer, minimalCostthing Integer)
+AS $$
+
+declare
+    maxInt integer;
+    usernamecheck text;
+begin
+
+SELECT username into usernamecheck
+FROM restaurants
+WHERE username = rnamething;
+
+if usernamecheck IS NULL then
+    raise exception 'This restaurant is not existing!';
+end if;
+
+set constraints restaurant_fkey deferred;
+update restaurants set promoid = promotionthing where rname = rnamething;
+update restaurants set minimalcost = minimalCostthing where rname = rnamething;
+
+end
+$$ language plpgsql;
+
+call changePromotion(`;
+
 router.get('/', function (req, res, next) {
 	sess = req.session
 	console.log('LOL is ' + sess.id);

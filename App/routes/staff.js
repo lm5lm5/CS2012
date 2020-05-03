@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'SELECT staffid FROM staffLogin WHERE Username = \'';
+var sql_query = 'SELECT restaurant_name, Username FROM staffLogin WHERE Username = \'';
 var sql_query2 = '\' AND password = \'';
 var sql_query3 = '\' AND Restaurant_name = \'';
 
@@ -57,17 +57,24 @@ router.post('/', function (req, res, next) {
 			res.redirect('/staff');
 		}
 		else {
-			console.log(data.length);
-			console.log(data.rows);
-			console.log(data.rowCount);
+			console.log("insert_query: " + insert_query);
+			console.log("data.length: " + data.length);
+			console.log("data.rows: " + data.rows);
+			console.log("data.rowcount: " + data.rowCount);
 			if (data.rowCount == 1){
 				sess = req.session;
 				sess.login = 1;
 				sess.staff = 1;
 				sess.error = null;
 				var data = data.rows;
-				sess.user = data[0].staffid;
-				res.redirect('/')
+				sess.rname = data[0].restaurant_name;
+				sess.staffname = data[0].username;
+
+				// sess.user = data[0].staffid;
+				// sess.user = data[0].staffid;
+				console.log("data[0].Restaurant_name: " + sess.rname);
+				console.log("data[0].username: " + sess.staffname);
+				res.redirect('/restaurantProfile')
 			}
 			else {
 				sess = req.session;
