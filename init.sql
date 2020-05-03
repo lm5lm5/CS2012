@@ -123,12 +123,13 @@ create table Foodlists(
     Cid int not null references Customer(cid),
     Riderid int,
     Promoid int,
-    Order_time time,
+    Order_time date,
     Restaurant_name text,
     Payment_method text,
     Total_cost numeric default 0,
     Delivery_location text,
-    Did INt Unique,
+    Did integer,
+    unique(flId, Did),
     FOREIGN KEY (Did) REFERENCES Delivers(Did)
 );
 
