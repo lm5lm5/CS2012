@@ -107,13 +107,20 @@ create table Restaurants(
     constraint restaurant_fkey FOREIGN KEY (promoId) REFERENCES Promotions (promoId) deferrable initially deferred
 );
 
+CREATE TABLE Food_categories (
+    category VARCHAR(60),
+    category_meaning text UNIQUE NOT NULL,
+    PRIMARY KEY (category)
+
+);
+
 --done
 create table Foods(
     fname varchar(100) NOT NULL,
     rname varchar(100) NOT NULL,
     dailyLimit Integer,
     isavailable boolean,
-    category VARCHAR(60),
+    category VARCHAR(60) references Food_categories (category),
     price decimal,
     primary key(fname, rname),
     FOREIGN KEY (rname) REFERENCES Restaurants (rname) on delete cascade
@@ -243,8 +250,6 @@ CREATE TABLE managerLogin (
     mid Integer,
     PRIMARY KEY (mid)
 );
-
-
 
 
 

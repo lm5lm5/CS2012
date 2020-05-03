@@ -605,6 +605,7 @@ insert into promotions (promoid, descriptionpromo, discount, startdate, enddate)
 
 
 
+
 insert into Riders (riderId, ridername) values (1, 'Clio');
 insert into Riders (riderId, ridername) values (2, 'Husein');
 insert into Riders (riderId, ridername) values (3, 'Brok');
@@ -1092,6 +1093,17 @@ insert into restaurants (rname, promoid, minimalcost) values ('WEC Energy Group,
 insert into restaurants (rname, promoid, minimalcost) values ('U.S. Global Investors, Inc.', 10, 151);
 insert into restaurants (rname, promoid, minimalcost) values ('Comstock Resources, Inc.', 28, 148);
 insert into restaurants (rname, promoid, minimalcost) values ('PCM, Inc.', 30, 114);
+
+insert into food_categories (category, category_meaning) values ('category_1', 'American');
+insert into food_categories (category, category_meaning) values ('category_2', 'British');
+insert into food_categories (category, category_meaning) values ('category_3', 'Caribbean');
+insert into food_categories (category, category_meaning) values ('category_4', 'Chinese');
+insert into food_categories (category, category_meaning) values ('category_5', 'French');
+insert into food_categories (category, category_meaning) values ('category_6', 'Greek');
+insert into food_categories (category, category_meaning) values ('category_7', 'Indian');
+insert into food_categories (category, category_meaning) values ('category_8', 'Italian');
+insert into food_categories (category, category_meaning) values ('category_9', 'Japanese');
+insert into food_categories (category, category_meaning) values ('category_10', 'Mexican');
 
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Passion fruit', 'Bank of America Corporation', 14, true, 'category_3', 57.11);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Baked beans', 'Willamette Valley Vineyards, Inc.', 65, false, 'category_2', 49.84);

@@ -31,6 +31,7 @@
 		<thead>
 			<tr>
 				<th scope="col">Food name</th>
+				<th scope="col">Category</th>
 				<th scope="col">Restaurant name</th>
 				<th scope="col">Price</th>
 				<th scope="col">Delete</th>
@@ -40,6 +41,7 @@
 			<% for(var i=0; i<ownfoodlist.length; i++) { %>
 			<tr>
 				<td><%= ownfoodlist[i].fname%></td>
+				<td><%= ownfoodlist[i].category_meaning%></td>
 				<td><%= ownfoodlist[i].rname%></td>
 				<td><%= ownfoodlist[i].price%></td>
 				<td>
@@ -58,22 +60,86 @@
 		</tbody>
 	</table>
 	<h3>Total cost: <%= totalcost %></h3>
+	<% if (canbuy == true) { %>
 	<form method="POST" action="orderFood" name="checkoutFood">
+		<% if (ownfoodlist[0].reward_pts > 0) { %>
+			Choose number of reward points: 
+		<input type="range" name="rewardnumbertobuy" id="rewardnumbertobuy" value="0" min="0"
+			max="<%= ownfoodlist[0].reward_pts%>" oninput="rewardId.value = 	rewardnumbertobuy.value">
+		<output name="rewardId" id="rewardId" for="rewardnumbertobuy">0</output>
+		<script>
+			document.registrationForm.rewardnumbertobuy.oninput = function () {
+				document.checkoutFood.rewardId.value = document.Foodlist.numbertobuy.value;
+			}
+		</script>
+		<% } else { %>
+		<input type="hidden" name="rewardnumbertobuy" value=0 />
+		<% } %>
+		<p></p>
 		<input type="hidden" name="action" value="Checkout" />
-		<button type="submit">Checkout</button>
+		<button type="submit" class="btn btn-primary">Checkout</button>
 	</form>
+	<% }  else {%>
+		<p></p>
+		<h2>Minimum order to buy is $<%= minimalcost1%></h2>
+		<p></p>
+		<% } %>
 	<% } %>
 
 	<h2>Food available today:</h2>
 
-	<table class="table">
+
+	<script>
+		function myFunction() {
+
+			// Declare variables 
+			var input = document.getElementById("Findfood");
+			var filter = input.value.toUpperCase();
+			var table = document.getElementById("foodlistthing");
+			var trs = table.tBodies[0].getElementsByTagName("tr");
+
+			// Loop through first tbody's rows
+			for (var i = 0; i < trs.length; i++) {
+
+				// define the row's cells
+				var tds = trs[i].getElementsByTagName("td");
+
+				// hide the row
+				trs[i].style.display = "none";
+
+				// loop through row cells
+				for (var i2 = 0; i2 < 3; i2++) {
+
+					// if there's a match
+					if (tds[i2].innerHTML.toUpperCase().indexOf(filter) > -1) {
+
+						// show the row
+						trs[i].style.display = "";
+
+						// skip to the next row
+						continue;
+
+					}
+				}
+			}
+
+		}
+
+	</script>
+
+	<input id="Findfood" type="text" onkeyup="myFunction()" placeholder="Search by food, category or restaurant name"
+		style="width: 1000px;" />
+	<table class="table" id="foodlistthing">
 		<thead>
 			<tr>
 				<th scope="col">Food name</th>
+				<th scope="col">Category</th>
 				<th scope="col">Restaurant name</th>
 				<th scope="col">Price</th>
+				<th scope="col">Reviews</th>
 				<th scope="col">Available</th>
 				<th scope="col">Number</th>
+				<th scope="col">Add</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -81,8 +147,12 @@
 			<tr>
 				<form method="POST" action="orderFood" name="Foodlist">
 					<td><%= foodlist[i].fname%></td>
+					<td><%= foodlist[i].category_meaning%></td>
 					<td><%= foodlist[i].rname%></td>
 					<td><%= foodlist[i].price%></td>
+					<td>
+						<a href="/reviews?fname=<%= foodlist[i].fname%>&rname=<%= foodlist[i].rname%>">Reviews</a>
+					</td>
 					<td>
 						<% if (foodlist[i].isavailable == true) { %>
 						Yes
@@ -108,6 +178,8 @@
 						<button type="submit" class="btn btn-primary">Add</button>
 						<% }%>
 					</td>
+
+
 
 				</form>
 
