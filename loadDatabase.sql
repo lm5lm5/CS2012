@@ -2225,8 +2225,24 @@ insert into holds (wwsid, sessionsid) values (312, 4);
 insert into holds (wwsid, sessionsid) values (90, 14);
 insert into holds (wwsid, sessionsid) values (176, 6);
 insert into holds (wwsid, sessionsid) values (250, 17);
-
-
+insert into holds (wwsid, sessionsid) values (36, 17);
+insert into holds (wwsid, sessionsid) values (37, 20);
+insert into holds (wwsid, sessionsid) values (64, 17);
+insert into holds (wwsid, sessionsid) values (65, 20);
+insert into holds (wwsid, sessionsid) values (78, 17);
+insert into holds (wwsid, sessionsid) values (79, 20);
+insert into holds (wwsid, sessionsid) values (106, 17);
+insert into holds (wwsid, sessionsid) values (108, 20);
+insert into holds (wwsid, sessionsid) values (134, 17);
+insert into holds (wwsid, sessionsid) values (134, 19);
+insert into holds (wwsid, sessionsid) values (176, 19);
+insert into holds (wwsid, sessionsid) values (176, 14);
+insert into holds (wwsid, sessionsid) values (211, 19);
+insert into holds (wwsid, sessionsid) values (211, 15);
+insert into holds (wwsid, sessionsid) values (232, 15);
+insert into holds (wwsid, sessionsid) values (232, 16);
+insert into holds (wwsid, sessionsid) values (127, 16);
+insert into holds (wwsid, sessionsid) values (127, 17);
 
 
 
