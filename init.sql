@@ -53,7 +53,7 @@ CREATE TABLE ShiftHour (
 --done
 CREATE TABLE Sessions (
     Sessionsid Integer primary key,
-    TotalHours Integer,
+    TotalHours Integer check(TotalHours>=1 and TotalHours<=2),
     EndInterval Integer check(EndInterval >= 10 and EndInterval <= 22),
     StartInterval Integer check(EndInterval >= 10 and EndInterval <= 22)
 );
