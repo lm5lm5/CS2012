@@ -75,11 +75,14 @@
 		<% } else { %>
 		<input type="hidden" name="rewardnumbertobuy" value=0 />
 		<% } %>
+		<p></p>
 		<input type="hidden" name="action" value="Checkout" />
 		<button type="submit" class="btn btn-primary">Checkout</button>
 	</form>
 	<% }  else {%>
+		<p></p>
 		<h2>Minimum order to buy is $<%= minimalcost1%></h2>
+		<p></p>
 		<% } %>
 	<% } %>
 

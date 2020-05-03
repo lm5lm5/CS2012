@@ -55,8 +55,8 @@
 
 		<div class="form-group">
 			<label for="Payment">Choose payment method:</label>
-			<select id="payment">
-				<option value="Cash">Cash</option>
+			<select id="payment" value="Cash" name="payment">
+				<option selected value="Cash">Cash</option>
 				<option value="Credit Card">Credit Card</option>
 			</select>
 		</div>
@@ -85,6 +85,9 @@
 		<input type="hidden" id="costthing3" name="costthing3" value=0/>
 		<input type="hidden" id="deliveryfeething" name="deliveryfeething" value = <%= deliveryfee %> >
 		<input type="hidden" id="rewardptsused" name="rewardptsused" value= <%= rewardpts  %> >
+		<input type="hidden" id="resdiscount" name="resdiscount" value= <%= resdiscount  %> >
+		<input type="hidden" id="promoid" name="promoid" value= <<%= ownfoodlist[0].promoid%> >
+		<input type="hidden" id="originalcost" name="originalcost" value= <%= ownfoodlist[0].total_cost%> >
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 
@@ -107,6 +110,10 @@
 		var cost = parseFloat(`<%= ownfoodlist[0].total_cost%>`);
 		cost = cost + parseFloat(`<%= deliveryfee%>`);
 		cost = cost * ((100 - parseFloat(`<%= resdiscount  %>`)) / 100)
+		cost = cost - parseInt(`<%= rewardpts  %>`)
+		if (cost < 0) {
+			cost = 0;
+		}
 		document.getElementById("costthing2").innerHTML = cost.toFixed(2);
 		document.getElementById("costthing3").value = cost.toFixed(2);
 

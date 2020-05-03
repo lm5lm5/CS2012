@@ -60,7 +60,9 @@ router.post('/', function (req, res, next) {
 	var deliverylocation = req.body.delivery;
 	var payment = req.body.payment;
 	var costthing = req.body.costthing3;
+	var originalcost = req.body.originalcost;
 	var deliveryfee = req.body.deliveryfeething;
+	console.log("Payment option is " + payment);
 
 
 
@@ -134,7 +136,7 @@ router.post('/', function (req, res, next) {
 		Math.random() * (301 - 0) + 0
 	)
 
-	var insertdeliversql = `CREATE or replace procedure newdid(deliverything numeric, date1 timestamp, date2 timestamp, date3 timestamp, date4 timestamp, date5 timestamp, rideridthing integer)
+	var insertdeliversql = `CREATE or replace procedure newdid(deliverything numeric, date1 timestamp, date2 timestamp, date3 timestamp, date4 timestamp, date5 timestamp, rideridthing integer, flidthing integer)
 	AS $$
 	
 	declare
@@ -145,6 +147,8 @@ router.post('/', function (req, res, next) {
 	SELECT (coalesce(max(did), 0)+1) into didthing FROM Delivers;
 
 	insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (didthing, deliverything, date1, date2, date3, date4, date5, rideridthing, null); 
+
+	Update foodlists SET did = didthing WHERE flid = flidthing;
 
 	end
 	$$ language plpgsql;
@@ -222,69 +226,49 @@ router.post('/', function (req, res, next) {
 
 	var update_rewartpts_sql = `Update customer
 	Set reward_pts = reward_pts - ` + rewardptsused +
-	` WHERE cid = ` + sess.user + `;`;
+		` WHERE cid = ` + sess.user + `;`;
 
-	var full_sql_thing = insertdeliversql + deliveryfee + `, ` +  fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `);` + sql_insertlocation2 +  update_rewartpts_sql;
+	var update_rewartpts_sql_add = `Update customer Set reward_pts = reward_pts+ ` + Math.floor(originalcost / 500) + ` WHERE cid = ` + sess.user + `;`;
 
+	var promoidthing = null;
+	if (req.body.resdiscount > 0) {
+		promoidthing = req.body.promoid;
+	}
 
-	console.log(full_sql_thing);
-
-
-
-
-
-
+	var food_list_update = `Update foodlists SET riderid = ` + rideridthing + `, promoid = ` + promoidthing + `, order_time = ` + fulldate + `, payment_method = '` + payment + `', total_cost = ` + originalcost + `, delivery_location = '` + deliverylocation + `' WHERE flid = ` + sess.flid + `;`;
 
 
-	// pool.query(sql_checkout_full, (err, data2) => {
-	// 	var date3 = new Date(data2.rows[0].startdate)
-	// 	var date4 = new Date(data2.rows[0].enddate)
-	// 	console.log("NIggs time: " + date3);
-	// 	var noOfItems = data2.rowCount;
-	// 	var fee = noOfItems * 5;
-	// 	var resdiscount = 0;
-	// 	if (date2 > date3 && date2 < date4) {
-	// 		resdiscount = data2.rows[0].discount;
-	// 	}
+
+	var full_sql_thing = insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
+
+	console.log (full_sql_thing);
 
 
-	// 	res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: fee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount });
-	// });
-
-	// Construct Specific SQL Query
-	// var insert_query = sql_query + '\'' + ccNo + '\', \'' + username + '\', \'' + password + '\')';
-	// console.log(insert_query);
 
 
-	// pool.query(insert_query, (err, data) => {
-	// 	if (err) {
-	// 		console.log(err.stack);
-	// 		//alert(err.stack);
-	// 		sess = req.session;
-	// 		var errormessage = err.stack;
-	// 		sess.error = errormessage;
-	// 		sess.errortype = 'usernamewrong';
-	// 		res.redirect('/customerNew');
-	// 	}
-	// 	else {
-	// 		sess = req.session;
-	// 		sess.login = 1;
-	// 		sess.customer = 1;
-	// 		sess.error = null;
-	// 		var sql_query = 'SELECT Cid FROM customerLogin WHERE Username = \'';
-	// 		insert_query = sql_query + username + '\'';
-	// 		var data23;
-	// 		pool.query(insert_query, (err, data2) => {
-	// 			var data3 = data2.rows;
-	// 			data23 = data3[0].cid;
-	// 			req.session.user = data23;
-	// 			console.log(req.session.user);
-	// 			res.redirect('/');
-	// 		});
 
-	// 	}
 
-	// });
+
+
+
+
+	pool.query(full_sql_thing, (err, data2) => {
+
+		sess = req.session;
+		sess.error = null;
+		sess.errortype = null;
+		sess.flid = null;
+		sess.chosenfood = null;
+		sess.rname = null;
+		
+		res.redirect("/");
+
+
+
+
+
+
+	});
 });
 
 module.exports = router;
