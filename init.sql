@@ -53,7 +53,7 @@ CREATE TABLE ShiftHour (
 --done
 CREATE TABLE Sessions (
     Sessionsid Integer primary key,
-    TotalHours Integer check(TotalHours >= 1 and TotalHours <= 2),
+    TotalHours Integer check(TotalHours>=1 and TotalHours<=2),
     EndInterval Integer check(EndInterval >= 10 and EndInterval <= 22),
     StartInterval Integer check(EndInterval >= 10 and EndInterval <= 22)
 );
@@ -103,8 +103,8 @@ create table Restaurants(
     rname varchar(100) NOT NULL,
     promoId Integer,
     minimalCost Integer NOT NULL,
-    FOREIGN KEY (promoId) REFERENCES Promotions (promoId),
-    primary key(rname)
+    primary key(rname),
+    constraint restaurant_fkey FOREIGN KEY (promoId) REFERENCES Promotions (promoId) deferrable initially deferred
 );
 
 --done

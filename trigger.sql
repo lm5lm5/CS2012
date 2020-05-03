@@ -105,3 +105,46 @@ RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
 
+--check if the total hours for wws is 10 <= hours <= 48
+CREATE OR REPLACE FUNCTION func_check_holds()
+RETURNS TRIGGER AS 
+$$ BEGIN 
+  IF EXISTS(with riderhours as (select riderid, sum(totalhours) totalhours
+from wws natural join (holds natural join sessions)
+group by riderid
+order by riderid)
+select *
+from riderhours where totalhours < 10)
+THEN RAISE EXCEPTION 'There are riders with less than 10 working hours';
+RETURN NULL;
+  ELSIF EXISTS(with riderhours as (select riderid, sum(totalhours) totalhours
+from wws natural join (holds natural join sessions)
+group by riderid
+order by riderid)
+select *
+from riderhours where totalhours > 48)
+THEN RAISE EXCEPTION 'There are riders with more than 48 working hours';
+RETURN NULL;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS check_insert_holds ON holds;
+CREATE TRIGGER check_insert_holds
+BEFORE INSERT ON holds
+FOR EACH ROW
+EXECUTE PROCEDURE func_check_holds();
+
+DROP TRIGGER IF EXISTS check_delete_holds ON holds;
+CREATE TRIGGER check_delete_holds
+BEFORE DELETE ON holds
+FOR EACH ROW
+EXECUTE PROCEDURE func_check_holds();
+
+DROP TRIGGER IF EXISTS check_update_holds ON holds;
+CREATE TRIGGER check_update_holds
+BEFORE UPDATE ON holds
+FOR EACH ROW
+EXECUTE PROCEDURE func_check_holds();
+
