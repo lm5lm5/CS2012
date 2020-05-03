@@ -48,7 +48,7 @@ var staffRouter = require('./routes/staff');
 var staffNewRouter = require('./routes/staffNew');
 
 var managerRouter = require('./routes/manager');
-//var managerNewRouter = require('./routes/managerNew');
+var managerNewRouter = require('./routes/managerNew');
 
 var addFoodRouter = require('./routes/addFood');
 var addPromotionRouter = require('./routes/addPromotion');
@@ -119,7 +119,7 @@ app.use('/riderPastDeliveries', riderPastDeliveriesRouter);
 app.use('/staff', staffRouter);
 app.use('/staffNew', staffNewRouter);
 app.use('/manager', managerRouter);
-//app.use('/managerNew', managerNewRouter);
+app.use('/managerNew', managerNewRouter);
 app.use('/restaurantProfile', restaurantProfileRouter);
 app.use('/addFood', addFoodRouter);
 app.use('/addPromotion', addPromotionRouter);

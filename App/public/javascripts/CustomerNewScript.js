@@ -19,7 +19,7 @@ function check(event) {
 		event.stopPropagation();
 		return false;
 	}
-	var isnum = /^\d+$/.test(ccMo);
+	var isnum = /^\d+$/.test(ccNo);
 	if(isnum == false) {
 		alert("Invalid cid no");
 		event.preventDefault();
