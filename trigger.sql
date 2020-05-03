@@ -48,5 +48,60 @@ FOR EACH ROW
 EXECUTE PROCEDURE func_check_ShiftHour();
 
 
+--check if the riders follow isa constraint, each entity in superclass must be in a subclass and vice-versa and doesnt overlap
+CREATE OR REPLACE FUNCTION func_check_parttimeriderISA()
+RETURNS TRIGGER AS 
+$$ BEGIN 
+  IF EXISTS(select 1 from fulltimeriders f where NEW.riderid = f.riderid)
+THEN RAISE EXCEPTION 'There exists overlapping rider ids';
+RETURN NULL;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 
+CREATE OR REPLACE FUNCTION func_check_fulltimeriderISA()
+RETURNS TRIGGER AS 
+$$ BEGIN 
+  IF EXISTS(select 1 from parttimeriders p where NEW.riderid = p.riderid)
+THEN RAISE EXCEPTION 'There exists overlapping rider ids';
+RETURN NULL;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS check_insert_parttimeriderISA ON parttimeriders;
+CREATE TRIGGER check_insert_parttimeriderISA
+BEFORE INSERT ON parttimeriders
+FOR EACH ROW
+EXECUTE PROCEDURE func_check_parttimeriderISA();
+
+DROP TRIGGER IF EXISTS check_insert_fulltimeriderISA ON fulltimeriders;
+CREATE TRIGGER check_insert_fulltimeriderISA
+BEFORE INSERT ON fulltimeriders
+FOR EACH ROW
+EXECUTE PROCEDURE func_check_fulltimeriderISA();
+
+CREATE OR REPLACE FUNCTION func_check_parttimeriderISA()
+RETURNS TRIGGER AS 
+$$ BEGIN 
+  IF EXISTS(select 1 from fulltimeriders f where NEW.riderid = f.riderid)
+THEN RAISE EXCEPTION 'There exists overlapping rider ids';
+RETURN NULL;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION func_check_fulltimeriderISA()
+RETURNS TRIGGER AS 
+$$ BEGIN 
+  IF EXISTS(select 1 from parttimeriders p where NEW.riderid = p.riderid)
+THEN RAISE EXCEPTION 'There exists overlapping rider ids';
+RETURN NULL;
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
 
