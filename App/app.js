@@ -48,7 +48,7 @@ var staffRouter = require('./routes/staff');
 var staffNewRouter = require('./routes/staffNew');
 
 var managerRouter = require('./routes/manager');
-var managerNewRouter = require('./routes/managerNew');
+//var managerNewRouter = require('./routes/managerNew');
 
 var app = express();
 
@@ -114,7 +114,7 @@ app.use('/staff', staffRouter);
 app.use('/staffNew', staffNewRouter);
 
 app.use('/manager', managerRouter);
-app.use('/managerNew', managerNewRouter);
+//app.use('/managerNew', managerNewRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

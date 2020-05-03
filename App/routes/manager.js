@@ -15,13 +15,13 @@ var sql_query2 = '\' AND password = \'';
 router.get('/', function (req, res, next) {
     sess = req.session;
     if (sess.error && sess.error != null && sess.errortype == 'cidexist') {
-        console.log("HEREERERERE");
-        res.render('customer', { title: 'Customer login', error: sess.error});
+        console.log("log: Manager login");
+        res.render('manager', { title: 'Manager login', error: sess.error});
         sess.error = null;
         sess.errortype = 'cidexist';
     }
     else {
-        res.render('customer', { title: 'Customer login', error: null });
+        res.render('manager', { title: 'Manager login', error: null });
     }
 });
 
@@ -63,7 +63,7 @@ router.post('/', function (req, res, next) {
                 sess = req.session;
                 sess.error = "Username or password wrong";
                 sess.errortype = 'cidexist';
-                res.redirect('/customer');
+                res.redirect('/manager');
 
             }
         }
