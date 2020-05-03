@@ -29,7 +29,7 @@ create table Promotions(
     promoId Integer primary key,
     descriptionPromo varchar(200),
     discount decimal,
-    startDate DATE,
+    startDate date,
     endDate Date
 );
 
@@ -53,7 +53,7 @@ CREATE TABLE ShiftHour (
 --done
 CREATE TABLE Sessions (
     Sessionsid Integer primary key,
-    TotalHours Integer,
+    TotalHours Integer check(TotalHours >= 1 and TotalHours <= 2),
     EndInterval Integer check(EndInterval >= 10 and EndInterval <= 22),
     StartInterval Integer check(EndInterval >= 10 and EndInterval <= 22)
 );
@@ -102,6 +102,7 @@ create table Delivers (
 create table Restaurants(
     rname varchar(100) NOT NULL,
     promoId Integer,
+    minimalCost Integer NOT NULL,
     FOREIGN KEY (promoId) REFERENCES Promotions (promoId),
     primary key(rname)
 );
@@ -124,12 +125,13 @@ create table Foodlists(
     Cid int not null references Customer(cid),
     Riderid int,
     Promoid int,
-    Order_time time,
+    Order_time date,
     Restaurant_name text,
     Payment_method text,
     Total_cost numeric default 0,
     Delivery_location text,
-    Did INt Unique,
+    Did integer,
+    unique(flId, Did),
     FOREIGN KEY (Did) REFERENCES Delivers(Did)
 );
 

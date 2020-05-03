@@ -30,7 +30,7 @@ var formsRouter = require('./routes/forms');
 
 /* --- V6: Modify Database  --- */
 var insertRouter = require('./routes/insert');
-var insertRouter = require('./routes/insert_restaurants');
+var insert_restaurantsRouter = require('./routes/insert_restaurants');
 /* ---------------------------- */
 
 var customerRouter = require('./routes/customer');
@@ -42,6 +42,7 @@ var checkoutRouter = require('./routes/checkout');
 var riderRouter = require('./routes/rider');
 var riderNewRouter = require('./routes/riderNew');
 var riderProfileRouter = require('./routes/riderProfile');
+var riderPastDeliveriesRouter = require('./routes/riderPastDeliveries');
 
 var staffRouter = require('./routes/staff');
 var staffNewRouter = require('./routes/staffNew');
@@ -95,7 +96,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/insert', insertRouter);
-app.use('/insert_restaurants', insertRouter);
+app.use('/insert_restaurants', insert_restaurantsRouter);
 /* ---------------------------- */
 
 app.use('/customer', customerRouter);
@@ -107,6 +108,7 @@ app.use('/checkout',checkoutRouter);
 app.use('/rider', riderRouter);
 app.use('/riderNew', riderNewRouter);
 app.use('/riderProfile', riderProfileRouter);
+app.use('/riderPastDeliveries', riderPastDeliveriesRouter);
 
 app.use('/staff', staffRouter);
 app.use('/staffNew', staffNewRouter);
