@@ -238,8 +238,8 @@ CREATE TABLE staffLogin (
 CREATE TABLE managerLogin (
     Username text NOT NULL,
     Password text NOT NULL,
-    managerid Integer,
-    PRIMARY KEY (managerid)
+    mid Integer,
+    PRIMARY KEY (mid)
 );
 
 
