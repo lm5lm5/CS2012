@@ -58,6 +58,8 @@ var addPromotionRouter = require('./routes/addPromotion');
 
 
 var restaurantProfileRouter = require('./routes/restaurantProfile');
+var monthlySummaryRouter = require('./routes/monthlySummary');
+
 
 var app = express();
 
@@ -126,6 +128,7 @@ app.use('/staffNew', staffNewRouter);
 app.use('/restaurantProfile', restaurantProfileRouter);
 app.use('/addFood', addFoodRouter);
 app.use('/addPromotion', addPromotionRouter);
+app.use('/monthlySummary', monthlySummaryRouter);
 
 app.use('/manager', managerRouter);
 app.use('/managerNew', managerNewRouter);
