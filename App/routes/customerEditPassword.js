@@ -31,7 +31,7 @@ router.get('/', function (req, res, next) {
 		res.redirect('/customer');
 	}
 	else {
-		res.render('customerEditDetails', { title: 'Modifying Database', error: null });
+		res.render('customerEditPassword', { title: 'Modifying Database', error: null });
 	}
 });
 
@@ -56,7 +56,7 @@ router.post('/', function (req, res, next) {
 			sess = req.session;
 			var errormessage = err.stack;
 			sess.error = errormessage;
-			res.redirect('/customerEditDetails');
+			res.redirect('/customerEditPassword');
 		} 
 		else {
 			sess = req.session;

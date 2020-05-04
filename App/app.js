@@ -39,7 +39,7 @@ var customerProfileRouter = require('./routes/customerProfile');
 var orderFoodRouter = require('./routes/orderFood');
 var checkoutRouter = require('./routes/checkout');
 var reviewRouter = require('./routes/reviews');
-var customerEditDetailsRouter = require('./routes/customerEditDetails');
+var customerEditPasswordRouter = require('./routes/customerEditPassword');
 
 var riderRouter = require('./routes/rider');
 var riderNewRouter = require('./routes/riderNew');
@@ -113,7 +113,7 @@ app.use('/customerProfile', customerProfileRouter);
 app.use('/orderFood', orderFoodRouter);
 app.use('/checkout',checkoutRouter);
 app.use('/reviews',reviewRouter);
-app.use('/customerEditDetails',customerEditDetailsRouter);
+app.use('/customerEditPassword',customerEditPasswordRouter);
 
 app.use('/rider', riderRouter);
 app.use('/riderNew', riderNewRouter);
