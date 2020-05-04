@@ -15,7 +15,7 @@ var sql_query2 = '\' AND password = \'';
 router.get('/', function (req, res, next) {
     sess = req.session;
     if (sess.error && sess.error != null && sess.errortype == 'cidexist') {
-        console.log("log: Manager login");
+        console.log("error: incorrect account info");
         res.render('manager', { title: 'Manager login', error: sess.error});
         sess.error = null;
         sess.errortype = 'cidexist';
@@ -44,20 +44,20 @@ router.post('/', function (req, res, next) {
             var errormessage = err.stack;
             sess.error = errormessage;
             sess.errortype = 'cidexist';
-            res.redirect('/customer');
+            res.redirect('/manager');
         }
         else {
-            console.log(data.length);
             console.log(data.rows);
             console.log(data.rowCount);
             if (data.rowCount == 1){
+                console.log("correct account info");
                 sess = req.session;
                 sess.login = 1;
                 sess.customer = 1;
                 sess.error = null;
                 var data = data.rows;
                 sess.user = data[0].cid;
-                res.redirect('/')
+                res.redirect('/managerProfile')
             }
             else {
                 sess = req.session;
