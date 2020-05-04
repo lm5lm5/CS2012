@@ -57,6 +57,8 @@ var addPromotionRouter = require('./routes/addPromotion');
 
 
 var restaurantProfileRouter = require('./routes/restaurantProfile');
+var monthlySummaryRouter = require('./routes/monthlySummary');
+
 
 var app = express();
 
@@ -127,6 +129,7 @@ app.use('/managerNew', managerNewRouter);
 app.use('/restaurantProfile', restaurantProfileRouter);
 app.use('/addFood', addFoodRouter);
 app.use('/addPromotion', addPromotionRouter);
+app.use('/monthlySummary', monthlySummaryRouter);
 
 
 // catch 404 and forward to error handler
