@@ -25,14 +25,14 @@ var sql_query2 = '\'' + ' and order_time <' + '\'';
 
 router.get('/', function (req, res, next) {
 	sess = req.session;
-  res.render('monthlySummary', { title: 'view monthly summary', error: null });
+  res.render('printMonthlySummary', { title: 'view monthly summary', error: null });
 });
 
 // POST
 router.post('/', function (req, res, next) {
   	// Retrieve Information
     var month = req.body.month;
-    // sess.month = month;
+    sess.month = month;
     console.log("print month: " + month);
   
     // Construct Specific SQL Query
@@ -49,13 +49,11 @@ router.post('/', function (req, res, next) {
 			console.log("data.length: "+ data.length);
 			console.log(data.rows);
       console.log("data.rowCount: " + data.rowCount);
-      
+
 			if (data.rowCount == 1){
-        res.render('select', {monthlydata: data.rows });
+        res.render('printMonthlySummary', {monthlydata: data.rows });
 			}
 	});
 });
 
 module.exports = router;
-
-

@@ -2728,7 +2728,7 @@ insert into customerLogin (Username, Password, cid) values ('lmcgenis10', 'hpYdK
 insert into customerLogin (Username, Password, cid) values ('htraves11', 'viDYdtgYk', 38);
 insert into customerLogin (Username, Password, cid) values ('tclaasen12', 'mjjPb0k0lmo', 39);
 insert into customerLogin (Username, Password, cid) values ('tdowner13', '1iiPUClR', 40);
-insert into customerLogin (Username, Password, cid) values ('ltremblett14', 'jH5j5I8lcPh', 41);
+insert into customerLogin (Username, Password, cid) values ('qq', 'qq', 41);
 insert into customerLogin (Username, Password, cid) values ('jlaughton15', 'Qhc0QgWP7hml', 42);
 insert into customerLogin (Username, Password, cid) values ('tcestard16', 'jcrlH9ov2R', 43);
 insert into customerLogin (Username, Password, cid) values ('dpardy17', 'Spo5w1cHccoJ', 44);

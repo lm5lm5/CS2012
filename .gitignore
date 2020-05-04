@@ -4,3 +4,5 @@ notdatabase.sql
 App/node_modules/
 App/package.json
 App/package-lock.json
+my_test.sql
+

@@ -30,31 +30,21 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">Name</th>
-					<th scope="col">Rider Id</th>
-					<th scope="col">Status</th>
-					<th scope="col">Number of deliveries</th>
-					<th scope="col">Total working hours</th>
-					<th scope="col">Salary (weekly)</th>
+					<th scope="col">total orders</th>
+					<th scope="col">total orders</th>
+					
 				</tr>
 			</thead>
 			<tbody>
-				<% for(var i=0; i<riderdata.length; i++) { %>
+				<% for(var i=0; i<monthlydata.length; i++) { %>
 				<tr>
-					<td><%= riderdata[i].ridername%></td>
-					<td><%= riderdata[i].riderid%></td>
-					<td><%= riderdata[i].status%></td>
-					<td><%= riderdata[i].numofdeliveries%></td>
-					<td><%= riderdata[i].totalhours%></td>
-					<td><%= riderdata[i].totalsalary%></td>
+					<td><%= monthlydata[i].total_orders%></td>
+					<td><%= monthlydata[i].total_cost%></td>
 				</tr>
 				<% } %>
 			</tbody>
 		</table>
-	<p><a href="/riderPastDeliveries">Click here to view your past deliveries</a></p>
-	<form method="post" action="riderProfile">
-		<button type="submit" class="btn-link">Click to log out</button>
-	    </form>
+	<p><a href="/staff">Click here to logout</a></p>
 </body>
 
 </html>

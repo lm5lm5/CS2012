@@ -31,6 +31,7 @@ router.get('/', function (req, res, next) {
 	else {
 		res.render('customer', { title: 'Customer login', error: null });
 	}
+	//req.session.destroy();
 });
 
 // POST
