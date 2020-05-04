@@ -3,7 +3,7 @@
 
 <head>
     <!-- Page Title -->
-    <title>Order summary</title>
+    <title>Delivery Statistics</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 
     <!-- CSS for Styling -->
@@ -22,13 +22,14 @@
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
     <!-- ADDED JavaScript -->
-    <script src="javascripts/checkDates.js"></script>
+    <script src="javascripts/checkDatesAndRid.js"></script>
+
 </head>
 
 <body>
 
-<h1>Please specify the time period</h1>
-<form id="html_form" action="orderStatistics" role="form" method="post">
+<h1>Please specify a time period and a rider</h1>
+<form id="html_form" action="deliveryStatistics" role="form" method="post">
     <div class="form-group">
         <label for="startdate">Start date</label>
         <input type="date" class="form-control" id="startdate" name="startdate" aria-describedby="startdate"
@@ -41,10 +42,18 @@
                placeholder="end date">
         <small id="Help" class="form-text text-muted">Enter the end date (inclusive)</small>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        <label for="price">Rider id</label>
+        <input type="integer" class="form-control" id="rid" name="rid" aria-describedby="price"
+               placeholder="Enter your password">
+        <small id="matricHelp" class="form-text text-muted">Input rider id</small>
+    </div>
+    <p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </p>
 </form>
-<p><a href="/managerProfile">Click here to move back</a></p>
 
+<p><a href="/managerProfile">Click here to move back</a></p>
 <script>
     (function () {
         window.addEventListener('load', function () {
