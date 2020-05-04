@@ -1240,15 +1240,15 @@ insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name,
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (10, 41, 23, 66, '5/5/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
 
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (11, 41, 23, 66, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (12, 41, 23, 66, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (13, 41, 23, 66, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (14, 41, 23, 66, '5/4/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (15, 41, 23, 66, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (16, 41, 23, 66, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (17, 41, 23, 66, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (18, 41, 23, 66, '5/4/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (19, 41, 23, 66, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (20, 41, 23, 66, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (12, 41, 23, 1, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (13, 41, 23, 6, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (14, 41, 23, 5, '5/4/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (15, 41, 23, 3, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (16, 41, 23, 4, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (17, 41, 23, 6, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (18, 41, 23, 11, '5/4/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (19, 41, 23, 6, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (20, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
 
 -- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (11, 77, 71, 21, '6/5/2020', 'Adient plc', 'Credit Card', null, null, 15);
 -- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (12, 88, 46, 97, '4/5/2020', 'Bank of America Corporation', 'Cash', null, null, 33);
