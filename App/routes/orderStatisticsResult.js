@@ -1,12 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-// const {Pool} = require('pg')
-//
-// const pool = new Pool({
-//     connectionString: process.env.DATABASE_URL
-// });
-
 // GET
 router.get('/', function (req, res, next) {
     sess = req.session;
@@ -14,7 +8,7 @@ router.get('/', function (req, res, next) {
         console.log("manager not logged in yet");
         res.redirect('/manager');
     }
-    res.render('orderStatisticsResult', {})
+    res.render('orderStatisticsResult', {orderdata: sess.orderdata})
 });
 
 

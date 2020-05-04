@@ -26,23 +26,23 @@
 </head>
 
 <body>
+
 <h1>Please specify the time period</h1>
-<form id="html_form" action="orderStatisticsResult" role="form" method="post">
+<form id="html_form" action="orderStatistics" role="form" method="post">
     <div class="form-group">
-        <label for="startdate">startdate</label>
+        <label for="startdate">Start date</label>
         <input type="date" class="form-control" id="startdate" name="startdate" aria-describedby="startdate"
                placeholder="start date">
         <small id="Help" class="form-text text-muted">Enter the start date (inclusive)</small>
     </div>
     <div class="form-group">
-        <label for="enddate">enddate</label>
+        <label for="enddate">End date</label>
         <input type="date" class="form-control" id="enddate" name="enddate" aria-describedby="enddate"
                placeholder="end date">
         <small id="Help" class="form-text text-muted">Enter the end date (inclusive)</small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<p><a href="/orderStatisticsResult">Go to result</a></p>
 <p><a href="/managerProfile">Click here to move back</a></p>
 
 <script>

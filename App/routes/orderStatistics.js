@@ -8,7 +8,7 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'select * from foodlists natural join customerlogin natural join Riders ';
+var sql_query = 'with orderlist as (select * from foodlists natural join customerlogin natural join Riders ';
 var sql_query2 = 'where order_time >= \'';
 var sql_query3 = '\' and order_time <= \'';
 
@@ -27,11 +27,12 @@ router.post('/', function (req, res, next) {
     // Retrieve Information
     var startdate = req.body.startdate;
     var enddate = req.body.enddate;
-    console.log("start: " + startDate);
-    console.log("end: " + endDate);
+    console.log("start: " + startdate);
+    console.log("end: " + enddate);
 
     // Construct Specific SQL Query
-    var insert_query = sql_query + sql_query2 + startdate + sql_query3 + enddate + '\'';
+    var insert_query = sql_query + sql_query2 + startdate + sql_query3 + enddate + '\' order by flid) ' +
+        'select count(flid) as num, sum(total_cost) as cost from orderlist';
     console.log('query: ' + insert_query);
 
     pool.query(insert_query, (err, data) => {
@@ -44,20 +45,19 @@ router.post('/', function (req, res, next) {
             sess.errortype = 'invalid dates';
             res.redirect('/orderStatistics');
         } else {
-            console.log(data.length);
             console.log(data.rows);
             console.log(data.rowCount);
-            if (data.rowCount > 0) {
+            // if (data.rowCount > 0) {
                 sess = req.session;
                 sess.error = null;
-                var data = data.rows;
+                sess.orderdata = data.rows;
                 res.redirect('/orderStatisticsResult')
-            } else {
-                sess = req.session;
-                sess.error = "Invalid Dates, or no order within the period";
-                sess.errortype = 'invalid dates';
-                res.redirect('/orderStatistics');
-            }
+            // } else {
+            //     sess = req.session;
+            //     sess.error = "Invalid Dates, or no order within the period";
+            //     sess.errortype = 'invalid dates';
+            //     res.redirect('/orderStatistics');
+            // }
         }
     });
 });
