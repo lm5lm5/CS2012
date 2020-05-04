@@ -1329,6 +1329,8 @@ insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name,
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (99, 1, 33, 52, '1/5/2020', 'Adient plc', 'Credit Card', null, null, 37);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (100, 30, 97, 82, '6/5/2020', 'Commerce Bancshares, Inc.', 'Credit Card', null, null, 22);
 
+update foodlists set total_cost = 100  where total_cost is NULL;
+
 insert into Reviews (review, flid) values ('Good', 5);
 insert into Reviews (review, flid) values ('Bad', 4);
 insert into Reviews (review, flid) values ('Can be improved', 10);
