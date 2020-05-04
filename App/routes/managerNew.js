@@ -43,12 +43,16 @@ call addManager(`;
 // GET
 router.get('/', function (req, res, next) {
     sess = req.session;
-    if (sess.error && sess.error != null && sess.errortype === 'usernamewrong') {
-        console.log("error: username is wrong");
+    if (sess.error) {
+        console.log("error occurred");
+        if (sess.errortype === 'usernamewrong') {
+            console.log("error: username is wrong");
+        }
         res.render('managerNew', { title: 'Add new manager', error: sess.error});
         sess.error = null;
     }
     else {
+        console.log("other error");
         res.render('managerNew', { title: 'Add new manager', error: null });
     }
 });
