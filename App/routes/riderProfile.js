@@ -22,9 +22,19 @@ router.get('/', function (req, res, next) {
   sess = req.session;
   var sql_query2 = sql_query + sess.user;
   console.log("myquery " + sql_query2);
+
+  if(sess.user == 'undefined' || sess.user == null) {
+    res.redirect('/rider');
+  } else {
   pool.query(sql_query2, (err, data) => {
 		res.render('riderProfile', {riderdata: data.rows });
-	});
+	}); }
+});
+
+router.post('/', function (req, res, next) {
+	// Retrieve Information
+  req.session.destroy();
+  res.redirect('/rider');
 });
 
 module.exports = router;

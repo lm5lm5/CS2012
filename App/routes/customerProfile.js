@@ -25,11 +25,15 @@ router.get('/', function (req, res, next) {
   var sql_query3 = sql_query + sess.user;
   var sql_query4 = sql_query2 + sess.user;
   console.log("myquery " + sql_query3);
+  if(sess.user == 'undefined' || sess.user == null) {
+    res.redirect('/customer');
+  } else {
   pool.query(sql_query3, (err, data1) => {
     pool.query(sql_query4, (err, data2) => {
       res.render('customerProfile', { title: 'Database Connect', customerOrderData: data1.rows, customerPersonalData: data2.rows  });
     });
   });
+}
   //req.session.destroy();
 });
 
