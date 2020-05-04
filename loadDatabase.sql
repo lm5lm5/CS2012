@@ -2688,7 +2688,7 @@ insert into consists (coid, flid, fname, rname) values (58, 18, 'Common octopus'
 insert into consists (coid, flid, fname, rname) values (59, 19, 'Scallop', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (60, 20, 'Scallop', 'Lombard Medical, Inc.');
 
-insert into customerLogin (Username, Password, cid) values ('rdon0', 'RpUJHUN8', 1);
+insert into customerLogin (Username, Password, cid) values ('ee', 'ee', 1);
 insert into customerLogin (Username, Password, cid) values ('hmcairt1', '1g8XThby1oku', 2);
 insert into customerLogin (Username, Password, cid) values ('dchess2', 'nF6LMxPN', 3);
 insert into customerLogin (Username, Password, cid) values ('mskittrell3', 'qxIBPJUvyLT1', 4);

@@ -65,7 +65,8 @@ router.post('/', function (req, res, next) {
 				sess.error = null;
 				var data = data.rows;
 				sess.user = data[0].cid;
-				res.redirect('/')
+				sess.pw = data[0].password;
+				res.redirect('/customerProfile')
 			}
 			else {
 				sess = req.session;
