@@ -3792,3 +3792,4 @@ insert into stafflogin (staffid, username, password, Restaurant_name) values (29
 insert into stafflogin (staffid, username, password, Restaurant_name) values (299, 'Adaline Joseff', 'THpUF5Zcix', 'CGI Group, Inc.');
 insert into stafflogin (staffid, username, password, Restaurant_name) values (300, 'Morton Siflet', 'l7z8mwZ', 'Novan, Inc.');
 
+insert into managerlogin (Username, Password, Mid) values ('admin', 'admin', 1);

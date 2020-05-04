@@ -52,6 +52,9 @@ var staffNewRouter = require('./routes/staffNew');
 var managerRouter = require('./routes/manager');
 var managerNewRouter = require('./routes/managerNew');
 var managerProfileRouter = require('./routes/managerProfile');
+var managerViewOrderRouter = require('./routes/allOrders');
+var managerOrderStatsRouter = require('./routes/orderStatistics');
+var managerOrderStatsResultRouter = require('./routes/orderStatisticsResult');
 
 var addFoodRouter = require('./routes/addFood');
 var addPromotionRouter = require('./routes/addPromotion');
@@ -134,7 +137,10 @@ app.use('/printMonthlySummary', printMonthlySummaryRouter);
 
 app.use('/manager', managerRouter);
 app.use('/managerNew', managerNewRouter);
-app.use('/managerProfile', managerProfileRouter)
+app.use('/managerProfile', managerProfileRouter);
+app.use('/allOrders', managerViewOrderRouter);
+app.use('/orderStatistics', managerOrderStatsRouter);
+app.use('/orderStatisticsResult', managerOrderStatsResultRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

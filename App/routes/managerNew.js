@@ -91,7 +91,7 @@ router.post('/', function (req, res, next) {
                 req.session.manager = data23;
                 console.log("new manager created and logged in");
                 console.log(req.session.manager);
-                res.redirect('/');
+                res.redirect('/managerProfile');
             });
         }
     });
