@@ -12,33 +12,17 @@ const pool = new Pool({
 })
 */
 const pool = new Pool({
-	connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL
 });
 
 /* SQL Query */
-var sql_query = `WITH tmp AS (
-  SELECT * FROM customer LEFT JOIN foodlists USING (cid) LEFT JOIN consists USING (flid) LEFT JOIN foods USING (fname)),
-  
-  tmp2 AS (
-  SELECT coalesce(SUM(price),0) AS totalprice, flid, cid FROM tmp GROUP BY flid,cid )
-  
-  SELECT *
-  FROM tmp JOIN tmp2 USING (cid)
-  WHERE cid = `;
+var sql_query = 'select * from customers';
 
-var sql_query2 = 
-
-router.get('/', function(req, res, next) {
-  var total_query = sql_query + req.session.user;
-  var data1;
-  
-	pool.query(total_query, (err, data) => {
-		data1 = data;
-  });
-
-  pool.query(total)
-  
-  res.render('customerProfile', { title: 'All your information', data: data1.rows});
+router.get('/', function (req, res, next) {
+  sess = req.session;
+  var sql_query2 = sql_query + sess.user;
+  console.log("myquery " + sql_query2);
+  res.render('customerProfile', { });
 });
 
 module.exports = router;

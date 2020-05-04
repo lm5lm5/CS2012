@@ -32,7 +32,7 @@ if usernamecheck IS NOT NULL then
     raise exception 'This username is taken. Choose another username!';
 end if;
 
-select max(cid) into maxInt from Customer;
+select coalesce(max(cid), 0) into maxInt from Customer;
 insert into customer (Cid, Reward_pts, CC_no) values (maxInt+1, 0, ccnumber);
 insert into customerlogin (username, password, Cid) values (usernamething,passwordthing,maxInt+1);
 

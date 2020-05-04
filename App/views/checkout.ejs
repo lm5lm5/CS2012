@@ -32,6 +32,7 @@
 		<thead>
 			<tr>
 				<th scope="col">Food name</th>
+				<th scope="col">Category</th>
 				<th scope="col">Restaurant name</th>
 				<th scope="col">Price</th>
 			</tr>
@@ -40,19 +41,21 @@
 			<% for(var i=0; i<ownfoodlist.length; i++) { %>
 			<tr>
 				<td><%= ownfoodlist[i].fname%></td>
+				<td><%= ownfoodlist[i].category_meaning%></td>
 				<td><%= ownfoodlist[i].rname%></td>
 				<td><%= ownfoodlist[i].price%></td>
 			</tr>
 			<% } %>
 		</tbody>
 	</table>
+	<a href="/orderFood"><h2>Go back</h2></a>
 	<h3>Food Price: <%= ownfoodlist[0].total_cost%></h3>
 	<h2>Checkout information</h2>
 	<form id="html_form" action="checkout" role="form" method="post">
 
 		<div class="form-group">
 			<label for="Payment">Choose payment method:</label>
-			<select id="payment">
+			<select id="payment" value="Cash" name="payment">
 				<option value="Cash">Cash</option>
 				<option value="Credit Card">Credit Card</option>
 			</select>
@@ -73,11 +76,21 @@
 				<option value="<%= ownfoodlist[0].fifthloc%>"><%= ownfoodlist[0].fifthloc%></option>
 			</select>
 		</div>
-		<h2>Final cost:  <%= ownfoodlist[0].total_cost%></h2>
+		<h2>Reward points: <div> <%= rewardpts  %> </div></h2>
+		<h2>Restuarant Promo: <div>  <%= resdiscount  %>%</div></h2>
+		<h2>Delivery Promo: <div>I have no idea how to do this</div></h2>
+		<h2>Delivery Fee: <div>$<%= deliveryfee %></div></h2>
+		<h2>Final cost:<div id="costthing2">$<%= ownfoodlist[0].total_cost%></div>
+		</h2>
+		<input type="hidden" id="costthing3" name="costthing3" value=0/>
+		<input type="hidden" id="deliveryfeething" name="deliveryfeething" value = <%= deliveryfee %> >
+		<input type="hidden" id="rewardptsused" name="rewardptsused" value= <%= rewardpts  %> >
+		<input type="hidden" id="resdiscount" name="resdiscount" value= <%= resdiscount  %> >
+		<input type="hidden" id="promoid" name="promoid" value= <%= ownfoodlist[0].promoid%> >
+		<input type="hidden" id="originalcost" name="originalcost" value= <%= ownfoodlist[0].total_cost%> >
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 
-	
 
 	<script>
 		(function () {
@@ -89,9 +102,21 @@
 			}, false);
 		})();
 		function myFunction() {
-var x = document.getElementById("delivery2").value;
-document.getElementById("delivery").value = x;
-  }
+			var x = document.getElementById("delivery2").value;
+			document.getElementById("delivery").value = x;
+		}
+	</script>
+	<script>
+		var cost = parseFloat(`<%= ownfoodlist[0].total_cost%>`);
+		cost = cost + parseFloat(`<%= deliveryfee%>`);
+		cost = cost * ((100 - parseFloat(`<%= resdiscount  %>`)) / 100)
+		cost = cost - parseInt(`<%= rewardpts  %>`)
+		if (cost < 0) {
+			cost = 0;
+		}
+		document.getElementById("costthing2").innerHTML = cost.toFixed(2);
+		document.getElementById("costthing3").value = cost.toFixed(2);
+
 	</script>
 </body>
 
