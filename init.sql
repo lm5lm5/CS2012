@@ -248,7 +248,8 @@ CREATE TABLE managerLogin (
     Username text NOT NULL,
     Password text NOT NULL,
     mid Integer,
-    PRIMARY KEY (mid)
+    PRIMARY KEY (mid),
+    UNIQUE(Username)
 );
 
 
