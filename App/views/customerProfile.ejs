@@ -31,9 +31,41 @@
 			<tr>
 				<th scope="col">Customer Id</th>
 				<th scope="col">Reward Points</th>
-				<th scope="col">Number of deliveries</th>
+				<th scope="col">Credit card number</th>
 			</tr>
 		</thead>
+		<tbody>
+			<% for(var i=0; i<customerPersonalData.length; i++) { %>
+			<tr>
+				<td><%= customerPersonalData[i].cid%></td>
+				<td><%= customerPersonalData[i].reward_pts%></td>
+				<td><%= customerPersonalData[i].cc_no%></td>
+			</tr>
+			<% } %>
+		</tbody>
+	</table>
+	<p>Your past orders</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Food Item Name</th>
+				<th scope="col">Quantity</th>
+				<th scope="col">Price(each item)</th>
+				<th scope="col">From</th>
+				<th scope="col">Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for(var i=0; i<customerOrderData.length; i++) { %>
+			<tr>
+				<td><%= customerOrderData[i].fname%></td>
+				<td><%= customerOrderData[i].count%></td>
+				<td><%= customerOrderData[i].price%></td>
+				<td><%= customerOrderData[i].rname%></td>
+				<td><%= customerOrderData[i].order_time%></td>
+			</tr>
+			<% } %>
+		</tbody>
 	</table>
 	<p><a href="/customerEditPassword">Click here to change your password</a></p>
 	<p><a href="/customer">Click here to logout</a></p>
