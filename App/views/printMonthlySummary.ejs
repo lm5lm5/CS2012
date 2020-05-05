@@ -25,21 +25,37 @@
 
 <body>
 	<h1>Welcome, <%= sess.name%></h1>
-	<p>Your weekly summary</p><br />
+	<p>Your monthly summary</p><br />
 	<p>Keep up the good work!</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">total order</th>
+				<th scope="col">total cost</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for(var i=0; i<monthlydata.length; i++) { %>
+			<tr>
+				<td><%= monthlydata[i].total_orders%></td>
+				<td><%= parseFloat(monthlydata[i].total_cost).toFixed(2)%></td>
+			</tr>
+			<% } %>
+		</tbody>
+	</table>
+
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col">total orders</th>
-					<th scope="col">total orders</th>
-					
+					<th scope="col">food name</th>
+					<th scope="col">numbers</th>
 				</tr>
 			</thead>
 			<tbody>
-				<% for(var i=0; i<monthlydata.length; i++) { %>
+				<% for(var i=0; i<monthlydata2.length; i++) { %>
 				<tr>
-					<td><%= monthlydata[i].total_orders%></td>
-					<td><%= monthlydata[i].total_cost%></td>
+					<td><%= monthlydata2[i].fname%></td>
+					<td><%= monthlydata2[i].count%></td>
 				</tr>
 				<% } %>
 			</tbody>
