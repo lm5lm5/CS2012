@@ -8,7 +8,8 @@ router.get('/', function (req, res, next) {
         console.log("manager not logged in yet");
         res.redirect('/manager');
     }
-    res.render('orderStatisticsResult', {orderdata: sess.orderdata})
+    res.render('orderStatisticsResult', {orderdata: sess.orderdata, orderdata2: sess.orderdata2,
+        startdate: sess.start, enddate: sess.end})
 });
 
 

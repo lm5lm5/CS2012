@@ -14,25 +14,16 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 		<!-- ADDED JavaScript -->
-		<script src="javascripts/insertScript.js"></script>
+		<script src="javascripts/reviewFoodListScript.js"></script>
   </head>
   <body>
-  
-  <% } %>
-    <h1>CS2102: <%= title%></h1>
-		<form id="html_form" action="insert" role="form" method="post">
+
+    <h1>Review your order</h1>
+		<form id="html_form" action="reviewFoodList" role="form" method="post">
 			<div class="form-group">
-				<label for="matric">Matric Number</label>
-				<input type="number" class="form-control" id="matric" name="matric" aria-describedby="matricHelp" placeholder="Enter your cc number">
-				<small id="matricHelp" class="form-text text-muted">Do not share your matric number with anyone else.</small>
-			</div>
-			<div class="form-group">
-				<label for="name">Name</label>
-				<input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
-			</div>
-			<div class="form-group">
-				<label for="faculty">Faculty</label>
-				<input type="text" class="form-control" id="faculty" name="faculty" placeholder="Enter your faculty">
+				<label for="feedback">Give us your feedback</label>
+				<input type="feedback" class="form-control" id="feedback" name="feedback" aria-describedby="matricHelp" placeholder="Enter your feedback here">
+				<small id="matricHelp" class="form-text text-muted">Thank you for your purchase</small>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>

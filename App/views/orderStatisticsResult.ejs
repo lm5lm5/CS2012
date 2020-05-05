@@ -25,54 +25,52 @@
 </head>
 
 <body>
-<h1>Order Statistics</h1>
+<h1>Order Statistics from <%= startdate %> to <%= enddate %> (exclusive)</h1>
+<p><a href="/orderStatistics">Click here to move back</a></p>
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">total number of orders</th>
-        <th scope="col">total cost of orders</th>
+        <th scope="col">Number of orders</th>
+        <th scope="col">Number of customers placing orders</th>
+        <th scope="col">Number of riders being called</th>
+        <th scope="col">Total cost of orders</th>
+        <th scope="col">Maximal cost of an order</th>
     </tr>
     </thead>
     <tbody>
-    <% for(var i = 0; i < orderdata.length; i++) { %>
         <tr>
-            <td><%= orderdata[i].num%></td>
-            <td><%= orderdata[i].cost%></td>
+            <td><%= orderdata[0].num%></td>
+            <td><%= orderdata[0].customer%></td>
+            <td><%= orderdata[0].rider%></td>
+            <td><%= orderdata[0].cost%></td>
+            <td><%= orderdata[0].maxcost%></td>
+        </tr>
+    </tbody>
+</table>
 
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Customer id</th>
+        <th scope="col">Customer username</th>
+        <th scope="col">Number of orders placed</th>
+        <th scope="col">Total cost of orders</th>
+        <th scope="col">Maximal cost of an order</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i = 0; i < orderdata2.length; i++) { %>
+        <tr>
+            <td><%= orderdata2[i].cid%></td>
+            <td><%= orderdata2[i].username%></td>
+            <td><%= orderdata2[i].count%></td>
+            <td><%= orderdata2[i].cost%></td>
+            <td><%= orderdata2[i].maxcost%></td>
         </tr>
     <% } %>
     </tbody>
-<!--<table class="table">-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--        <th scope="col">Order id</th>-->
-<!--        <th scope="col">Customer username</th>-->
-<!--        <th scope="col">Rider name</th>-->
-<!--        <th scope="col">Promotion id</th>-->
-<!--        <th scope="col">Order time</th>-->
-<!--        <th scope="col">Restaurant name</th>-->
-<!--        <th scope="col">Delivery location</th>-->
-<!--        <th scope="col">Total cost</th>-->
-<!--        <th scope="col">Payment method</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <% for(var i = 0; i < orderdata.length; i++) { %>-->
-<!--        <tr>-->
-<!--            <td><%= orderdata[i].flid%></td>-->
-<!--            <td><%= orderdata[i].username%></td>-->
-<!--            <td><%= orderdata[i].ridername%></td>-->
-<!--            <td><%= orderdata[i].promoid%></td>-->
-<!--            <td><%= orderdata[i].order_time%></td>-->
-<!--            <td><%= orderdata[i].restaurant_name%></td>-->
-<!--            <td><%= orderdata[i].delivery_location%></td>-->
-<!--            <td><%= orderdata[i].total_cost%></td>-->
-<!--            <td><%= orderdata[i].payment_method%></td>-->
-<!--        </tr>-->
-<!--    <% } %>-->
-<!--    </tbody>-->
 </table>
-<p><a href="/orderStatistics">Click here to move back</a></p>
+
 
 </body>
 

@@ -26,6 +26,7 @@ router.get('/', function (req, res, next) {
 // POST
 router.post('/', function (req, res, next) {
         // Retrieve Information
+        sess = req.session;
         var flid = req.body.reviewFlid;
         var feedback = req.body.feedback;
         // Construct Specific SQL Query
@@ -33,8 +34,13 @@ router.post('/', function (req, res, next) {
         console.log("deletequery = " + delete_query);
         var insert_query = sql_query2 + feedback + '\',' + flid + ')';
         console.log("insertquery = " + insert_query);
+<<<<<<< HEAD
         if (feedback == null || feedback == 'undefined') {
                 res.redirect('/reviewFoodList');
+=======
+        if (feedback == null || feedback == 'undefined' || flid == 'undefined' || flid == null) {
+                res.render('reviewFoodList');
+>>>>>>> bae333d78c25f5f5e00e3785788c6878518d864e
         } else {
                 pool.query(delete_query, (err, data) => {
                         pool.query(insert_query, (err, data2) => {
@@ -48,7 +54,7 @@ router.post('/', function (req, res, next) {
                                 else {
                                         sess = req.session;
                                         sess.error = null;
-                                        res.redirect('/reviewFoodList');
+                                        res.redirect('/customerProfile');
                                 }
                         });
                 });

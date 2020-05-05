@@ -34,6 +34,33 @@ end if;
 
 select max(riderid) into maxInt from riders;
 insert into riders (riderid, ridername) values (maxInt+1, name);
+insert into parttimeriders (riderid, weeklybasesalary) values (maxInt+1, floor(random()*(999))+1);
+insert into riderlogin (username, password, riderid) values (usernamething,passwordthing,maxInt+1);
+
+end
+$$ language plpgsql;
+
+call addRider(`;
+
+var sql_query2 = `CREATE or REPLACE procedure addRider (name text, usernamething text, passwordthing text)
+AS $$
+
+declare
+    maxInt integer;
+    usernamecheck text;
+begin
+
+SELECT username into usernamecheck
+FROM riderLogin
+WHERE username = usernamething;
+
+if usernamecheck IS NOT NULL then
+    raise exception 'This username is taken. Choose another username!';
+end if;
+
+select max(riderid) into maxInt from riders;
+insert into riders (riderid, ridername) values (maxInt+1, name);
+insert into fulltimeriders (riderid, mwsid, monthlybasesalary) values (maxInt+1, floor(random()*(15))+1,floor(random()*(999))+1);
 insert into riderlogin (username, password, riderid) values (usernamething,passwordthing,maxInt+1);
 
 end
@@ -60,9 +87,15 @@ router.post('/', function (req, res, next) {
 	var name = req.body.name;
 	var username = req.body.username;
 	var password = req.body.password;
-
+	var type = req.body.group1;
+	console.log(type);
+	var insert_query;
 	// Construct Specific SQL Query
-	var insert_query = sql_query + '\'' + name + '\', \'' + username + '\', \'' + password + '\')';
+	if(type == 'parttime') {
+		insert_query = sql_query + '\'' + name + '\', \'' + username + '\', \'' + password + '\')';
+	} else {
+		insert_query = sql_query2 + '\'' + name + '\', \'' + username + '\', \'' + password + '\')';
+	}
 	console.log(insert_query);
 
 

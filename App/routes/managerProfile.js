@@ -23,4 +23,10 @@ router.get('/', function (req, res, next) {
     // });
 });
 
+router.post('/', function (req, res, next) {
+    // Retrieve Information
+    req.session.destroy();
+    res.redirect('/manager');
+});
+
 module.exports = router;
