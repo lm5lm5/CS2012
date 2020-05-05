@@ -60,6 +60,7 @@
 				<th scope="col">Total cost</th>
 				<th scope="col">From</th>
 				<th scope="col">Date</th>
+				<th scope="col">Review your order</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -75,6 +76,12 @@
 				<td><%= customerOrderData[i].total_cost%></td>
 				<td><%= customerOrderData[i].restaurant_name%></td>
 				<td><%= customerOrderData[i].order_time%></td>
+				<td>					
+					<form method="POST" action="reviewFoodList" name="reviewFoodList">
+						<input type="hidden" name="reviewFlid" value="<%= customerOrderData[i].flid%>" />
+						<button type="submit" class="btn btn-primary">Click to review your order</button>
+					</form>
+				</td>
 			</tr>
 			<% } %>
 		</tbody>

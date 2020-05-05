@@ -41,6 +41,7 @@ var checkoutRouter = require('./routes/checkout');
 var reviewRouter = require('./routes/reviews');
 var customerEditPasswordRouter = require('./routes/customerEditPassword');
 var foodListRouter = require('./routes/foodList');
+var reviewFoodListRouter = require('./routes/reviewFoodList');
 
 var riderRouter = require('./routes/rider');
 var riderNewRouter = require('./routes/riderNew');
@@ -126,6 +127,7 @@ app.use('/checkout',checkoutRouter);
 app.use('/reviews',reviewRouter);
 app.use('/customerEditPassword',customerEditPasswordRouter);
 app.use('/foodList', foodListRouter);
+app.use('/reviewFoodList', reviewFoodListRouter);
 
 app.use('/rider', riderRouter);
 app.use('/riderNew', riderNewRouter);
