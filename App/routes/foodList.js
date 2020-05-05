@@ -21,7 +21,7 @@ var sql_query = 'with y as (with x as (select sum(price), flid from (foodlists j
  
 
 router.get('/', function(req, res, next) {
-		res.render('foodList', { title: 'Database Connect', foodListData: data.rows });
+		res.render('foodList');
 });
 
 router.post('/', function (req, res, next) {
