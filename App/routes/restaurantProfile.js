@@ -25,8 +25,11 @@ router.get('/', function (req, res, next) {
   console.log("myquery: " + sql_query2);
   // console.log("minicost: " + sess.minimalcost);
   pool.query(sql_query2, (err, data) => {
+    var format1 = data.startdate;
+    console.log("format1: " + format1);
 		res.render('restaurantProfile', {restaurantdata: data.rows });
 	});
 });
 
 module.exports = router;
+ 
