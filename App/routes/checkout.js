@@ -240,7 +240,7 @@ router.post('/', function (req, res, next) {
 
 	var full_sql_thing = insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
 
-	console.log (full_sql_thing);
+	console.log(full_sql_thing);
 
 
 
@@ -253,13 +253,28 @@ router.post('/', function (req, res, next) {
 
 	pool.query(full_sql_thing, (err, data2) => {
 
-		req.session.error = null;
-		req.session.errortype = null;
-		req.session.flid = null;
-		req.session.chosenFood = null;
-		req.session.rname = null;
+
+
+		var easydelete = `
+		With t as (
+			SELECT coalesce(count(*),0) AS no, fname, rname FROM foodlists JOIN consists USING (flid) WHERE payment_method IS NULL GROUP BY fname,rname
+			)
+			Update foods
+			SET dailylimit = dailylimit + t.no
+			FROM t
+			WHERE foods.fname = t.fname
+			AND foods.rname = t.rname;
 		
-		res.redirect("/");
+		DELETE FROM foodlists WHERE payment_method IS NULL;`;
+
+		pool.query(easydelete, (err, deletething) => {
+			req.session.error = null;
+			req.session.errortype = null;
+			req.session.flid = null;
+			req.session.chosenFood = null;
+			req.session.rname = null;
+			res.redirect("/");
+		});
 
 
 
