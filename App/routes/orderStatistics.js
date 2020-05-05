@@ -75,8 +75,9 @@ router.post('/', function (req, res, next) {
             console.log('start: ' + start);
             console.log('end: ' + end);
             var insert_query2 = sql_query4
-                + 'select cid, username, count(distinct flid) as count, sum(total_cost) as cost '
-                + 'from orderlist group by cid, username';
+                + 'select cid, username, count(distinct flid) as count, sum(total_cost) as cost, '
+                + 'max(total_cost) as maxcost '
+                + 'from orderlist group by (cid, username) order by cid';
             console.log('query2: ' + insert_query2);
             pool.query(insert_query2, (err, data) => {
                 if (err) {

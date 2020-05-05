@@ -55,6 +55,7 @@
         <th scope="col">Customer username</th>
         <th scope="col">Number of orders placed</th>
         <th scope="col">Total cost of orders</th>
+        <th scope="col">Maximal cost of an order</th>
     </tr>
     </thead>
     <tbody>
@@ -64,6 +65,7 @@
             <td><%= orderdata2[i].username%></td>
             <td><%= orderdata2[i].count%></td>
             <td><%= orderdata2[i].cost%></td>
+            <td><%= orderdata2[i].maxcost%></td>
         </tr>
     <% } %>
     </tbody>
