@@ -32,7 +32,10 @@ router.post('/', function (req, res, next) {
 
     // Construct Specific SQL Query
     var insert_query = sql_query + sql_query2 + startdate + sql_query3 + enddate + '\' order by flid) ' +
-        'select count(flid) as num, sum(total_cost) as cost from orderlist';
+        'select coalesce(count(flid), 0) as num, coalesce(sum(total_cost), 0) as cost, '
+        'coalesce(max(total_cost), 0) as maxcost '
+        + 'from orderlist';
+
     console.log('query: ' + insert_query);
 
     pool.query(insert_query, (err, data) => {
