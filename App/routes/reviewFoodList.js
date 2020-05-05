@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
         var insert_query = sql_query2 + feedback + '\',' + flid + ')';
         console.log("insertquery = " + insert_query);
         if (feedback == null || feedback == 'undefined') {
-                res.render('reviewFoodList');
+                res.redirect('/reviewFoodList');
         } else {
                 pool.query(delete_query, (err, data) => {
                         pool.query(insert_query, (err, data2) => {

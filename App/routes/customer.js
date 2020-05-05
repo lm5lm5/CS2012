@@ -22,11 +22,16 @@ var sql_query2 = '\' AND password = \'';
 // GET
 router.get('/', function (req, res, next) {
 	sess = req.session;
-	if (sess.error && sess.error != null && sess.errortype == 'cidexist') {
+	var errorcheck = sess.error;
+	var errortypecheck = sess.errortype
+	if (errorcheck && errorcheck != null && errortypecheck == 'cidexist') {
 		console.log("HEREERERERE");
-		res.render('customer', { title: 'Customer login', error: sess.error});
+
 		sess.error = null;
-		sess.errortype = 'cidexist';
+		sess.errortype = null;
+
+		res.render('customer', { title: 'Customer login', error: errorcheck});
+		
 	}
 	else {
 		res.render('customer', { title: 'Customer login', error: null });

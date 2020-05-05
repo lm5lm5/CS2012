@@ -29,7 +29,7 @@ router.get('/', function (req, res, next) {
 
 		var sql_checkout = `SELECT * FROM customer JOIN foodlists USING (cid) JOIN consists USING (flid) JOIN foods USING (fname,rname) JOIN food_categories using (category) JOIN  (restaurants JOIN promotions USING (promoid)) USING (rname) WHERE flid =`
 		var sql_checkout_full = sql_checkout + sess.flid;
-		var rewardpts = req.query.points;
+		var rewardpts = sess.rewardnumbertobuy;
 
 		console.log(sql_checkout_full);
 
@@ -43,9 +43,16 @@ router.get('/', function (req, res, next) {
 			if (date2 > date3 && date2 < date4) {
 				resdiscount = data2.rows[0].discount;
 			}
+			var finalprice = data2.rows[0].total_cost;
+			finalprice = finalprice * (100 - (resdiscount / 100));
+			finalprice = finalprice + deliveryfee
+			finalprice = finalprice - rewardpts
+			if (finalprice < 0) {
+				finalprice = 0;
+			}
 
 
-			res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: fee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount });
+			res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: fee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount, finalprice: finalprice });
 		});
 
 
@@ -59,13 +66,14 @@ router.post('/', function (req, res, next) {
 	sess = req.session;
 	var deliverylocation = req.body.delivery;
 	var payment = req.body.payment;
-	var costthing = req.body.costthing3;
+	var finalcost = req.body.finalprice;
 	var originalcost = req.body.originalcost;
 	var deliveryfee = req.body.deliveryfeething;
+	var rname = req.body.rnamething;
 	console.log("Payment option is " + payment);
 
 
-
+	var sql_update_foodlist = `UPDATE foodlists SET restaurant_name = '` + rname + `' WHERE flid = ` + sess.flid + `;`;
 	var sql_insertlocation = `CREATE or replace procedure newlocation (locationthing text, checkcid integer)
 	AS $$
 	
@@ -227,7 +235,7 @@ router.post('/', function (req, res, next) {
 	Set reward_pts = reward_pts - ` + rewardptsused +
 		` WHERE cid = ` + sess.user + `;`;
 
-	var update_rewartpts_sql_add = `Update customer Set reward_pts = reward_pts+ ` + Math.floor(originalcost / 500) + ` WHERE cid = ` + sess.user + `;`;
+	var update_rewartpts_sql_add = `Update customer Set reward_pts = reward_pts + ` + Math.floor(originalcost / 500) + ` WHERE cid = ` + sess.user + `;`;
 
 	var promoidthing = null;
 	if (req.body.resdiscount > 0) {
@@ -238,7 +246,7 @@ router.post('/', function (req, res, next) {
 
 
 
-	var full_sql_thing = insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
+	var full_sql_thing = sql_update_foodlist + insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
 
 	console.log(full_sql_thing);
 
@@ -273,6 +281,7 @@ router.post('/', function (req, res, next) {
 			req.session.flid = null;
 			req.session.chosenFood = null;
 			req.session.rname = null;
+			sess.rewardnumbertobuy = null;
 			res.redirect("/");
 		});
 

@@ -44,10 +44,13 @@ call addCustomer(`;
 // GET
 router.get('/', function (req, res, next) {
 	sess = req.session;
-	if (sess.error && sess.error != null && sess.errortype == 'usernamewrong') {
+	var errormessagething = sess.error;
+	var errortypecheck = sess.errortype
+	if (errormessagething && errormessagething != null && errortypecheck == 'usernamewrong') {
 		console.log("HEREERERERE");
-		res.render('customerNew', { title: 'Add new user', error: sess.error});
 		sess.error = null;
+		sess.errortype = null;
+		res.render('customerNew', { title: 'Add new user', error: errormessagething});
 	}
 	else {
 		res.render('customerNew', { title: 'Add new user', error: null });
