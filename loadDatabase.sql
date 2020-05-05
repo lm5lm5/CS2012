@@ -3802,26 +3802,26 @@ group by flid
 order by flid)
 update foodlists set total_cost = x.sum from x where foodlists.flid = x.flid;
 
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (1, 3, null, null, 41.09, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (2, 8, null, null, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (3, 4, 58, null, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (4, 12, null, null, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (5, 18, null, null, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (6, 18, 100, 64, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (7, 13, 25, 63, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (8, 9, 67, null, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (9, 5, 23, null, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (10, 19, 66, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (11, 18, 66, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (12, 2, null, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (13, 10, 6, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (14, 12, 5, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (15, 4, 3, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (16, 6, 4, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (17, 16, 6, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (18, 6, null, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (19, 2, 6, 3, null, null);
-insert into foodlistCost (flid, reward_pts, rest_promoid, deliver_pid, deliveryfee, final_cost) values (20, 7, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (1, 3, null, null, 41.09, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (2, 8, null, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (3, 4, 58, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (4, 12, null, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (5, 18, null, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (6, 18, 100, 64, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (7, 13, 25, 63, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (8, 9, 67, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (9, 5, 23, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (10, 19, 66, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (11, 18, 66, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (12, 2, null, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (13, 10, 6, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (14, 12, 5, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (15, 4, 3, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (16, 6, 4, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (17, 16, 6, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (18, 6, null, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (19, 2, 6, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (20, 7, 1, 3, null, null);
 
 with t as (
 SELECT count(*) as no, flid

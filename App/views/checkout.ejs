@@ -78,8 +78,8 @@
 		</div>
 		<h2>Reward points: <div> <%= rewardpts  %> </div></h2>
 		<h2>Restuarant Promo: <div>  <%= resdiscount  %>%</div></h2>
-		<h2>Delivery Promo: <div>I have no idea how to do this</div></h2>
-		<h2>Delivery Fee: <div>$<%= deliveryfee %></div></h2>
+		<h2>Delivery Promo: <div> <%= delpiddiscount  %> </div></h2>
+		<h2>Delivery Fee: <div>$<%= deliveryfee %>%</div></h2>
 		<h2>Final cost:<div>$<%= finalprice %></div>
 		</h2>
 		<input type="hidden" id="deliveryfeething" name="deliveryfeething" value = <%= deliveryfee %> >
@@ -87,8 +87,10 @@
 		<input type="hidden" id="resdiscount" name="resdiscount" value= <%= resdiscount  %> >
 		<input type="hidden" id="promoid" name="promoid" value= <%= ownfoodlist[0].promoid%> >
 		<input type="hidden" id="originalcost" name="originalcost" value= <%= ownfoodlist[0].total_cost%> >
-		<input type="hidden" id="rnamething" name="rnamething" value= <%= ownfoodlist[i].rname%> >
+		<input type="hidden" id="rnamething" name="rnamething" value= <%= ownfoodlist[0].rname%> >
 		<input type="hidden" id="finalprice" name="finalprice" value= <%= finalprice %> >
+		<input type="hidden" id="delpid" name="delpid" value= <%= delpid %> >
+		<input type="hidden" id="delpiddiscount" name="delpiddiscount" value= <%= delpiddiscount %> >
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
 

@@ -38,21 +38,67 @@ router.get('/', function (req, res, next) {
 			var date4 = new Date(data2.rows[0].enddate)
 			console.log("NIggs time: " + date3);
 			var noOfItems = data2.rowCount;
-			var fee = noOfItems * 5;
-			var resdiscount = 0;
-			if (date2 > date3 && date2 < date4) {
-				resdiscount = data2.rows[0].discount;
-			}
-			var finalprice = data2.rows[0].total_cost;
-			finalprice = finalprice * (100 - (resdiscount / 100));
-			finalprice = finalprice + deliveryfee
-			finalprice = finalprice - rewardpts
-			if (finalprice < 0) {
-				finalprice = 0;
-			}
+
+			var datecurrent = new Date();
+
+			// current date
+			// adjust 0 before single digit date
+			var day = ("0" + datecurrent.getDate()).slice(-2);
+
+			// current month
+			var month = ("0" + (datecurrent.getMonth() + 1)).slice(-2);
+
+			// current year
+			var year = datecurrent.getFullYear();
+
+			// current hours
+			var hours = datecurrent.getHours();
+
+			// current minutes
+			var minutes = datecurrent.getMinutes();
+
+			// current seconds
+			var seconds = datecurrent.getSeconds();
+
+			var fulldate = `'` + year + "-" + month + "-" + day + `'`;
 
 
-			res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: fee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount, finalprice: finalprice });
+
+			var sql_chooseDelivery = `SELECT * FROM deliverpromotions WHERE startdate <= ` + fulldate + ` AND enddate >= ` + fulldate + ` AND discount = (SELECT MAX(discount) FROM deliverpromotions WHERE startdate <= ` + fulldate + ` AND enddate >= ` + fulldate + `);`
+
+			console.log(sql_chooseDelivery);
+
+
+			pool.query(sql_chooseDelivery, (err, pidchosen) => {
+
+				var resdiscount = 0;
+				var respromoid = null
+				if (date2 > date3 && date2 < date4) {
+					resdiscount = data2.rows[0].discount;
+					respromoid = data2.rows[0].promoid;
+				}
+				var delpid = null;
+				var delpiddiscount = 0;
+				if (pidchosen.rowCount > 0) {
+					delpid = pidchosen.rows[0].pid;
+					delpiddiscount = pidchosen.rows[0].discount
+
+				}
+				var finalprice = data2.rows[0].total_cost;
+				finalprice = finalprice * ((100 - resdiscount) / 100);
+				deliveryfee = (data2.rowCount * 5) * ((100 - delpiddiscount) / 100);
+				finalprice = finalprice + deliveryfee;
+				finalprice = finalprice - rewardpts;
+				if (finalprice < 0) {
+					finalprice = 0;
+				}
+
+
+
+				res.render('checkout', { title: 'Checkout', ownfoodlist: data2.rows, deliveryfee: deliveryfee, price: data2.rows[0].total_cost, rewardpts: rewardpts, resdiscount: resdiscount, finalprice: finalprice.toFixed(2), delpid: delpid, delpiddiscount: delpiddiscount });
+			});
+
+
 		});
 
 
@@ -70,10 +116,18 @@ router.post('/', function (req, res, next) {
 	var originalcost = req.body.originalcost;
 	var deliveryfee = req.body.deliveryfeething;
 	var rname = req.body.rnamething;
-	console.log("Payment option is " + payment);
+	var delpid = null;
+	var promoidthing = null;
+	if (req.body.resdiscount > 0) {
+		promoidthing = req.body.promoid;
+	}
+	if (req.body.delpiddiscount > 0) {
+		delpid = req.body.delpid;
+	}
 
 
 	var sql_update_foodlist = `UPDATE foodlists SET restaurant_name = '` + rname + `' WHERE flid = ` + sess.flid + `;`;
+	var sql_foodlistcost = `insert into foodlistcost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (` + sess.flid + `, ` + sess.rewardnumbertobuy + `, ` + promoidthing + `, ` + delpid + `, ` + deliveryfee + `, ` + finalcost + `);`;
 	var sql_insertlocation = `CREATE or replace procedure newlocation (locationthing text, checkcid integer)
 	AS $$
 	
@@ -237,16 +291,13 @@ router.post('/', function (req, res, next) {
 
 	var update_rewartpts_sql_add = `Update customer Set reward_pts = reward_pts + ` + Math.floor(originalcost / 500) + ` WHERE cid = ` + sess.user + `;`;
 
-	var promoidthing = null;
-	if (req.body.resdiscount > 0) {
-		promoidthing = req.body.promoid;
-	}
+
 
 	var food_list_update = `Update foodlists SET riderid = ` + rideridthing + `, promoid = ` + promoidthing + `, order_time = ` + fulldate + `, payment_method = '` + payment + `', total_cost = ` + originalcost + `, delivery_location = '` + deliverylocation + `' WHERE flid = ` + sess.flid + `;`;
 
 
 
-	var full_sql_thing = sql_update_foodlist + insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
+	var full_sql_thing = sql_update_foodlist + sql_foodlistcost + insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
 
 	console.log(full_sql_thing);
 

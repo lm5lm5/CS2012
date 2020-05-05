@@ -256,8 +256,8 @@ CREATE TABLE managerLogin (
 CREATE TABLE foodlistCost (
     flid integer,
     Reward_pts integer default 0,
-    rest_promoId integer,
-    deliver_pid integer,
+    promoId integer,
+    pid integer,
     deliveryfee integer,
     final_cost numeric default 0,
     Primary Key (flid), 
