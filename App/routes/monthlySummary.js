@@ -38,14 +38,6 @@ router.post('/', function (req, res, next) {
     sess.year = year;
     console.log("print month: " + month);
     console.log("print year: " + year);
-  
-    // Construct Specific SQL Query
-    // var insert_query = sql_query + username + sql_query2 + password + '\'';
-    // console.log(insert_query);
-  
-    // var sql_query3 = sql_query + sess.rname + sql_query2 + '2020-01-31' + sql_query1 + '2020-01-01' + '\'';
-    //  '2020-01-01'
-    //  '2020-01-31'
     
       res.redirect('/printMonthlySummary');
 });
