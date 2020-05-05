@@ -55,9 +55,9 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th scope="col">Food Item Name</th>
-				<th scope="col">Quantity</th>
-				<th scope="col">Price(each item)</th>
+				<th scope="col">Order number</th>
+				<th scope="col">List of food purchased</th>
+				<th scope="col">Total cost</th>
 				<th scope="col">From</th>
 				<th scope="col">Date</th>
 			</tr>
@@ -65,10 +65,15 @@
 		<tbody>
 			<% for(var i=0; i<customerOrderData.length; i++) { %>
 			<tr>
-				<td><%= customerOrderData[i].fname%></td>
-				<td><%= customerOrderData[i].count%></td>
-				<td><%= customerOrderData[i].price%></td>
-				<td><%= customerOrderData[i].rname%></td>
+				<td><%= customerOrderData[i].flid%></td>
+				<td>					
+					<form method="POST" action="foodList" name="foodList">
+						<input type="hidden" name="flid" value="<%= customerOrderData[i].flid%>" />
+						<button type="submit" class="btn btn-primary">Click to view food items</button>
+					</form>
+				</td>
+				<td><%= customerOrderData[i].total_cost%></td>
+				<td><%= customerOrderData[i].restaurant_name%></td>
 				<td><%= customerOrderData[i].order_time%></td>
 			</tr>
 			<% } %>

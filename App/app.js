@@ -40,6 +40,7 @@ var orderFoodRouter = require('./routes/orderFood');
 var checkoutRouter = require('./routes/checkout');
 var reviewRouter = require('./routes/reviews');
 var customerEditPasswordRouter = require('./routes/customerEditPassword');
+var foodListRouter = require('./routes/foodList');
 
 var riderRouter = require('./routes/rider');
 var riderNewRouter = require('./routes/riderNew');
@@ -124,6 +125,7 @@ app.use('/orderFood', orderFoodRouter);
 app.use('/checkout',checkoutRouter);
 app.use('/reviews',reviewRouter);
 app.use('/customerEditPassword',customerEditPasswordRouter);
+app.use('/foodList', foodListRouter);
 
 app.use('/rider', riderRouter);
 app.use('/riderNew', riderNewRouter);
