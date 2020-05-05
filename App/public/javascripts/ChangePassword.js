@@ -14,8 +14,5 @@ function check(event) {
                 event.preventDefault();
 		event.stopPropagation();
 		return false;
-        } else {
-                alert("Your password has been changed successfully;");
-                return true;
         }
 }
