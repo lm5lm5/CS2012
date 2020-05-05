@@ -25,41 +25,34 @@
 
 <body>
 	<h1>Welcome, <%= sess.name%></h1>
-	<p>Your monthly summary</p><br />
+	<p>Your promotion summary</p><br />
 	<p>Keep up the good work!</p>
 	<table class="table">
 		<thead>
 			<tr>
-				<th scope="col">total order</th>
-				<th scope="col">total cost</th>
+				<th scope="col">promoid</th>
+				<th scope="col">From</th>
+				<th scope="col">To</th>
+				<th scope="col">Days</th>
+				<th scope="col">Order received</th>
+				<th scope="col">ratio</th>
 			</tr>
 		</thead>
 		<tbody>
-			<% for(var i=0; i<monthlydata.length; i++) { %>
+			<% for(var i=0; i<promotiondata.length; i++) { %>
 			<tr>
-				<td><%= monthlydata[i].total_orders%></td>
-				<td><%= parseFloat(monthlydata[i].total_cost).toFixed(2)%></td>
+				<td><%= promotiondata[i].promoid%></td>
+				<td><%= (promotiondata[i].startdate).getFullYear()+ "-" + ((new Date(promotiondata[i].startdate)).getMonth() + 1) + "-" + (promotiondata[i].startdate).getDate() %></td>
+				<td><%= (promotiondata[i].enddate).getFullYear()+ "-" + ((new Date(promotiondata[i].enddate)).getMonth() + 1) + "-" + (promotiondata[i].enddate).getDate() %></td>
+				<!-- <td><%= promotiondata[i].startdate%></td>
+				<td><%= promotiondata[i].enddate%></td> -->
+				<td><%= promotiondata[i].durationindays%></td>
+				<td><%= promotiondata[i].count%></td>
+				<td><%= parseFloat(promotiondata[i].ratio).toFixed(2)%></td>
 			</tr>
 			<% } %>
 		</tbody>
 	</table>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">food name</th>
-					<th scope="col">numbers</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% for(var i=0; i<monthlydata2.length; i++) { %>
-				<tr>
-					<td><%= monthlydata2[i].fname%></td>
-					<td><%= monthlydata2[i].count%></td>
-				</tr>
-				<% } %>
-			</tbody>
-		</table>
 	<p><a href="/staff">Click here to logout</a></p>
 </body>
 
