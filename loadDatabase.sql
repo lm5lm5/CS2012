@@ -1341,8 +1341,6 @@ insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name,
 -- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (99, 1, 33, 52, '1/5/2020', 'Adient plc', 'Credit Card', null, null, 37);
 -- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (100, 30, 97, 82, '6/5/2020', 'Commerce Bancshares, Inc.', 'Credit Card', null, null, 22);
 
-update foodlists set total_cost = 300  where total_cost is NULL;
-
 insert into Reviews (review, flid) values ('Good', 5);
 insert into Reviews (review, flid) values ('Bad', 4);
 insert into Reviews (review, flid) values ('Can be improved', 10);
@@ -3793,3 +3791,11 @@ insert into stafflogin (staffid, username, password, Restaurant_name) values (29
 insert into stafflogin (staffid, username, password, Restaurant_name) values (300, 'Morton Siflet', 'l7z8mwZ', 'Novan, Inc.');
 
 insert into managerlogin (Username, Password, Mid) values ('admin', 'admin', 1);
+
+
+with x as (
+select sum(price), flid
+from (foodlists join consists using (flid)) join foods using (fname,rname)
+group by flid
+order by flid)
+update foodlists set total_cost = x.sum from x where foodlists.flid = x.flid;
