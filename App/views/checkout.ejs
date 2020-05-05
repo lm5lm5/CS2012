@@ -26,9 +26,22 @@
 </head>
 
 <body>
-	<h1><%= title%></h1>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+		<a class="navbar-brand" href="#">Food delivery shop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		  <ul class="navbar-nav mr-auto"></ul>
+		  </ul>
+		  <form class="form-inline mt-2 mt-md-0" form method="post" action="customerProfile">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+		  </form>
+		</div>
+	  </nav>
+	<h1 class="display-4 font-weight-normal"><%= title%></h1>
 	<h2>Your food list:</h2>
-	<table class="table">
+	<table class="table table-striped table-sm" >
 		<thead>
 			<tr>
 				<th scope="col">Food name</th>
@@ -48,14 +61,14 @@
 			<% } %>
 		</tbody>
 	</table>
-	<a href="/orderFood"><h2>Go back</h2></a>
+	<a href="/orderFood" class="btn btn-lg btn-outline-success my-2 my-sm-0">Go back</a>
 	<h3>Food Price: <%= ownfoodlist[0].total_cost%></h3>
 	<h2>Checkout information</h2>
 	<form id="html_form" action="checkout" role="form" method="post">
 
 		<div class="form-group">
 			<label for="Payment">Choose payment method:</label>
-			<select id="payment" value="Cash" name="payment">
+			<select id="payment"  class="custom-select d-block w-100" value="Cash" name="payment">
 				<option value="Cash">Cash</option>
 				<option value="Credit Card">Credit Card</option>
 			</select>
@@ -68,7 +81,7 @@
 
 		<div class="form-group">
 			<label for="delivery2">Choose past location:</label>
-			<select id="delivery2" onchange="myFunction()">
+			<select id="delivery2" class="custom-select d-block w-100" onchange="myFunction()">
 				<option value="<%= ownfoodlist[0].firstloc%>"><%= ownfoodlist[0].firstloc%></option>
 				<option value="<%= ownfoodlist[0].secondloc%>"><%= ownfoodlist[0].secondloc%></option>
 				<option value="<%= ownfoodlist[0].thirdloc%>"><%= ownfoodlist[0].thirdloc%></option>
@@ -91,7 +104,7 @@
 		<input type="hidden" id="finalprice" name="finalprice" value= <%= finalprice %> >
 		<input type="hidden" id="delpid" name="delpid" value= <%= delpid %> >
 		<input type="hidden" id="delpiddiscount" name="delpiddiscount" value= <%= delpiddiscount %> >
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-lg btn-block btn-outline-primary">Submit</button> 
 	</form>
 
 

@@ -79,6 +79,7 @@
 				<td>					
 					<form method="POST" action="reviewFoodList" name="reviewFoodList">
 						<input type="hidden" name="reviewFlid" value="<%= customerOrderData[i].flid%>" />
+						<input type="hidden" name="entering" value="true" />
 						<button type="submit" class="btn btn-primary">Click to review your order</button>
 					</form>
 				</td>
