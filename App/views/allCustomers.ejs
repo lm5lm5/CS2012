@@ -31,6 +31,9 @@
     <tr>
         <th scope="col">Customer id</th>
         <th scope="col">Customer username</th>
+        <th scope="col">Number of orders placed</th>
+        <th scope="col">Total cost of orders</th>
+        <th scope="col">Maximal cost of an order</th>
         <th scope="col">Reward points</th>
 
     </tr>
@@ -40,6 +43,9 @@
         <tr>
             <td><%= customerdata[i].cid%></td>
             <td><%= customerdata[i].username%></td>
+            <td><%= customerdata[i].order%></td>
+            <td><%= customerdata[i].cost%></td>
+            <td><%= customerdata[i].max%></td>
             <td><%= customerdata[i].reward_pts%></td>
         </tr>
     <% } %>
