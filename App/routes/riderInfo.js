@@ -56,12 +56,7 @@ router.post('/', function (req, res, next) {
     }
     // Construct Specific SQL Query
     var sql_query4 = sql_query + sql_query2 + start + sql_query3 + end + sql_query31 + id + '\') ';
-    var insert_query = sql_query4 + 'select * from deliverylist';
-    // var insert_query = sql_query4
-    //     + 'select coalesce(count(distinct flid), 0) as num, coalesce(sum(total_cost), 0) as cost, '
-    //     + 'coalesce(max(total_cost), 0) as maxcost, coalesce(count(distinct cid), 0) as customer, '
-    //     + 'coalesce(count(distinct riderid), 0) as rider '
-    //     + 'from deliverylist';
+    var insert_query = sql_query4 + 'select *, customerplaceorder: as ordertime,  from deliverylist';
 
     console.log('query: ' + insert_query);
 
@@ -74,7 +69,7 @@ router.post('/', function (req, res, next) {
             res.redirect('/riderInfo');
             return;
         }
-        //console.log(data.rows);
+        console.log(data.rows);
         sess = req.session;
         sess.error = null;
         sess.riderdata2 = data.rows;

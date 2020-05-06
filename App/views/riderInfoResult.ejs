@@ -65,8 +65,10 @@
     <tr>
         <th scope="col">Order id</th>
         <th scope="col">Customer id</th>
-<!--        <th scope="col">Customer username</th>-->
         <th scope="col">Order date</th>
+        //<th scope="col">Order time</th>
+        <th scope="col">Time between order placed and delivered</th>
+        <th scope="col">Time spent on delivery</th>
         <th scope="col">Delivery fee</th>
         <th scope="col">Rating</th>
     </tr>
@@ -77,6 +79,9 @@
             <td><%= riderdata2[i].flid%></td>
             <td><%= riderdata2[i].cid%></td>
             <td><%= riderdata2[i].order_date%></td>
+            //<td><%= riderdata2[i].customerplaceorder%></td>
+            <td><%= riderdata2[i].riderdeliverorder - riderdata2[i].customerplaceorder%></td>
+            <td><%= riderdata2[i].riderdeliverorder - riderdata2[i].riderleftrest%></td>
             <td><%= riderdata2[i].deliveryfee%></td>
             <td><%= riderdata2[i].ratingtext%></td>
         </tr>
