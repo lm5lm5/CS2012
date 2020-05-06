@@ -88,11 +88,7 @@ router.post('/', function (req, res, next) {
 			insert_query = sql_query + username + '\'';
 			var data23;
 			pool.query(insert_query, (err, data2) => {
-				var data3 = data2.rows;
-				data23 = data3[0].cid;
-				req.session.user = data23;
-				console.log(req.session.user);
-				res.redirect('/');
+				res.redirect('/customer');
 			});
 			
 		}
