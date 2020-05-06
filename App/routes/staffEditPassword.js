@@ -46,8 +46,8 @@ router.post('/', function (req, res, next) {
 	var password = req.body.password;
 	var previouspw = req.body.previouspw;
 	// Construct Specific SQL Query
-	var update_query = sql_query + password + '\'' + sql_query2 + sess.user;
-	var check_password = sql_query3 + sess.user + sql_query4 + previouspw + '\'';
+	var update_query = sql_query + password + '\'' + sql_query2 + '\''+ sess.staffid + '\'';
+	var check_password = sql_query3 + '\''+ sess.staffid + '\'' + sql_query4 + previouspw + '\'';
 	console.log("-------------------------------------------------------------------------------------");
 
 	console.log("update_query = " + update_query);
@@ -78,7 +78,7 @@ router.post('/', function (req, res, next) {
 						console.log("update query = " + update_query);
 						sess.numrows = -1;
 						sess.changepwsuccess = 1;
-						res.redirect('/staffProfile');
+						res.redirect('/restaurantProfile');
 					}
 				});
 			}
