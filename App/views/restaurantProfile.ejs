@@ -74,6 +74,7 @@
 					<th scope="col">Price($)</th>
 					<th scope="col">Daily limit</th>
 					<th scope="col">isavaiable</th>
+					<th scope="col">Add</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -88,6 +89,12 @@
 						<% } else { %>
 						No
 						<% }%>
+					</td>
+					<td>
+						<input type="hidden" name="fname" value="<%= restaurantdata[i].fname%>" />
+						<input type="hidden" name="rname" value="<%= restaurantdata[i].rname%>" />
+						<input type="hidden" name="action" value="Add" />
+						<button type="submit" class="btn btn-outline-primary">toggle</button>
 					</td>
 				</tr>
 				<% } %>
