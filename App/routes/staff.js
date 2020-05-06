@@ -25,12 +25,12 @@ router.get('/', function (req, res, next) {
 	sess = req.session;
 	if (sess.error && sess.error != null && sess.errortype == 'staffidexist') {
 		console.log("HEREERERERE");
-		res.render('staff', { title: 'Get staffid', error: sess.error});
+		res.render('staff', { title: 'Staff login', error: sess.error});
 		sess.error = null;
 		sess.errortype = 'staffidexist';
 	}
 	else {
-		res.render('staff', { title: 'Get staffid', error: null });
+		res.render('staff', { title: 'Staff login', error: null });
 	}
 });
 
