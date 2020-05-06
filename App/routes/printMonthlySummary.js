@@ -21,7 +21,7 @@ var sql_query1 = '\'' + ' and order_time >' + '\'';
 var sql_query2 = '\'' + ' and order_time <' + '\'';
 var sql_query3 = 'select fname, coalesce(count(fname),0) as count from Y group by y.fname order by coalesce(count(fname),0) desc limit 5';
 
-var sql2_query = 'with y as(with X as (select f.flId, f.restaurant_name, f.order_time, f.total_cost as beforePromo_cost, f.promoid, (select p.discount from promotions p where f.promoid = p.promoid), fc.reward_pts from foodLists f join foodlistcost fc on f.flid = fc.flId) select flid, restaurant_name, order_time, beforePromo_cost, (beforePromo_cost - reward_pts) / 100 * (100 - discount) as afterPromo_cost from X) select count(*) as total_orders, coalesce(sum(afterPromo_cost), 0) as total_cost from y where restaurant_name =\''
+var sql2_query = 'with y as(with X as (select f.flId, f.restaurant_name, f.order_time, f.total_cost as beforePromo_cost, f.promoid, (select p.discount from promotions p where f.promoid = p.promoid), fc.reward_pts from foodLists f join foodlistcost fc on f.flid = fc.flId) select flid, restaurant_name, order_time, beforePromo_cost, beforePromo_cost / 100 * (100 - discount) - reward_pts as afterPromo_cost from X) select count(*) as total_orders, coalesce(sum(afterPromo_cost), 0) as total_cost from y where restaurant_name =\''
 var sql2_query1 = '\'' + ' and order_time >' + '\''; 
 var sql2_query2 = '\'' + ' and order_time <' + '\'';
 
