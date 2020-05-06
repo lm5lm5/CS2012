@@ -37,40 +37,42 @@
         <th scope="col" style="width:120px">Status</th>
         <th scope="col">Number of deliveries</th>
         <th scope="col">Number of customers served</th>
-        <th scope="col">Average rating</th>
+        <th scope="col">Average delivery time</th>
+        <th scope="col">Number of raitngs received</th>
+        <th scope="col" style="width:150px">Average rating</th>
         <th scope="col">Total weekly working hours</th>
         <th scope="col">Base monthly salary</th>
         <th scope="col">Salary earned from delivery</th>
     </tr>
     </thead>
     <tbody>
-    <% for(var i=0; i<riderdata.length; i++) { %>
-        <tr>
-            <td><%= riderdata[i].riderid%></td>
-            <td><%= riderdata[i].ridername%></td>
-            <td><%= riderdata[i].status%></td>
+    <tr>
+            <td><%= riderdata[0].riderid%></td>
+            <td><%= riderdata[0].ridername%></td>
+            <td><%= riderdata[0].status%></td>
             <td><%= riderdata3[0].num%></td>
             <td><%= riderdata3[0].customer%></td>
+            <td><%= riderdata3[0].avgtime%></td>
+            <td><%= riderdata3[0].ratings%></td>
             <td><%= riderdata3[0].rating + ' / 10'%></td>
-            <td><%= riderdata[i].totalhours%></td>
-            <td><%= riderdata[i].salary%></td>
+            <td><%= riderdata[0].totalhours%></td>
+            <td><%= riderdata[0].salary%></td>
             <td><%= riderdata3[0].num * 5%></td>
-        </tr>
-    <% } %>
+    </tr>
     </tbody>
 </table>
 
-<table class="table">
+<table class="table" style="text-align:center;">
     <thead>
     <tr>
         <th scope="col">Order id</th>
         <th scope="col">Customer id</th>
-        <th scope="col">Order date</th>
         <th scope="col">Order time</th>
         <th scope="col" style="width:250px">Time spent on delivery <br> (in hours:minutes:seconds)</th>
         <th scope="col" style="width:250px">Total time spent<br> (in hours:minutes:seconds)</th>
+        <th scope="col">Delivery location</th>
         <th scope="col">Delivery fee</th>
-        <th scope="col">Rating</th>
+        <th scope="col">Rating on delivery</th>
     </tr>
     </thead>
     <tbody>
@@ -78,10 +80,10 @@
         <tr>
             <td><%= riderdata2[i].flid%></td>
             <td><%= riderdata2[i].cid%></td>
-            <td><%= riderdata2[i].order_date%></td>
             <td><%= riderdata2[i].order%></td>
             <td><%= riderdata2[i].deliverytime%></td>
             <td><%= riderdata2[i].ordertime%></td>
+            <td><%= riderdata2[i].delivery_location%></td>
             <td><%= riderdata2[i].deliveryfee%></td>
             <td><%= riderdata2[i].ratingtext%></td>
         </tr>

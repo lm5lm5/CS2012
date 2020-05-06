@@ -57,8 +57,8 @@ router.post('/', function (req, res, next) {
     // Construct Specific SQL Query
     var sql_query4 = sql_query + sql_query2 + start + sql_query3 + end + sql_query31 + id + '\') ';
     var insert_query = sql_query4 + 'select *, to_char(customerplaceorder, \'yyyy-MM-dd HH:mm:ss\') as order, '
-        + 'to_char(riderdeliverorder - customerplaceorder, \'HH:MI:SS\') as ordertime, '
-        + 'to_char(riderleftrest - customerplaceorder, \'HH:MI:SS\') as deliverytime from deliverylist';
+        + 'to_char(riderdeliverorder - customerplaceorder, \'HH24:MI:SS\') as ordertime, '
+        + 'to_char(riderleftrest - customerplaceorder, \'HH24:MI:SS\') as deliverytime from deliverylist order by flid';
 
     console.log('query: ' + insert_query);
 
@@ -94,8 +94,10 @@ router.post('/', function (req, res, next) {
             }
             console.log(data.rows);
             sess.riderdata = data.rows;
-            var insert_query3 = sql_query4 + 'select count(flid) as num, coalesce(avg(rating)::decimal(10, 2)::text, \'no rating\') as rating, '
-                + 'count(distinct cid) as customer from deliverylist';
+            var insert_query3 = sql_query4 + 'select count(flid) as num, coalesce(count(rating), 0) as ratings, '
+                + 'coalesce(avg(rating)::decimal(10, 2)::text, \'no rating\') as rating, '
+                + 'count(distinct cid) as customer, coalesce(to_char(avg(riderleftrest - customerplaceorder), \'HH24:MI:SS\'), \'NA\') as avgtime '
+                + 'from deliverylist';
             console.log('query3: ' + insert_query3);
             pool.query(insert_query3, (err, data) => {
                 if (err) {
