@@ -16,13 +16,13 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'select * from foodlists left join reviews using (flid) where payment_method IS NOT NULL AND cid = ';
+var sql_query = 'select * from (foodlists left join reviews using (flid)) natural join delivers where payment_method IS NOT NULL AND cid = ';
 
 var sql_query2 = 'select * from customer where cid = ';
 
 router.get('/', function (req, res, next) {
   sess = req.session;
-  var sql_query3 = sql_query + sess.user;
+  var sql_query3 = sql_query + sess.user + ' order by flid';
   var sql_query4 = sql_query2 + sess.user;
   console.log("myquery " + sql_query3);
   if (sess.user == 'undefined' || sess.user == null) {
