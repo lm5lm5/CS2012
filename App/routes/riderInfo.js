@@ -56,12 +56,9 @@ router.post('/', function (req, res, next) {
     }
     // Construct Specific SQL Query
     var sql_query4 = sql_query + sql_query2 + start + sql_query3 + end + sql_query31 + id + '\') ';
-    var insert_query = sql_query4 + 'select * from deliverylist';
-    // var insert_query = sql_query4
-    //     + 'select coalesce(count(distinct flid), 0) as num, coalesce(sum(total_cost), 0) as cost, '
-    //     + 'coalesce(max(total_cost), 0) as maxcost, coalesce(count(distinct cid), 0) as customer, '
-    //     + 'coalesce(count(distinct riderid), 0) as rider '
-    //     + 'from deliverylist';
+    var insert_query = sql_query4 + 'select *, to_char(customerplaceorder, \'yyyy-MM-dd HH:mm:ss\') as order, '
+        + 'to_char(riderdeliverorder - customerplaceorder, \'HH24:MI:SS\') as ordertime, '
+        + 'to_char(riderleftrest - customerplaceorder, \'HH24:MI:SS\') as deliverytime from deliverylist order by flid';
 
     console.log('query: ' + insert_query);
 
@@ -74,7 +71,7 @@ router.post('/', function (req, res, next) {
             res.redirect('/riderInfo');
             return;
         }
-        //console.log(data.rows);
+        console.log(data.rows);
         sess = req.session;
         sess.error = null;
         sess.riderdata2 = data.rows;
@@ -97,8 +94,10 @@ router.post('/', function (req, res, next) {
             }
             console.log(data.rows);
             sess.riderdata = data.rows;
-            var insert_query3 = sql_query4 + 'select count(flid) as num, coalesce(avg(rating)::decimal(10, 2)::text, \'no rating\') as rating, '
-                + 'count(distinct cid) as customer from deliverylist';
+            var insert_query3 = sql_query4 + 'select count(flid) as num, coalesce(count(rating), 0) as ratings, '
+                + 'coalesce(avg(rating)::decimal(10, 2)::text, \'no rating\') as rating, '
+                + 'count(distinct cid) as customer, coalesce(to_char(avg(riderleftrest - customerplaceorder), \'HH24:MI:SS\'), \'NA\') as avgtime '
+                + 'from deliverylist';
             console.log('query3: ' + insert_query3);
             pool.query(insert_query3, (err, data) => {
                 if (err) {
