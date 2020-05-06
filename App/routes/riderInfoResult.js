@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
         res.redirect('/manager');
         return;
     }
-    res.render('riderInfoResult', {riderdata: sess.riderdata, riderdata2: sess.riderdata2,
+    res.render('riderInfoResult', {riderdata: sess.riderdata, riderdata2: sess.riderdata2, riderdata3: sess.riderdata3,
         startdate: sess.start, enddate: sess.end})
 });
 

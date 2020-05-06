@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {Pool} = require('pg')
+const {Pool} = require('pg');
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL
@@ -68,37 +68,51 @@ router.post('/', function (req, res, next) {
         if (err) {
             console.log(err.stack);
             sess = req.session;
-            var errormessage = err.stack;
-            sess.error = errormessage;
+            sess.error = err.stack;
             sess.errortype = 'invalid input';
             res.redirect('/riderInfo');
-        } else {
+            return;
+        }
+        //console.log(data.rows);
+        sess = req.session;
+        sess.error = null;
+        sess.riderdata2 = data.rows;
+        sess.start = start;
+        sess.end = end;
+        console.log('start: ' + start);
+        console.log('end: ' + end);
+        var insert_query2 = 'with totalworkinghours as (with fulltimers as (with fulltime as (select riderid, 40 hours from fulltimeriders) select riderid, case when hours is null then 0 else hours end from riders left join fulltime using (riderid)), parttimers as (select riderid, case when sum(totalhours) is null then 0 else sum(totalhours) end totalhours from riders left join ((holds natural join sessions) natural join wws) using (riderid) group by riderid order by riderid) select riderid, hours + totalhours totalhours from fulltimers natural join parttimers), totalsalary as (with riderbasesalary as (SELECT distinct riderid, CASE WHEN wwsid IS NOT NULL then (weeklybasesalary * 4) ELSE monthlybasesalary END AS salary FROM (riders LEFT JOIN fulltimeriders using (riderid) LEFT JOIN parttimeriders USING (riderid) left join wws using (riderid)) ), ridernumdeliveries as (select riderid, count(*) numofdeliveries from delivers group by riderid) select riderid, case when numofdeliveries is null then salary else (salary + (numofdeliveries * 5)) end totalsalary, salary, case when numofdeliveries is null then 0 else numofdeliveries end from riderbasesalary left join ridernumdeliveries using(riderid) order by riderid) select *, case when riderid in (select riderid from parttimeriders) then \'part timer\' when riderid in (select riderid from fulltimeriders) then \'full timer\' else \'error\' end as status, ridername from(totalworkinghours natural join totalsalary) natural join riders where riderid = '
+            + rid;
+        console.log('query2: ' + insert_query2);
+        pool.query(insert_query2, (err, data) => {
+            if (err) {
+                console.log(err.stack);
+                sess = req.session;
+                var errormessage = err.stack;
+                sess.error = errormessage;
+                sess.errortype = 'invalid input';
+                res.redirect('/riderInfo');
+                return;
+            }
             console.log(data.rows);
-            sess = req.session;
-            sess.error = null;
-            sess.riderdata2 = data.rows;
-            sess.start = start;
-            sess.end = end;
-            console.log('start: ' + start);
-            console.log('end: ' + end);
-            var insert_query2 = 'with totalworkinghours as (with fulltimers as (with fulltime as (select riderid, 40 hours from fulltimeriders) select riderid, case when hours is null then 0 else hours end from riders left join fulltime using (riderid)), parttimers as (select riderid, case when sum(totalhours) is null then 0 else sum(totalhours) end totalhours from riders left join ((holds natural join sessions) natural join wws) using (riderid) group by riderid order by riderid) select riderid, hours + totalhours totalhours from fulltimers natural join parttimers), totalsalary as (with riderbasesalary as (SELECT distinct riderid, CASE WHEN wwsid IS NOT NULL then weeklybasesalary ELSE monthlybasesalary END AS salary FROM (riders LEFT JOIN fulltimeriders using (riderid) LEFT JOIN parttimeriders USING (riderid) left join wws using (riderid)) ), ridernumdeliveries as (select riderid, count(*) numofdeliveries from delivers group by riderid) select riderid, case when numofdeliveries is null then salary else (salary + (numofdeliveries * 5)) end totalsalary, salary, case when numofdeliveries is null then 0 else numofdeliveries end from riderbasesalary left join ridernumdeliveries using(riderid) order by riderid) select *, case when riderid in (select riderid from parttimeriders) then \'part timer\' when riderid in (select riderid from fulltimeriders) then \'full timer\' else \'error\' end as status, ridername from(totalworkinghours natural join totalsalary) natural join riders where riderid = '
-                + rid;
-            console.log('query2: ' + insert_query2);
-            pool.query(insert_query2, (err, data) => {
+            sess.riderdata = data.rows;
+            var insert_query3 = sql_query4 + 'select count(flid) as num, coalesce(avg(rating)::decimal(10, 2)::text, \'no rating\') as rating, '
+                + 'count(distinct cid) as customer from deliverylist';
+            console.log('query3: ' + insert_query3);
+            pool.query(insert_query3, (err, data) => {
                 if (err) {
                     console.log(err.stack);
                     sess = req.session;
-                    var errormessage = err.stack;
-                    sess.error = errormessage;
+                    sess.error = err.stack;
                     sess.errortype = 'invalid input';
                     res.redirect('/riderInfo');
-                } else {
-                    console.log(data.rowCount);
-                    sess.riderdata = data.rows;
-                    res.redirect('/riderInfoResult');
+                    return;
                 }
+                console.log(data.rows);
+                sess.riderdata3 = data.rows;
+                res.redirect('/riderInfoResult');
             });
-        }
+        });
     });
 });
 
