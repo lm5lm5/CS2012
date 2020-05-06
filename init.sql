@@ -83,6 +83,15 @@ create table Riders (
     ridername VARCHAR(60)
 );
 
+--holds
+create table DeliverPromotions (
+    pid INTEGER primary key,
+    descriptionPromo varchar(200),
+    discount decimal,
+    startDate DATE,
+    endDate Date
+);
+
 --done
 create table Delivers (
     -- temporary did as primary key
@@ -95,7 +104,9 @@ create table Delivers (
     riderdeliverorder timestamp,
     riderid integer not null,
     FOREIGN KEY(riderid) REFERENCES Riders(riderid),
-    rating INTEGER
+    rating INTEGER,
+    pid integer,
+    FOREIGN KEY(pid) REFERENCES deliverpromotions
 );
 
 --done
@@ -129,7 +140,7 @@ create table Foods(
 --done
 create table Foodlists(
     flId Integer primary key,
-    Cid int not null references Customer(cid),
+    Cid int not null references Customer(cid) on delete cascade,
     Riderid int,
     Promoid int,
     Order_time date,
@@ -138,7 +149,8 @@ create table Foodlists(
     Total_cost numeric default 0,
     Delivery_location text,
     Did integer,
-    unique(flId, Did),
+    unique(flId),
+	unique(Did),
     FOREIGN KEY (Did) REFERENCES Delivers(Did)
 );
 
@@ -151,7 +163,7 @@ create table Consists(
 
     Primary key (coid),
     FOREIGN KEY (fname, rname) REFERENCES Foods (fname, rname),
-    FOREIGN KEY (flId) REFERENCES Foodlists (flId)
+    FOREIGN KEY (flId) REFERENCES Foodlists (flId) on delete cascade
 );
 
 -- done
@@ -185,17 +197,6 @@ create table FullTimeRiders (
 );
 
 --holds
-create table DeliverPromotions (
-    pid INTEGER primary key,
-    descriptionPromo varchar(200),
-    discount decimal,
-    startDate DATE,
-    endDate Date,
-    did int not null,
-    foreign key (did) references Delivers
-);
-
---holds
 CREATE TABLE Holds (
     WWSid Integer,
     foreign key (WWSid) references WWS(wwsid),
@@ -223,7 +224,7 @@ CREATE TABLE customerLogin (
     Cid int,
     PRIMARY KEY (Cid),
     Unique(Username),
-    foreign Key (cid) references Customer(cid)
+    foreign Key (cid) references Customer(cid) on delete cascade
 );
 
 CREATE TABLE riderLogin (
@@ -240,7 +241,7 @@ CREATE TABLE staffLogin (
     Password text NOT NULL,
     Restaurant_name text not null,
     staffid Integer,
-    PRIMARY KEY (staffid),
+    PRIMARY KEY (staffid, Restaurant_name),
     foreign Key (Restaurant_name) references Restaurants(rname)
 );
 
@@ -253,4 +254,14 @@ CREATE TABLE managerLogin (
 );
 
 
+CREATE TABLE foodlistCost (
+    flid integer,
+    Reward_pts integer default 0,
+    promoId integer,
+    pid integer,
+    deliveryfee integer,
+    final_cost numeric default 0,
+    Primary Key (flid), 
+	foreign key (flid) references foodlists on delete cascade
 
+);

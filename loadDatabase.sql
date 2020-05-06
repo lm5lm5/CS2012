@@ -962,106 +962,139 @@ insert into sessions (sessionsid, totalhours, endinterval, startinterval) values
 insert into sessions (sessionsid, totalhours, endinterval, startinterval) values (22,2,21,19);
 insert into sessions (sessionsid, totalhours, endinterval, startinterval) values (23,2,22,20);
 
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (1, 12.29, '2019-09-16 11:31:40', '2019-10-29 04:53:24', '2019-11-03 21:48:48', '2019-07-15 16:51:44', '2019-07-28 09:36:23', 256, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (2, 52.66, '2020-02-18 02:52:19', '2019-12-24 08:41:05', '2020-01-31 05:02:22', '2019-05-05 03:34:05', '2019-09-26 12:59:06', 55, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (3, 55.86, '2020-02-16 05:54:02', '2020-03-14 09:57:49', '2019-11-10 16:25:56', '2019-06-01 06:58:14', '2019-07-21 04:43:46', 60, 0);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (4, 90.58, '2020-03-02 08:16:09', '2019-07-06 11:06:15', '2020-02-28 21:29:08', '2019-10-04 15:13:24', '2020-01-04 16:10:25', 146, 10);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (5, 41.09, '2019-10-17 01:29:48', '2019-06-07 13:50:28', '2019-09-28 11:04:36', '2020-01-30 08:33:58', '2020-03-23 14:58:11', 122, 1);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (6, 12.91, '2019-07-03 21:48:52', '2019-12-17 22:29:19', '2019-06-21 07:40:38', '2019-05-26 17:56:39', '2019-09-03 15:11:58', 230, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (7, 98.05, '2019-04-02 21:23:13', '2019-06-08 06:51:56', '2019-08-03 19:57:30', '2019-11-26 20:04:03', '2019-04-10 11:02:27', 202, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (8, 87.9, '2019-05-08 21:55:59', '2020-02-24 06:48:54', '2019-07-31 02:50:28', '2019-09-20 05:30:04', '2020-03-20 17:46:29', 155, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (9, 50.24, '2019-12-27 12:06:18', '2019-05-14 22:22:50', '2019-04-05 16:28:03', '2019-07-01 18:26:41', '2019-07-29 01:07:50', 43, 0);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (10, 51.2, '2020-03-27 23:46:08', '2019-06-08 11:06:48', '2019-07-05 09:19:01', '2019-09-17 03:55:35', '2019-12-31 22:29:28', 257, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (11, 42.96, '2019-08-25 19:55:20', '2019-07-25 15:26:48', '2019-09-12 07:52:30', '2020-01-29 09:59:04', '2019-08-01 05:14:58', 218, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (12, 23.5, '2019-08-26 10:35:06', '2019-09-10 14:25:18', '2019-09-21 13:06:22', '2020-03-14 23:03:57', '2019-10-07 07:14:50', 179, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (13, 5.53, '2020-03-27 13:37:19', '2020-01-05 16:36:38', '2019-06-22 02:45:51', '2019-08-28 19:21:25', '2020-02-25 00:23:50', 252, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (14, 50.24, '2019-10-27 13:00:13', '2019-09-19 13:35:57', '2019-10-20 21:05:24', '2019-09-06 17:54:31', '2019-07-18 13:15:12', 163, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (15, 73.97, '2020-02-26 23:11:08', '2020-02-28 09:59:46', '2020-02-02 16:23:28', '2019-06-19 08:32:34', '2019-10-12 14:48:48', 57, 0);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (16, 8.01, '2019-12-07 03:53:50', '2020-03-13 16:42:55', '2020-01-17 01:21:36', '2019-04-12 10:03:04', '2019-10-28 15:39:32', 294, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (17, 89.03, '2019-08-07 17:04:00', '2019-11-08 17:05:29', '2020-02-24 03:26:14', '2019-07-05 01:54:21', '2019-11-11 08:07:11', 128, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (18, 4.22, '2019-12-08 06:35:14', '2019-05-16 02:22:56', '2019-05-15 00:25:05', '2020-02-22 10:40:23', '2019-04-22 04:10:00', 63, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (19, 97.56, '2019-06-10 02:52:40', '2019-06-04 17:01:48', '2019-11-11 06:57:59', '2019-06-07 15:02:23', '2019-04-04 13:10:41', 113, 0);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (20, 46.22, '2020-03-05 15:25:01', '2019-11-20 04:02:15', '2019-08-28 15:51:25', '2020-01-30 22:27:33', '2019-08-15 22:34:29', 181, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (21, 26.59, '2020-03-02 05:41:40', '2019-06-04 07:20:28', '2020-02-23 14:08:34', '2020-03-18 22:16:21', '2020-01-06 06:13:57', 91, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (22, 61.68, '2019-09-16 07:42:05', '2019-08-24 16:57:52', '2020-01-26 14:36:47', '2019-07-11 21:59:58', '2019-04-07 03:28:59', 292, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (23, 88.62, '2019-06-29 03:17:30', '2019-04-15 09:55:39', '2019-05-21 12:12:17', '2020-03-27 02:56:29', '2019-06-08 17:52:30', 211, 1);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (24, 52.21, '2019-11-06 16:53:26', '2019-08-30 03:19:42', '2019-04-03 16:46:24', '2019-05-27 17:01:17', '2019-10-10 15:07:15', 223, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (25, 20.94, '2020-03-06 05:28:09', '2019-07-07 03:51:54', '2019-09-18 13:00:39', '2019-09-13 20:06:20', '2019-10-31 18:48:50', 84, 9);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (26, 54.11, '2019-07-05 07:52:56', '2019-05-27 06:30:25', '2020-02-28 11:32:31', '2019-09-12 20:04:32', '2019-07-20 17:12:23', 77, 9);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (27, 97.57, '2020-02-13 08:35:09', '2020-01-08 14:48:06', '2020-01-12 16:37:46', '2019-08-21 13:25:50', '2019-10-30 01:40:49', 291, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (28, 67.48, '2019-10-22 00:36:42', '2019-09-10 02:44:10', '2019-08-19 16:40:18', '2019-08-08 01:36:47', '2020-02-11 17:39:07', 181, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (29, 65.12, '2019-07-28 09:14:45', '2019-09-03 22:25:58', '2019-07-13 22:17:01', '2019-12-06 07:44:34', '2019-04-07 00:04:24', 98, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (30, 71.9, '2020-03-11 08:53:29', '2020-01-05 00:05:46', '2019-11-25 17:52:08', '2019-10-02 21:11:49', '2019-11-04 07:13:31', 125, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (31, 15.71, '2019-08-16 05:40:50', '2019-11-05 22:24:48', '2020-03-06 20:43:27', '2020-02-08 14:12:27', '2020-02-10 20:35:46', 112, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (32, 16.54, '2019-04-20 08:02:09', '2020-02-24 05:43:47', '2020-01-11 09:14:59', '2020-03-28 18:36:04', '2019-10-20 08:07:46', 282, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (33, 51.13, '2019-04-21 14:45:35', '2020-03-22 04:46:25', '2019-10-06 10:58:36', '2020-03-16 07:47:39', '2019-05-29 23:52:27', 110, 9);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (34, 24.27, '2019-04-13 07:16:04', '2020-01-15 14:42:58', '2019-11-01 21:14:00', '2019-06-28 22:53:56', '2020-01-19 17:52:51', 125, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (35, 20.91, '2020-01-17 12:55:19', '2019-04-03 19:09:54', '2020-01-24 09:51:55', '2020-03-12 12:21:53', '2019-06-12 19:23:58', 164, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (36, 41.24, '2019-05-29 15:50:00', '2019-04-10 01:09:05', '2019-11-06 09:14:37', '2019-04-06 13:39:10', '2019-11-15 12:11:31', 250, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (37, 77.55, '2019-08-27 09:23:35', '2019-05-17 23:04:35', '2019-06-27 11:28:31', '2020-03-16 10:36:57', '2019-07-01 00:34:46', 105, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (38, 53.31, '2019-04-08 06:53:46', '2019-08-20 08:25:29', '2019-12-18 22:36:27', '2019-04-06 14:43:55', '2019-06-02 20:41:34', 31, 1);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (39, 73.95, '2019-08-11 10:35:13', '2020-01-21 04:13:24', '2019-10-19 10:25:51', '2019-08-30 21:01:11', '2019-07-25 17:36:39', 226, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (40, 22.21, '2019-05-10 02:33:03', '2019-12-27 02:02:01', '2019-12-06 15:45:14', '2020-01-23 20:41:10', '2019-11-28 12:33:45', 278, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (41, 10.4, '2020-03-11 17:49:00', '2020-01-28 17:45:42', '2019-08-04 11:07:32', '2019-04-16 18:14:47', '2019-06-05 07:23:56', 65, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (42, 86.58, '2019-10-31 07:57:40', '2019-09-15 22:18:14', '2019-05-18 22:14:34', '2020-01-20 11:17:37', '2020-01-11 20:30:05', 282, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (43, 39.77, '2019-07-31 00:17:38', '2020-01-30 18:58:50', '2019-09-04 12:10:31', '2019-08-03 23:03:04', '2019-12-16 18:47:22', 260, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (44, 1.45, '2019-04-07 17:44:05', '2019-05-22 15:11:25', '2019-06-17 05:08:27', '2019-06-15 17:51:02', '2019-10-12 11:39:54', 30, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (45, 41.83, '2019-07-15 06:50:26', '2020-01-13 17:01:13', '2019-08-03 22:48:26', '2020-03-27 06:47:30', '2019-10-11 16:35:50', 95, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (46, 81.53, '2019-11-20 23:20:21', '2019-08-04 05:01:58', '2019-07-15 09:27:21', '2020-01-04 07:56:51', '2020-03-10 04:03:41', 277, 10);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (47, 67.24, '2019-04-09 23:54:23', '2020-03-17 11:49:28', '2019-10-15 22:46:50', '2020-03-16 10:08:04', '2019-07-17 05:17:30', 36, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (48, 69.78, '2019-11-27 15:28:08', '2020-02-25 10:13:43', '2019-11-05 13:32:33', '2019-04-21 11:53:08', '2020-01-06 17:05:37', 198, 0);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (49, 36.28, '2020-03-13 11:58:05', '2019-10-15 18:30:09', '2019-04-11 17:07:54', '2019-07-08 06:08:35', '2019-06-23 01:41:47', 49, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (50, 97.76, '2020-03-29 08:58:12', '2020-03-26 04:24:47', '2019-07-13 14:02:26', '2019-08-09 16:12:26', '2019-07-25 06:12:11', 212, 1);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (51, 66.58, '2020-03-09 04:11:00', '2019-07-16 08:48:10', '2020-01-23 10:23:50', '2020-03-09 13:29:30', '2019-09-18 01:34:25', 207, 5);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (52, 57.19, '2019-04-23 04:36:15', '2020-03-08 08:08:26', '2019-09-27 11:42:57', '2019-12-04 10:01:21', '2020-02-07 14:33:53', 237, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (53, 89.55, '2019-06-19 06:34:05', '2019-12-18 22:06:46', '2019-04-23 17:14:58', '2019-05-27 09:02:44', '2020-01-26 03:56:29', 273, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (54, 79.11, '2019-09-02 10:01:23', '2019-12-31 07:50:59', '2019-05-07 18:34:52', '2020-02-27 04:38:59', '2020-03-13 09:45:18', 38, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (55, 14.04, '2019-05-28 23:47:40', '2019-09-17 16:01:38', '2019-04-15 07:18:56', '2019-08-03 00:00:52', '2019-12-18 15:51:36', 242, 1);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (56, 28.83, '2020-02-22 22:36:36', '2019-08-11 07:13:11', '2019-08-14 02:17:09', '2019-06-27 22:26:14', '2020-01-14 20:04:08', 230, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (57, 66.51, '2019-10-29 06:21:58', '2019-10-23 20:21:37', '2019-11-11 13:26:10', '2019-11-07 11:44:33', '2019-12-24 12:42:10', 234, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (58, 14.58, '2019-10-28 02:35:14', '2020-02-07 02:13:38', '2019-08-02 15:01:32', '2019-11-30 23:22:28', '2020-03-12 01:37:47', 272, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (59, 67.45, '2019-11-25 21:51:35', '2020-02-10 05:48:32', '2019-07-19 04:50:45', '2019-08-08 17:21:41', '2019-11-07 02:15:02', 243, 2);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (60, 49.65, '2019-09-07 16:25:02', '2019-06-22 14:45:41', '2020-02-12 03:28:36', '2020-01-29 08:40:45', '2019-06-02 13:15:07', 172, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (61, 46.18, '2019-05-23 23:30:17', '2019-07-23 10:37:13', '2019-12-10 03:28:15', '2019-04-13 00:33:39', '2019-09-01 11:15:27', 245, 0);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (62, 29.11, '2019-06-24 14:42:49', '2019-06-20 10:34:23', '2019-11-26 14:56:19', '2020-03-05 13:15:52', '2020-01-02 06:07:57', 290, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (63, 60.7, '2019-08-26 06:00:05', '2019-05-10 10:48:57', '2019-06-26 03:24:32', '2019-12-05 03:44:50', '2020-03-28 21:49:04', 295, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (64, 76.52, '2019-12-30 18:46:14', '2020-03-26 18:28:48', '2019-09-19 07:29:07', '2019-07-13 13:06:10', '2020-03-15 17:57:34', 227, 2);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (65, 85.46, '2019-09-04 11:59:35', '2019-04-04 21:50:37', '2019-11-13 07:15:48', '2019-04-25 05:29:52', '2019-07-18 08:02:47', 8, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (66, 58.47, '2019-07-07 16:15:10', '2019-05-25 20:32:55', '2019-12-18 00:47:19', '2019-07-15 00:39:40', '2020-03-22 08:34:30', 2, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (67, 58.63, '2020-01-12 09:28:33', '2019-10-17 13:01:23', '2020-03-08 03:17:31', '2019-07-20 04:10:55', '2019-04-15 23:56:05', 253, 9);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (68, 23.45, '2019-12-21 14:15:37', '2019-08-22 14:32:45', '2019-09-26 05:35:51', '2019-10-05 12:01:42', '2020-02-07 08:05:25', 106, 10);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (69, 15.91, '2019-06-11 07:14:29', '2019-07-17 08:06:58', '2019-11-04 05:07:44', '2019-12-06 20:20:02', '2019-08-13 17:04:03', 220, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (70, 37.54, '2019-12-30 10:07:52', '2019-07-30 05:42:20', '2019-06-19 22:44:23', '2020-01-25 21:47:01', '2019-05-27 05:32:03', 125, 2);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (71, 19.65, '2019-10-21 10:22:28', '2020-03-24 17:34:18', '2019-05-25 12:32:11', '2019-11-02 07:11:01', '2019-10-05 12:54:48', 286, 10);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (72, 18.98, '2019-07-28 00:47:05', '2019-11-06 03:46:15', '2019-09-24 02:01:02', '2019-08-07 11:15:44', '2019-12-02 15:45:36', 202, 9);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (73, 65.79, '2019-12-17 12:04:30', '2019-08-03 07:51:01', '2020-01-04 22:16:14', '2020-03-14 10:14:46', '2020-02-04 23:29:45', 87, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (74, 77.46, '2019-08-26 16:37:46', '2020-01-31 23:29:56', '2019-05-30 10:01:50', '2019-11-30 02:21:38', '2019-04-08 16:55:37', 226, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (75, 17.59, '2020-02-05 20:55:56', '2020-03-14 02:48:10', '2020-01-22 14:56:47', '2020-03-02 14:25:52', '2019-04-21 03:29:39', 59, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (76, 18.38, '2019-07-07 13:11:47', '2020-01-24 06:19:35', '2019-04-21 03:15:18', '2019-09-18 14:53:18', '2020-02-18 08:23:31', 289, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (77, 97.96, '2019-12-19 07:22:26', '2019-12-29 07:32:20', '2019-10-10 12:48:44', '2019-05-07 08:50:31', '2019-12-28 23:27:18', 226, 0);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (78, 60.75, '2020-03-01 15:33:25', '2020-01-19 03:56:16', '2020-02-21 12:10:56', '2019-11-15 18:58:37', '2019-08-11 03:58:00', 140, 1);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (79, 93.87, '2019-12-31 23:32:07', '2020-01-09 01:40:36', '2019-11-25 01:29:23', '2019-04-27 18:09:52', '2019-10-04 10:45:04', 248, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (80, 85.3, '2020-03-11 19:45:12', '2019-12-10 19:52:45', '2019-09-24 09:04:44', '2019-05-27 08:24:47', '2020-03-12 14:41:15', 282, 10);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (81, 94.72, '2019-11-06 23:00:24', '2020-03-02 06:44:04', '2019-07-06 02:41:55', '2020-01-03 06:37:27', '2019-11-21 08:10:17', 34, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (82, 80.34, '2019-09-03 19:14:20', '2019-05-06 01:58:07', '2019-08-27 09:22:02', '2019-10-09 00:49:48', '2019-04-12 08:12:10', 34, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (83, 57.61, '2019-09-08 01:53:24', '2019-06-07 07:56:29', '2019-04-30 17:18:32', '2019-06-25 06:43:00', '2020-01-29 07:09:07', 114, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (84, 87.91, '2019-04-17 15:38:04', '2019-09-28 10:39:33', '2019-04-17 01:56:49', '2019-08-15 06:18:29', '2020-02-07 01:38:33', 38, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (85, 29.16, '2019-05-23 22:42:45', '2019-09-13 21:50:21', '2019-12-24 06:54:45', '2020-01-28 12:19:45', '2019-10-03 16:59:05', 267, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (86, 30.8, '2019-06-20 17:23:43', '2019-08-09 08:44:43', '2020-03-29 04:52:55', '2019-05-04 09:07:41', '2019-07-01 16:26:53', 290, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (87, 7.53, '2020-02-22 05:25:34', '2019-05-21 03:35:41', '2019-11-10 14:23:56', '2019-05-27 00:32:22', '2019-11-08 05:57:14', 245, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (88, 61.77, '2020-02-02 04:26:00', '2019-10-16 14:34:24', '2020-02-10 15:49:50', '2019-08-13 13:40:15', '2020-01-19 00:28:32', 198, 10);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (89, 19.81, '2019-10-10 08:41:09', '2019-09-17 11:17:13', '2019-12-09 12:03:04', '2019-07-25 04:21:04', '2020-03-13 12:35:29', 154, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (90, 33.59, '2019-11-17 10:17:50', '2019-10-18 23:26:12', '2019-09-30 18:14:21', '2019-09-15 20:37:08', '2019-09-24 00:14:53', 82, 1);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (91, 7.73, '2020-01-02 10:10:57', '2019-12-27 21:02:00', '2019-04-08 20:15:58', '2019-09-16 19:36:07', '2019-11-02 12:12:48', 19, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (92, 38.82, '2019-11-22 12:51:59', '2019-11-16 07:13:38', '2019-06-04 10:58:23', '2019-07-24 19:36:37', '2019-05-14 12:48:48', 274, 6);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (93, 11.53, '2019-07-08 18:22:25', '2019-06-14 10:08:34', '2019-05-03 08:55:15', '2019-05-11 23:23:45', '2020-01-13 16:58:39', 200, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (94, 62.2, '2019-08-22 12:57:27', '2020-01-26 22:25:12', '2019-05-13 13:48:56', '2019-07-20 15:30:26', '2019-09-29 12:15:20', 67, 0);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (95, 36.83, '2020-02-16 15:08:24', '2019-06-30 17:23:31', '2019-12-27 02:26:49', '2019-05-15 12:24:36', '2020-03-20 19:59:04', 273, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (96, 30.26, '2019-12-25 13:24:18', '2020-01-06 14:11:02', '2020-01-14 22:21:35', '2020-01-08 20:13:09', '2019-12-29 11:53:29', 175, 8);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (97, 47.56, '2020-03-03 16:46:42', '2019-08-18 18:17:59', '2019-06-15 02:56:27', '2019-08-19 13:53:03', '2019-08-14 07:11:26', 150, 7);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (98, 9.02, '2019-04-01 09:42:12', '2019-05-12 17:02:18', '2020-02-08 21:46:13', '2020-02-17 12:46:06', '2019-06-27 17:55:43', 174, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (99, 14.27, '2019-12-23 04:44:27', '2019-07-28 16:45:07', '2019-07-30 11:59:03', '2019-08-02 18:44:54', '2019-08-03 07:07:58', 263, 4);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating) values (100, 8.17, '2019-11-01 15:57:18', '2019-12-31 08:33:55', '2019-04-28 20:16:56', '2019-11-08 04:30:23', '2019-04-18 04:03:50', 66, 8);
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (1, 'Orn, Ortiz and Jacobs', 21.11, '2020-03-06 23:22:42', '2020-07-01 17:11:50');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (2, 'Schulist-Will', 38.74, '2020-03-26 09:13:14', '2021-06-26 15:14:35');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (3, 'Hegmann, Murazik and Connelly', 47.93, '2019-09-11 23:49:10', '2020-05-06 16:33:27');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (4, 'Anderson-Senger', 13.32, '2019-05-08 22:41:35', '2019-05-14 12:50:53');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (5, 'Langworth LLC', 46.68, '2019-04-29 17:57:41', '2020-03-15 04:54:07');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (6, 'Gulgowski, Towne and Homenick', 30.58, '2019-06-17 16:52:01', '2019-09-22 01:04:51');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (7, 'Hane, Reichel and Miller', 42.25, '2020-03-13 09:19:53', '2020-03-11 23:16:42');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (8, 'Prohaska and Sons', 27.39, '2020-03-01 17:08:26', '2020-06-10 06:53:02');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (9, 'Pacocha-Friesen', 25.28, '2019-12-17 00:50:07', '2020-01-04 20:31:04');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (10, 'Boyer and Sons', 1.17, '2019-08-18 07:11:09', '2019-08-21 10:52:08');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (11, 'Von-Murray', 38.44, '2019-08-21 09:47:25', '2019-08-29 03:13:12');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (12, 'Wiegand, Paucek and Bogisich', 48.29, '2020-02-17 10:32:58', '2020-03-22 04:21:45');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (13, 'Kling-Runolfsdottir', 11.09, '2019-05-09 00:01:04', '2019-12-31 12:24:33');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (14, 'Bartoletti-Stokes', 20.12, '2019-12-25 16:01:40', '2020-01-14 10:24:10');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (15, 'Lindgren-Hegmann', 24.42, '2019-05-01 03:43:44', '2019-11-30 00:19:02');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (16, 'Klein-Torphy', 23.87, '2019-05-28 09:47:18', '2019-10-24 11:06:37');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (17, 'Murazik and Sons', 25.93, '2019-08-25 17:51:11', '2019-12-29 18:29:41');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (18, 'Ondricka Group', 6.92, '2019-04-17 11:35:19', '2020-03-25 19:52:31');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (19, 'Swaniawski Inc', 18.37, '2020-02-09 11:16:54', '2019-03-31 16:28:37');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (20, 'Zemlak LLC', 41.62, '2019-07-17 15:14:18', '2020-05-11 14:40:31');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (21, 'Wuckert Group', 19.26, '2020-01-30 17:38:21', '2020-02-29 06:01:16');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (22, 'Schuster, Corwin and Spinka', 17.66, '2019-09-22 12:17:15', '2019-12-07 22:10:27');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (23, 'Dach, Altenwerth and Nitzsche', 10.74, '2019-03-31 13:51:00', '2019-05-18 02:17:36');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (24, 'Luettgen-Walter', 27.7, '2019-06-01 02:33:57', '2019-11-02 14:57:55');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (25, 'Klein, Gleichner and Stokes', 31.53, '2019-06-04 02:02:26', '2019-12-16 19:46:45');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (26, 'O''Reilly, Armstrong and Abernathy', 26.18, '2019-08-03 18:56:47', '2019-10-01 21:34:08');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (27, 'Hackett-Doyle', 26.26, '2019-10-21 22:24:23', '2019-11-04 03:13:09');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (28, 'Stiedemann and Sons', 10.76, '2019-05-03 07:55:30', '2020-01-05 06:15:38');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (29, 'Grimes LLC', 47.02, '2020-03-29 17:04:56', '2020-07-12 22:47:20');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (30, 'Little-Purdy', 1.15, '2019-11-24 19:04:13', '2020-01-17 04:12:58');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (31, 'Schulist-Feest', 46.88, '2019-08-17 23:20:36', '2019-10-07 19:45:20');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (32, 'Rempel Inc', 23.36, '2020-01-09 20:57:42', '2021-12-24 10:01:05');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (33, 'Kreiger-Mann', 32.82, '2020-02-12 01:10:06', '2020-02-20 11:59:49');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (34, 'Smitham Inc', 13.9, '2020-03-02 14:10:57', '2020-04-13 14:39:38');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (35, 'Powlowski-Schaden', 27.44, '2019-06-04 10:39:47', '2019-09-04 19:54:22');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (36, 'Keeling-Brown', 23.54, '2019-12-26 10:35:44', '2020-07-14 21:34:55');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (37, 'Lind Group', 43.75, '2019-12-10 08:19:27', '2020-02-22 21:47:54');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (38, 'McDermott LLC', 37.04, '2019-05-19 20:34:58', '2019-07-15 11:32:45');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (39, 'Klocko, Lueilwitz and West', 38.46, '2020-02-13 10:27:36', '2020-08-14 12:03:23');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (40, 'Medhurst Group', 14.07, '2019-04-12 08:35:08', '2019-05-01 00:57:40');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (41, 'Schiller Group', 20.89, '2019-01-03 12:10:11', '2019-04-07 18:56:37');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (42, 'Graham-Crist', 3.67, '2019-08-21 02:26:15', '2019-09-15 07:58:24');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (43, 'Gusikowski, Hills and Keeling', 39.31, '2019-07-25 06:56:50', '2020-01-31 14:08:23');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (44, 'Marvin, Lowe and Bogisich', 30.26, '2019-07-20 09:32:33', '2020-03-14 08:00:54');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (45, 'Abernathy and Sons', 19.31, '2019-06-26 21:28:16', '2020-02-17 07:38:08');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (46, 'Kutch, Waelchi and Strosin', 49.02, '2020-02-20 13:11:28', '2020-03-20 23:15:58');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (47, 'Sporer and Sons', 11.45, '2020-03-01 16:59:25', '2020-07-07 07:53:16');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (48, 'Farrell-Gislason', 12.5, '2019-05-04 21:50:58', '2019-10-29 11:11:17');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (49, 'Shields-Von', 16.82, '2019-10-25 13:00:42', '2019-12-16 16:46:30');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (50, 'Mante and Sons', 43.53, '2020-02-10 08:52:21', '2020-12-18 05:15:36');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (51, 'Bins-Toy', 21.3, '2019-08-14 16:50:04', '2019-12-01 09:07:20');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (52, 'Prohaska, Labadie and Crona', 48.75, '2020-03-23 09:42:14', '2021-04-02 17:51:11');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (53, 'Kuhlman Group', 27.31, '2019-09-21 16:49:33', '2020-07-24 05:10:58');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (54, 'McDermott, Reichert and Kunze', 36.36, '2019-01-19 19:49:46', '2019-04-02 02:17:21');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (55, 'Durgan-Parisian', 35.34, '2019-05-26 09:06:27', '2020-02-29 00:59:29');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (56, 'Robel-Will', 19.01, '2020-02-24 23:31:09', '2020-10-20 07:11:56');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (57, 'Kling Inc', 32.32, '2019-04-07 01:54:46', '2019-06-09 01:37:11');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (58, 'Orn-Treutel', 31.12, '2020-03-19 22:46:06', '2020-08-26 08:12:44');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (59, 'Reichert and Sons', 41.41, '2019-06-11 05:21:59', '2020-05-07 11:34:00');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (60, 'Jaskolski-Schiller', 30.58, '2019-05-09 02:43:47', '2020-04-13 16:29:51');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (61, 'Hauck, Stracke and Hudson', 17.55, '2019-09-20 01:19:45', '2019-10-18 16:27:03');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (62, 'Carroll-Grant', 36.05, '2019-12-29 12:32:55', '2020-10-20 06:51:00');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (63, 'Osinski Inc', 48.89, '2019-07-27 17:50:15', '2020-06-13 21:49:54');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (64, 'Abbott, Rippin and Kunde', 20.75, '2019-12-29 06:39:58', '2020-03-30 14:39:34');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (65, 'Hudson, Miller and Davis', 29.43, '2019-04-17 13:18:54', '2019-06-27 11:38:33');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (66, 'Wisoky, Nader and Wilderman', 46.38, '2019-06-08 16:56:37', '2019-12-19 07:55:13');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (67, 'Collins LLC', 4.64, '2019-06-21 11:32:02', '2019-11-05 15:52:02');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (68, 'Tillman and Sons', 11.16, '2019-08-10 00:24:53', '2019-08-28 15:44:14');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (69, 'Rowe, McGlynn and Torp', 14.22, '2020-03-29 09:54:25', '2020-11-26 12:53:08');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (70, 'Kshlerin-Douglas', 22.77, '2020-02-18 00:45:12', '2020-10-12 19:48:14');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (71, 'Okuneva-Feil', 13.48, '2018-10-22 16:20:36', '2019-05-12 07:44:09');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (72, 'Gaylord and Sons', 48.63, '2019-10-23 01:14:40', '2020-02-03 11:11:49');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (73, 'Mayer-Schaden', 21.07, '2019-05-12 08:16:08', '2019-08-10 21:17:07');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (74, 'Jacobs LLC', 33.75, '2018-11-02 03:50:37', '2019-05-23 21:36:18');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (75, 'Bernier-Block', 29.65, '2018-08-11 19:07:38', '2019-05-01 13:17:45');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (76, 'Homenick, Brown and Luettgen', 31.23, '2019-09-25 04:25:06', '2019-12-14 10:31:59');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (77, 'Doyle and Sons', 45.65, '2019-10-23 01:52:25', '2020-05-11 12:21:37');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (78, 'Heller-Herzog', 38.55, '2019-04-27 13:35:55', '2019-05-10 07:05:08');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (79, 'Gleason Inc', 25.69, '2019-09-05 18:28:02', '2020-04-04 08:33:14');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (80, 'Runte Inc', 11.14, '2020-02-11 12:42:24', '2020-09-05 06:35:46');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (81, 'Ortiz, Doyle and Schulist', 44.4, '2019-10-13 15:23:54', '2019-10-18 16:27:11');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (82, 'Mueller-Bauch', 44.88, '2019-07-01 23:45:11', '2019-08-21 12:37:48');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (83, 'Smith and Sons', 1.76, '2019-06-08 12:07:20', '2019-10-02 10:52:44');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (84, 'Mitchell, Wiza and Schinner', 13.23, '2019-05-02 05:02:22', '2019-11-18 09:28:48');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (85, 'Bosco, Wyman and Hane', 16.06, '2020-01-19 11:45:48', '2020-01-29 19:13:08');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (86, 'Lueilwitz LLC', 21.95, '2020-01-26 22:04:04', '2019-05-22 04:22:27');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (87, 'Stamm-Fahey', 20.86, '2019-12-15 22:06:32', '2020-03-23 01:23:02');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (88, 'Mayer-Jacobs', 46.95, '2020-01-02 01:46:47', '2020-05-04 05:51:21');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (89, 'Wyman-Durgan', 2.52, '2019-11-13 18:56:30', '2020-08-06 17:09:37');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (90, 'Becker-Wolff', 31.03, '2019-04-19 06:59:19', '2020-03-18 12:45:31');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (91, 'O''Keefe, Keebler and Johnson', 34.08, '2019-12-04 13:31:07', '2019-07-28 19:55:31');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (92, 'Trantow, Eichmann and Hilpert', 15.02, '2019-07-11 10:04:37', '2019-09-18 13:58:31');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (93, 'Dietrich Group', 4.53, '2019-10-13 14:51:11', '2020-05-02 16:24:13');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (94, 'King-Ryan', 11.42, '2019-11-03 13:07:59', '2020-02-20 00:47:18');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (95, 'Grimes, Batz and Koss', 45.42, '2019-11-24 06:50:37', '2020-03-22 03:04:19');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (96, 'Conn, Beier and Hansen', 19.2, '2019-06-05 19:35:28', '2020-05-26 08:33:41');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (97, 'Weber LLC', 16.51, '2019-08-22 07:56:08', '2019-12-07 18:33:28');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (98, 'Funk Group', 13.28, '2019-07-11 07:52:55', '2020-01-01 04:25:36');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (99, 'Grady LLC', 13.48, '2019-04-03 07:07:58', '2019-05-24 18:44:27');
+insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate) values (100, 'Buckridge, Williamson and Huel', 49.95, '2019-09-04 13:51:37', '2020-03-10 22:49:43');
+
+
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (1, 12.29, '2019-09-16 11:31:40', '2019-10-29 04:53:24', '2019-11-03 21:48:48', '2019-07-15 16:51:44', '2019-07-28 09:36:23', 256, 3, 27);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (2, 52.66, '2020-02-18 02:52:19', '2019-12-24 08:41:05', '2020-01-31 05:02:22', '2019-05-05 03:34:05', '2019-09-26 12:59:06', 55, 5, 49);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (3, 55.86, '2020-02-16 05:54:02', '2020-03-14 09:57:49', '2019-11-10 16:25:56', '2019-06-01 06:58:14', '2019-07-21 04:43:46', 60, 0, 3);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (4, 90.58, '2020-03-02 08:16:09', '2019-07-06 11:06:15', '2020-02-28 21:29:08', '2019-10-04 15:13:24', '2020-01-04 16:10:25', 146, 10, 12);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (5, 41.09, '2019-10-17 01:29:48', '2019-06-07 13:50:28', '2019-09-28 11:04:36', '2020-01-30 08:33:58', '2020-03-23 14:58:11', 122, 1, null);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (6, 12.91, '2019-07-03 21:48:52', '2019-12-17 22:29:19', '2019-06-21 07:40:38', '2019-05-26 17:56:39', '2019-09-03 15:11:58', 230, 3, 13);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (7, 98.05, '2019-04-02 21:23:13', '2019-06-08 06:51:56', '2019-08-03 19:57:30', '2019-11-26 20:04:03', '2019-04-10 11:02:27', 202, 5, 17);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (8, 87.9, '2019-05-08 21:55:59', '2020-02-24 06:48:54', '2019-07-31 02:50:28', '2019-09-20 05:30:04', '2020-03-20 17:46:29', 155, 6, 75);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (9, 50.24, '2019-12-27 12:06:18', '2019-05-14 22:22:50', '2019-04-05 16:28:03', '2019-07-01 18:26:41', '2019-07-29 01:07:50', 43, 0, 71);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (10, 51.2, '2020-03-27 23:46:08', '2019-06-08 11:06:48', '2019-07-05 09:19:01', '2019-09-17 03:55:35', '2019-12-31 22:29:28', 257, null, 74);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (11, 42.96, '2019-08-25 19:55:20', '2019-07-25 15:26:48', '2019-09-12 07:52:30', '2020-01-29 09:59:04', '2019-08-01 05:14:58', 218, null, 41);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (12, 23.5, '2019-08-26 10:35:06', '2019-09-10 14:25:18', '2019-09-21 13:06:22', '2020-03-14 23:03:57', '2019-10-07 07:14:50', 179, 3, 54);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (13, 5.53, '2020-03-27 13:37:19', '2020-01-05 16:36:38', '2019-06-22 02:45:51', '2019-08-28 19:21:25', '2020-02-25 00:23:50', 252, 8, 23);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (14, 50.24, '2019-10-27 13:00:13', '2019-09-19 13:35:57', '2019-10-20 21:05:24', '2019-09-06 17:54:31', '2019-07-18 13:15:12', 163, 6, null);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (15, 73.97, '2020-02-26 23:11:08', '2020-02-28 09:59:46', '2020-02-02 16:23:28', '2019-06-19 08:32:34', '2019-10-12 14:48:48', 57, 0, 57);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (16, 8.01, '2019-12-07 03:53:50', '2020-03-13 16:42:55', '2020-01-17 01:21:36', '2019-04-12 10:03:04', '2019-10-28 15:39:32', 294, 4, 65);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (17, 89.03, '2019-08-07 17:04:00', '2019-11-08 17:05:29', '2020-02-24 03:26:14', '2019-07-05 01:54:21', '2019-11-11 08:07:11', 128, 7, null);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (18, 4.22, '2019-12-08 06:35:14', '2019-05-16 02:22:56', '2019-05-15 00:25:05', '2020-02-22 10:40:23', '2019-04-22 04:10:00', 63, 5, 65);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (19, 97.56, '2019-06-10 02:52:40', '2019-06-04 17:01:48', '2019-11-11 06:57:59', '2019-06-07 15:02:23', '2019-04-04 13:10:41', 113, null, 3);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (20, 46.22, '2020-03-05 15:25:01', '2019-11-20 04:02:15', '2019-08-28 15:51:25', '2020-01-30 22:27:33', '2019-08-15 22:34:29', 181, null, null);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (21, 26.59, '2020-03-02 05:41:40', '2019-06-04 07:20:28', '2020-02-23 14:08:34', '2020-03-18 22:16:21', '2020-01-06 06:13:57', 91, 4, 43);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (22, 61.68, '2019-09-16 07:42:05', '2019-08-24 16:57:52', '2020-01-26 14:36:47', '2019-07-11 21:59:58', '2019-04-07 03:28:59', 300, 7, 53);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (23, 88.62, '2019-06-29 03:17:30', '2019-04-15 09:55:39', '2019-05-21 12:12:17', '2020-03-27 02:56:29', '2019-06-08 17:52:30', 300, 1, 63);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (24, 52.21, '2019-11-06 16:53:26', '2019-08-30 03:19:42', '2019-04-03 16:46:24', '2019-05-27 17:01:17', '2019-10-10 15:07:15', 300, 3, 73);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (25, 20.94, '2020-03-06 05:28:09', '2019-07-07 03:51:54', '2019-09-18 13:00:39', '2019-09-13 20:06:20', '2019-10-31 18:48:50', 300, 9, 83);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (26, 54.11, '2019-07-05 07:52:56', '2019-05-27 06:30:25', '2020-02-28 11:32:31', '2019-09-12 20:04:32', '2019-07-20 17:12:23', 300, 9, 93);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (27, 97.57, '2020-02-13 08:35:09', '2020-01-08 14:48:06', '2020-01-12 16:37:46', '2019-08-21 13:25:50', '2019-10-30 01:40:49', 300, 6, 13);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (28, 67.48, '2019-10-22 00:36:42', '2019-09-10 02:44:10', '2019-08-19 16:40:18', '2019-08-08 01:36:47', '2020-02-11 17:39:07', 300, 4, 14);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (29, 65.12, '2019-07-28 09:14:45', '2019-09-03 22:25:58', '2019-07-13 22:17:01', '2019-12-06 07:44:34', '2019-04-07 00:04:24', 300, 5,25);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (30, 71.9, '2020-03-11 08:53:29', '2020-01-05 00:05:46', '2019-11-25 17:52:08', '2019-10-02 21:11:49', '2019-11-04 07:13:31', 300, 3, 35);
+
 
 insert into restaurants (rname, promoid, minimalcost) values ('Wells Fargo & Company', 24, 178);
 insert into restaurants (rname, promoid, minimalcost) values ('CGI Group, Inc.', 29, 154);
@@ -1228,118 +1261,37 @@ insert into comprises (mwsid, shiftdayid, shifthourid) values (15, 4, 3);
 
 
 
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (1, 15, 46, 99, '2/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, 'location1', 5);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (2, 78, 99, 48, '4/5/2020', 'Bank of America Corporation', 'Credit Card', null, 'location4', 59);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (3, 26, 88, 58, '5/5/2020', 'Cumberland Pharmaceuticals Inc.', 'Cash', null, 'location11', 20);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (4, 10, 43, 74, '5/1/2020', 'Adient plc', 'Cash', null, 'location2', 33);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (5, 52, 52, 27, '5/5/2020', 'Comfort Systems USA, Inc.', 'Cash', null, 'location3', 44);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (6, 60, 71, 100, '3/5/2020', 'Bed Bath & Beyond Inc.', 'Cash', null, 'location8', 61);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (7, 4, 48, 25, '3/5/2020', 'California Water  Service Group Holding', 'Credit Card', null, null, 23);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (8, 93, 96, 67, '2/5/2020', 'Tuniu Corporation', 'Credit Card', null, 'location7', 14);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (9, 15, 15, 23, '4/5/2020', 'CGI Group, Inc.', 'Cash', null, 'location1', 17);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (10, 41, 23, 66, '5/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location6', 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (1, 15, 46, 30, '2/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, 'location1', 1);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (2, 78, 99, 4, '4/5/2020', 'Bank of America Corporation', 'Credit Card', null, 'location4', 2);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (3, 26, 88, 12, '5/5/2020', 'Cumberland Pharmaceuticals Inc.', 'Cash', null, 'location11', 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (4, 10, 43, 5, '5/1/2020', 'Adient plc', 'Cash', null, 'location2', 4);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (5, 52, 52, 30, '5/5/2020', 'Comfort Systems USA, Inc.', 'Cash', null, 'location3', 5);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (6, 60, 71, 6, '3/5/2020', 'Bed Bath & Beyond Inc.', 'Cash', null, 'location8', 6);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (7, 4, 48, 6, '3/5/2020', 'California Water  Service Group Holding', 'Credit Card', null, null, 7);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (8, 93, 96, 25, '2/5/2020', 'Tuniu Corporation', 'Credit Card', null, 'location7', 8);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (9, 15, 15, 29, '4/5/2020', 'CGI Group, Inc.', 'Cash', null, 'location1', 9);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (10, 41, 23, 25, '5/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location6', 10);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (11, 41, 23, 66, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location10', 11);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (12, 41, 23, null, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 12);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (13, 41, 23, 6, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 13);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (14, 41, 23, 5, '5/4/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location5', 14);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (15, 41, 23, 3, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 15);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (16, 41, 23, 4, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location5', 16);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (17, 41, 23, 6, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 17);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (18, 41, 23, null, '5/4/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location5', 18);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (19, 41, 23, 6, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 19);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (20, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 20);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (21, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 21);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (22, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 22);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (23, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 23);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (24, 41, 23, 1, '3/5/2020', 'Tuniu Corporation', 'Cash', null, 'location9', 24);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (25, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 25);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (26, 41, 23, 1, '3/5/2020', 'California Water  Service Group Holding', 'Cash', null, 'location9', 26);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (27, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 27);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (28, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 28);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (29, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 29);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (30, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 30);
 
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (11, 41, 23, 66, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location10', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (12, 41, 23, 1, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (13, 41, 23, 6, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (14, 41, 23, 5, '5/4/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location5', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (15, 41, 23, 3, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (16, 41, 23, 4, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location5', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (17, 41, 23, 6, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (18, 41, 23, 11, '5/4/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location5', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (19, 41, 23, 6, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (20, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 3);
-
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (11, 77, 71, 21, '6/5/2020', 'Adient plc', 'Credit Card', null, null, 15);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (12, 88, 46, 97, '4/5/2020', 'Bank of America Corporation', 'Cash', null, null, 33);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (13, 44, 23, 73, '1/5/2020', 'Commerce Bancshares, Inc.', 'Cash', null, null, 13);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (14, 34, 1, 99, '3/5/2020', 'Preformed Line Products Company', 'Cash', null, null, 7);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (15, 84, 80, 51, '1/5/2020', 'California Water  Service Group Holding', 'Cash', null, null, 82);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (16, 77, 20, 37, '4/5/2020', 'Commerce Bancshares, Inc.', 'Credit Card', null, null, 84);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (17, 96, 82, 40, '3/5/2020', 'Royal Caribbean Cruises Ltd.', 'Cash', null, null, 98);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (18, 50, 40, 27, '6/5/2020', 'Tuesday Morning Corp.', 'Credit Card', null, null, 84);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (19, 31, 23, 21, '6/5/2020', 'Preformed Line Products Company', 'Credit Card', null, null, 43);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (20, 65, 88, 61, '4/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, null, 19);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (21, 10, 53, 33, '1/5/2020', 'Novan, Inc.', 'Cash', null, null, 23);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (22, 97, 2, 20, '5/5/2020', 'Incyte Corporation', 'Credit Card', null, null, 71);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (23, 86, 31, 94, '2/5/2020', 'Scudder Strategic Municiple Income Trust', 'Credit Card', null, null, 55);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (24, 71, 5, 86, '1/5/2020', 'Bank of America Corporation', 'Credit Card', null, null, 9);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (25, 22, 26, 91, '2/5/2020', 'Tuesday Morning Corp.', 'Cash', null, null, 83);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (26, 71, 31, 14, '1/5/2020', 'Laboratory Corporation of America Holdings', 'Credit Card', null, null, 37);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (27, 95, 58, 80, '1/2/2020', 'WEC Energy Group, Inc.', 'Credit Card', null, null, 87);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (28, 4, 19, 36, '4/5/2020', 'Adient plc', 'Cash', null, null, 83);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (29, 28, 1, 48, '1/5/2020', 'Laboratory Corporation of America Holdings', 'Credit Card', null, null, 73);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (30, 18, 59, 72, '4/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, null, 93);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (31, 25, 39, 27, '1/5/2020', 'Burcon NutraScience Corp', 'Credit Card', null, null, 95);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (32, 51, 45, 42, '4/5/2020', 'Scudder Strategic Municiple Income Trust', 'Cash', null, null, 34);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (33, 64, 12, 50, '1/5/2020', 'WEC Energy Group, Inc.', 'Cash', null, null, 35);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (34, 80, 14, 3, '2/3/2020', 'VictoryShares US Small Cap Volatility Wtd ETF', 'Cash', null, null, 37);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (35, 64, 92, 59, '5/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, null, 17);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (36, 51, 61, 78, '3/5/2020', 'Wells Fargo & Company', 'Credit Card', null, null, 44);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (37, 14, 64, 36, '2/2/2020', 'Novan, Inc.', 'Credit Card', null, null, 37);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (38, 59, 56, 52, '1/5/2020', 'Comstock Resources, Inc.', 'Cash', null, null, 44);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (39, 15, 95, 52, '5/3/2020', 'Royal Caribbean Cruises Ltd.', 'Cash', null, null, 77);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (40, 23, 24, 53, '4/5/2020', 'Wells Fargo & Company', 'Credit Card', null, null, 81);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (41, 35, 65, 28, '3/5/2020', 'Bed Bath & Beyond Inc.', 'Credit Card', null, null, 33);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (42, 79, 40, 88, '6/5/2020', 'Aradigm Corporation', 'Cash', null, null, 99);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (43, 45, 100, 29, '3/5/2020', 'Aradigm Corporation', 'Credit Card', null, null, 84);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (44, 56, 72, 92, '5/5/2020', 'Adient plc', 'Credit Card', null, null, 95);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (45, 66, 85, 7, '2/5/2020', 'Tuniu Corporation', 'Cash', null, null, 87);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (46, 1, 13, 76, '3/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, null, 35);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (47, 53, 89, 86, '5/5/2020', 'Cumberland Pharmaceuticals Inc.', 'Credit Card', null, null, 66);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (48, 38, 71, 25, '4/5/2020', 'Adient plc', 'Cash', null, null, 91);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (49, 32, 25, 75, '1/4/2020', 'VictoryShares US Small Cap Volatility Wtd ETF', 'Cash', null, null, 34);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (50, 65, 79, 78, '1/5/2020', 'California Water  Service Group Holding', 'Cash', null, null, 64);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (51, 20, 91, 58, '4/5/2020', 'Adient plc', 'Cash', null, null, 26);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (52, 91, 53, 82, '1/5/2020', 'Laboratory Corporation of America Holdings', 'Cash', null, null, 86);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (53, 88, 72, 39, '2/5/2020', 'Bed Bath & Beyond Inc.', 'Cash', null, null, 50);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (54, 26, 24, 78, '2/5/2020', 'Wells Fargo & Company', 'Cash', null, null, 71);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (55, 18, 56, 18, '5/5/2020', 'Royal Caribbean Cruises Ltd.', 'Cash', null, null, 13);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (56, 11, 75, 10, '2/5/2020', 'Royal Caribbean Cruises Ltd.', 'Credit Card', null, null, 10);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (57, 9, 99, 25, '2/5/2020', 'Callon Petroleum Company', 'Cash', null, null, 32);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (58, 28, 72, 95, '1/5/2020', 'Adient plc', 'Cash', null, null, 7);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (59, 29, 66, 3, '6/5/2020', 'California Water  Service Group Holding', 'Credit Card', null, null, 60);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (60, 49, 34, 98, '1/5/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 55);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (61, 39, 75, 66, '3/5/2020', 'VictoryShares US Small Cap Volatility Wtd ETF', 'Cash', null, null, 88);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (62, 65, 68, 51, '6/5/2020', 'Wells Fargo & Company', 'Cash', null, null, 9);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (63, 91, 22, 60, '2/5/2020', 'Comstock Resources, Inc.', 'Cash', null, null, 14);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (64, 75, 50, 90, '3/5/2020', 'Aradigm Corporation', 'Cash', null, null, 97);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (65, 37, 34, 62, '6/5/2020', 'Willamette Valley Vineyards, Inc.', 'Cash', null, null, 65);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (66, 16, 27, 18, '4/5/2020', 'Tuesday Morning Corp.', 'Cash', null, null, 98);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (67, 12, 88, 78, '6/5/2020', 'Bed Bath & Beyond Inc.', 'Cash', null, null, 47);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (68, 14, 16, 16, '2/5/2020', 'Cumberland Pharmaceuticals Inc.', 'Cash', null, null, 31);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (69, 89, 65, 12, '1/5/2020', 'Wells Fargo & Company', 'Credit Card', null, null, 55);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (70, 96, 78, 89, '6/5/2020', 'VictoryShares US Small Cap Volatility Wtd ETF', 'Credit Card', null, null, 45);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (71, 92, 19, 26, '2/5/2020', 'CGI Group, Inc.', 'Credit Card', null, null, 38);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (72, 21, 74, 33, '6/5/2020', 'U.S. Global Investors, Inc.', 'Credit Card', null, null, 10);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (73, 43, 73, 98, '2/5/2020', 'Comfort Systems USA, Inc.', 'Cash', null, null, 49);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (74, 25, 77, 35, '6/5/2020', 'Aradigm Corporation', 'Cash', null, null, 29);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (75, 86, 54, 34, '1/5/2020', 'Preformed Line Products Company', 'Credit Card', null, null, 44);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (76, 19, 69, 56, '4/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, null, 6);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (77, 32, 45, 52, '1/5/2020', 'Burcon NutraScience Corp', 'Credit Card', null, null, 54);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (78, 100, 62, 16, '2/5/2020', 'Tuesday Morning Corp.', 'Cash', null, null, 94);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (79, 86, 41, 37, '2/5/2020', 'Novan, Inc.', 'Cash', null, null, 79);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (80, 60, 43, 9, '5/5/2020', 'Aradigm Corporation', 'Cash', null, null, 1);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (81, 26, 72, 28, '5/5/2020', 'Laboratory Corporation of America Holdings', 'Cash', null, null, 14);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (82, 73, 91, 2, '5/5/2020', 'Cumberland Pharmaceuticals Inc.', 'Cash', null, null, 92);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (83, 41, 48, 77, '6/5/2020', 'U.S. Global Investors, Inc.', 'Credit Card', null, null, 100);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (84, 2, 35, 45, '4/5/2020', 'PCM, Inc.', 'Credit Card', null, null, 34);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (85, 91, 4, 2, '1/5/2020', 'CGI Group, Inc.', 'Cash', null, null, 73);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (86, 48, 53, 73, '4/5/2020', 'Comstock Resources, Inc.', 'Cash', null, null, 65);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (87, 44, 12, 8, '6/5/2020', 'Tuniu Corporation', 'Credit Card', null, null, 16);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (88, 2, 24, 65, '6/5/2020', 'Tuniu Corporation', 'Credit Card', null, null, 55);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (89, 33, 8, 36, '4/5/2020', 'Wells Fargo & Company', 'Credit Card', null, null, 85);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (90, 39, 77, 31, '2/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, null, 23);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (91, 82, 26, 58, '4/5/2020', 'Comstock Resources, Inc.', 'Cash', null, null, 14);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (92, 38, 19, 5, '1/5/2020', 'Preformed Line Products Company', 'Cash', null, null, 76);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (93, 27, 10, 95, '1/5/2020', 'Aradigm Corporation', 'Credit Card', null, null, 37);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (94, 61, 54, 94, '1/5/2020', 'Laboratory Corporation of America Holdings', 'Cash', null, null, 65);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (95, 11, 23, 87, '5/5/2020', 'Lombard Medical, Inc.', 'Cash', null, null, 3);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (96, 56, 35, 72, '1/5/2020', 'PCM, Inc.', 'Credit Card', null, null, 56);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (97, 9, 16, 34, '5/5/2020', 'Incyte Corporation', 'Credit Card', null, null, 18);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (98, 60, 31, 15, '6/5/2020', 'Scudder Strategic Municiple Income Trust', 'Cash', null, null, 1);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (99, 1, 33, 52, '1/5/2020', 'Adient plc', 'Credit Card', null, null, 37);
--- insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (100, 30, 97, 82, '6/5/2020', 'Commerce Bancshares, Inc.', 'Credit Card', null, null, 22);
 
 insert into Reviews (review, flid) values ('Good', 5);
 insert into Reviews (review, flid) values ('Bad', 4);
@@ -2522,106 +2474,6 @@ insert into FullTimeRiders (riderid, mwsid, monthlybasesalary) values (298, 10, 
 insert into FullTimeRiders (riderid, mwsid, monthlybasesalary) values (299, 1, 987);
 insert into FullTimeRiders (riderid, mwsid, monthlybasesalary) values (300, 8, 238);
 
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (1, 'Orn, Ortiz and Jacobs', 21.11, '2020-03-06 23:22:42', '2019-07-01 17:11:50', 60);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (2, 'Schulist-Will', 38.74, '2020-03-26 09:13:14', '2019-06-26 15:14:35', 65);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (3, 'Hegmann, Murazik and Connelly', 47.93, '2019-09-11 23:49:10', '2019-05-06 16:33:27', 13);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (4, 'Anderson-Senger', 13.32, '2019-05-08 22:41:35', '2019-05-14 12:50:53', 56);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (5, 'Langworth LLC', 46.68, '2019-04-29 17:57:41', '2020-03-15 04:54:07', 69);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (6, 'Gulgowski, Towne and Homenick', 30.58, '2019-06-17 16:52:01', '2019-09-22 01:04:51', 75);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (7, 'Hane, Reichel and Miller', 42.25, '2020-03-13 09:19:53', '2020-03-11 23:16:42', 89);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (8, 'Prohaska and Sons', 27.39, '2020-03-01 17:08:26', '2019-06-10 06:53:02', 86);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (9, 'Pacocha-Friesen', 25.28, '2019-12-17 00:50:07', '2020-01-04 20:31:04', 9);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (10, 'Boyer and Sons', 1.17, '2019-08-18 07:11:09', '2019-08-01 10:52:08', 80);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (11, 'Von-Murray', 38.44, '2019-08-21 09:47:25', '2019-08-29 03:13:12', 93);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (12, 'Wiegand, Paucek and Bogisich', 48.29, '2020-02-17 10:32:58', '2020-01-22 04:21:45', 21);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (13, 'Kling-Runolfsdottir', 11.09, '2019-05-09 00:01:04', '2019-12-31 12:24:33', 8);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (14, 'Bartoletti-Stokes', 20.12, '2019-12-25 16:01:40', '2020-01-14 10:24:10', 80);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (15, 'Lindgren-Hegmann', 24.42, '2019-05-01 03:43:44', '2019-11-30 00:19:02', 43);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (16, 'Klein-Torphy', 23.87, '2019-05-28 09:47:18', '2019-10-24 11:06:37', 49);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (17, 'Murazik and Sons', 25.93, '2019-08-25 17:51:11', '2019-12-29 18:29:41', 90);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (18, 'Ondricka Group', 6.92, '2019-04-17 11:35:19', '2020-03-25 19:52:31', 15);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (19, 'Swaniawski Inc', 18.37, '2020-02-09 11:16:54', '2019-03-31 16:28:37', 76);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (20, 'Zemlak LLC', 41.62, '2019-07-17 15:14:18', '2019-05-11 14:40:31', 71);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (21, 'Wuckert Group', 19.26, '2020-01-30 17:38:21', '2020-01-29 06:01:16', 25);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (22, 'Schuster, Corwin and Spinka', 17.66, '2019-09-22 12:17:15', '2019-04-07 22:10:27', 92);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (23, 'Dach, Altenwerth and Nitzsche', 10.74, '2019-03-31 13:51:00', '2019-05-18 02:17:36', 8);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (24, 'Luettgen-Walter', 27.7, '2019-06-01 02:33:57', '2019-11-02 14:57:55', 83);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (25, 'Klein, Gleichner and Stokes', 31.53, '2019-06-04 02:02:26', '2019-12-16 19:46:45', 60);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (26, 'O''Reilly, Armstrong and Abernathy', 26.18, '2019-08-03 18:56:47', '2019-05-01 21:34:08', 28);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (27, 'Hackett-Doyle', 26.26, '2019-10-21 22:24:23', '2019-04-04 03:13:09', 7);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (28, 'Stiedemann and Sons', 10.76, '2019-05-03 07:55:30', '2020-01-05 06:15:38', 27);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (29, 'Grimes LLC', 47.02, '2020-03-29 17:04:56', '2019-07-12 22:47:20', 66);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (30, 'Little-Purdy', 1.15, '2019-11-24 19:04:13', '2020-01-17 04:12:58', 13);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (31, 'Schulist-Feest', 46.88, '2019-08-17 23:20:36', '2019-07-07 19:45:20', 35);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (32, 'Rempel Inc', 23.36, '2020-01-09 20:57:42', '2019-12-24 10:01:05', 76);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (33, 'Kreiger-Mann', 32.82, '2020-02-12 01:10:06', '2020-02-20 11:59:49', 65);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (34, 'Smitham Inc', 13.9, '2020-03-02 14:10:57', '2020-01-13 14:39:38', 52);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (35, 'Powlowski-Schaden', 27.44, '2019-06-04 10:39:47', '2019-09-04 19:54:22', 30);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (36, 'Keeling-Brown', 23.54, '2019-12-26 10:35:44', '2019-07-14 21:34:55', 16);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (37, 'Lind Group', 43.75, '2019-12-10 08:19:27', '2020-02-22 21:47:54', 5);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (38, 'McDermott LLC', 37.04, '2019-05-19 20:34:58', '2019-07-15 11:32:45', 62);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (39, 'Klocko, Lueilwitz and West', 38.46, '2020-02-13 10:27:36', '2019-08-14 12:03:23', 55);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (40, 'Medhurst Group', 14.07, '2019-07-12 08:35:08', '2019-05-01 00:57:40', 80);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (41, 'Schiller Group', 20.89, '2020-01-03 12:10:11', '2019-04-07 18:56:37', 40);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (42, 'Graham-Crist', 3.67, '2019-08-21 02:26:15', '2019-09-15 07:58:24', 94);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (43, 'Gusikowski, Hills and Keeling', 39.31, '2019-07-25 06:56:50', '2020-01-31 14:08:23', 48);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (44, 'Marvin, Lowe and Bogisich', 30.26, '2019-07-20 09:32:33', '2020-03-14 08:00:54', 50);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (45, 'Abernathy and Sons', 19.31, '2019-06-26 21:28:16', '2020-02-17 07:38:08', 72);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (46, 'Kutch, Waelchi and Strosin', 49.02, '2020-02-20 13:11:28', '2020-02-17 23:15:58', 43);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (47, 'Sporer and Sons', 11.45, '2020-03-01 16:59:25', '2019-07-07 07:53:16', 51);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (48, 'Farrell-Gislason', 12.5, '2019-05-04 21:50:58', '2019-10-29 11:11:17', 48);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (49, 'Shields-Von', 16.82, '2019-10-25 13:00:42', '2019-12-16 16:46:30', 39);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (50, 'Mante and Sons', 43.53, '2020-02-10 08:52:21', '2019-12-18 05:15:36', 65);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (51, 'Bins-Toy', 21.3, '2019-08-14 16:50:04', '2019-06-01 09:07:20', 63);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (52, 'Prohaska, Labadie and Crona', 48.75, '2020-03-23 09:42:14', '2019-04-02 17:51:11', 77);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (53, 'Kuhlman Group', 27.31, '2019-09-21 16:49:33', '2019-07-24 05:10:58', 12);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (54, 'McDermott, Reichert and Kunze', 36.36, '2019-09-19 19:49:46', '2019-04-02 02:17:21', 13);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (55, 'Durgan-Parisian', 35.34, '2019-05-26 09:06:27', '2020-02-29 00:59:29', 3);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (56, 'Robel-Will', 19.01, '2020-02-24 23:31:09', '2019-10-20 07:11:56', 89);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (57, 'Kling Inc', 32.32, '2019-09-07 01:54:46', '2019-06-09 01:37:11', 45);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (58, 'Orn-Treutel', 31.12, '2020-03-19 22:46:06', '2019-08-26 08:12:44', 80);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (59, 'Reichert and Sons', 41.41, '2019-06-11 05:21:59', '2019-05-07 11:34:00', 37);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (60, 'Jaskolski-Schiller', 30.58, '2019-05-09 02:43:47', '2019-04-13 16:29:51', 85);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (61, 'Hauck, Stracke and Hudson', 17.55, '2019-09-20 01:19:45', '2019-10-18 16:27:03', 50);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (62, 'Carroll-Grant', 36.05, '2019-12-29 12:32:55', '2019-10-20 06:51:00', 87);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (63, 'Osinski Inc', 48.89, '2019-07-27 17:50:15', '2019-06-13 21:49:54', 19);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (64, 'Abbott, Rippin and Kunde', 20.75, '2019-12-29 06:39:58', '2020-03-30 14:39:34', 24);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (65, 'Hudson, Miller and Davis', 29.43, '2019-04-17 13:18:54', '2019-06-27 11:38:33', 15);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (66, 'Wisoky, Nader and Wilderman', 46.38, '2019-06-08 16:56:37', '2019-12-19 07:55:13', 14);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (67, 'Collins LLC', 4.64, '2019-06-21 11:32:02', '2019-11-05 15:52:02', 78);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (68, 'Tillman and Sons', 11.16, '2019-08-10 00:24:53', '2019-08-28 15:44:14', 94);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (69, 'Rowe, McGlynn and Torp', 14.22, '2020-03-29 09:54:25', '2019-11-26 12:53:08', 62);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (70, 'Kshlerin-Douglas', 22.77, '2020-02-18 00:45:12', '2019-10-12 19:48:14', 76);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (71, 'Okuneva-Feil', 13.48, '2019-10-22 16:20:36', '2019-05-12 07:44:09', 54);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (72, 'Gaylord and Sons', 48.63, '2019-10-23 01:14:40', '2020-02-03 11:11:49', 65);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (73, 'Mayer-Schaden', 21.07, '2019-05-12 08:16:08', '2019-08-10 21:17:07', 67);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (74, 'Jacobs LLC', 33.75, '2019-11-02 03:50:37', '2019-05-23 21:36:18', 69);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (75, 'Bernier-Block', 29.65, '2019-08-11 19:07:38', '2019-05-01 13:17:45', 53);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (76, 'Homenick, Brown and Luettgen', 31.23, '2019-09-25 04:25:06', '2019-12-14 10:31:59', 73);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (77, 'Doyle and Sons', 45.65, '2019-10-23 01:52:25', '2019-05-11 12:21:37', 81);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (78, 'Heller-Herzog', 38.55, '2019-04-27 13:35:55', '2019-05-10 07:05:08', 72);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (79, 'Gleason Inc', 25.69, '2019-09-05 18:28:02', '2019-04-04 08:33:14', 87);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (80, 'Runte Inc', 11.14, '2020-02-11 12:42:24', '2019-09-05 06:35:46', 80);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (81, 'Ortiz, Doyle and Schulist', 44.4, '2019-10-13 15:23:54', '2019-10-18 16:27:11', 40);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (82, 'Mueller-Bauch', 44.88, '2019-07-01 23:45:11', '2019-06-21 12:37:48', 74);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (83, 'Smith and Sons', 1.76, '2019-06-08 12:07:20', '2019-10-02 10:52:44', 95);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (84, 'Mitchell, Wiza and Schinner', 13.23, '2019-05-02 05:02:22', '2019-11-18 09:28:48', 15);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (85, 'Bosco, Wyman and Hane', 16.06, '2020-01-19 11:45:48', '2020-01-16 19:13:08', 68);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (86, 'Lueilwitz LLC', 21.95, '2020-01-26 22:04:04', '2019-05-22 04:22:27', 68);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (87, 'Stamm-Fahey', 20.86, '2019-12-15 22:06:32', '2020-03-23 01:23:02', 13);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (88, 'Mayer-Jacobs', 46.95, '2020-01-02 01:46:47', '2019-05-04 05:51:21', 88);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (89, 'Wyman-Durgan', 2.52, '2019-11-13 18:56:30', '2019-07-06 17:09:37', 47);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (90, 'Becker-Wolff', 31.03, '2019-04-19 06:59:19', '2020-03-18 12:45:31', 27);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (91, 'O''Keefe, Keebler and Johnson', 34.08, '2019-12-04 13:31:07', '2019-07-28 19:55:31', 68);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (92, 'Trantow, Eichmann and Hilpert', 15.02, '2019-07-11 10:04:37', '2019-09-18 13:58:31', 90);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (93, 'Dietrich Group', 4.53, '2019-10-13 14:51:11', '2019-05-02 16:24:13', 4);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (94, 'King-Ryan', 11.42, '2019-11-03 13:07:59', '2020-02-20 00:47:18', 45);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (95, 'Grimes, Batz and Koss', 45.42, '2019-11-24 06:50:37', '2020-03-22 03:04:19', 31);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (96, 'Conn, Beier and Hansen', 19.2, '2019-06-05 19:35:28', '2019-05-26 08:33:41', 2);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (97, 'Weber LLC', 16.51, '2019-08-22 07:56:08', '2019-12-07 18:33:28', 19);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (98, 'Funk Group', 13.28, '2019-07-11 07:52:55', '2020-01-01 04:25:36', 26);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (99, 'Grady LLC', 13.48, '2019-04-03 07:07:58', '2019-05-24 18:44:27', 61);
-insert into deliverpromotions (pid, descriptionpromo, discount, startdate, enddate, did) values (100, 'Buckridge, Williamson and Huel', 49.95, '2019-09-04 13:51:37', '2020-03-10 22:49:43', 64);
 
 
 insert into consists (coid, flid, fname, rname) values (1, 1, 'Peach', 'Comfort Systems USA, Inc.');
@@ -2646,6 +2498,12 @@ insert into consists (coid, flid, fname, rname) values (4, 4, 'Daikon radish', '
 insert into consists (coid, flid, fname, rname) values (30, 4, 'Daikon radish', 'Adient plc');
 insert into consists (coid, flid, fname, rname) values (31, 4, 'Daikon radish', 'Adient plc');
 insert into consists (coid, flid, fname, rname) values (5, 5, 'Peach', 'Comfort Systems USA, Inc.');
+insert into consists (coid, flid, fname, rname) values (66, 5, 'Peach', 'Comfort Systems USA, Inc.');
+insert into consists (coid, flid, fname, rname) values (64, 5, 'Peach', 'Comfort Systems USA, Inc.');
+insert into consists (coid, flid, fname, rname) values (65, 5, 'Peach', 'Comfort Systems USA, Inc.');
+insert into consists (coid, flid, fname, rname) values (67, 5, 'Peach', 'Comfort Systems USA, Inc.');
+insert into consists (coid, flid, fname, rname) values (68, 5, 'Peach', 'Comfort Systems USA, Inc.');
+insert into consists (coid, flid, fname, rname) values (69, 5, 'Peach', 'Comfort Systems USA, Inc.');
 insert into consists (coid, flid, fname, rname) values (6, 6, 'Squirrel', 'Bed Bath & Beyond Inc.');
 insert into consists (coid, flid, fname, rname) values (32, 6, 'Eggs', 'Bed Bath & Beyond Inc.');
 insert into consists (coid, flid, fname, rname) values (33, 6, 'Eggs', 'Bed Bath & Beyond Inc.');
@@ -2659,10 +2517,20 @@ insert into consists (coid, flid, fname, rname) values (39, 7, 'Elderberry', 'Ca
 insert into consists (coid, flid, fname, rname) values (40, 7, 'Elderberry', 'California Water  Service Group Holding');
 insert into consists (coid, flid, fname, rname) values (41, 7, 'Elderberry', 'California Water  Service Group Holding');
 insert into consists (coid, flid, fname, rname) values (42, 7, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (51, 7, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (52, 7, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (53, 7, 'Elderberry', 'California Water  Service Group Holding');
 insert into consists (coid, flid, fname, rname) values (8, 8, 'Potato bread', 'Tuniu Corporation');
 insert into consists (coid, flid, fname, rname) values (43, 8, 'Potato bread', 'Tuniu Corporation');
+insert into consists (coid, flid, fname, rname) values (70, 8, 'Potato bread', 'Tuniu Corporation');
+insert into consists (coid, flid, fname, rname) values (71, 8, 'Potato bread', 'Tuniu Corporation');
+insert into consists (coid, flid, fname, rname) values (72, 8, 'Potato bread', 'Tuniu Corporation');
+insert into consists (coid, flid, fname, rname) values (73, 8, 'Potato bread', 'Tuniu Corporation');
 insert into consists (coid, flid, fname, rname) values (9, 9, 'Natto', 'CGI Group, Inc.');
 insert into consists (coid, flid, fname, rname) values (44, 9, 'Natto', 'CGI Group, Inc.');
+insert into consists (coid, flid, fname, rname) values (74, 9, 'Natto', 'CGI Group, Inc.');
+insert into consists (coid, flid, fname, rname) values (75, 9, 'Natto', 'CGI Group, Inc.');
+insert into consists (coid, flid, fname, rname) values (76, 9, 'Natto', 'CGI Group, Inc.');
 insert into consists (coid, flid, fname, rname) values (10, 10, 'Scallop', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (11, 10, 'Scallop', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (12, 10, 'Scallop', 'Lombard Medical, Inc.');
@@ -2674,10 +2542,9 @@ insert into consists (coid, flid, fname, rname) values (47, 10, 'Sauce', 'Lombar
 insert into consists (coid, flid, fname, rname) values (48, 10, 'Sauce', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (49, 10, 'Fruit preserve', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (50, 10, 'Fruit preserve', 'Lombard Medical, Inc.');
-
-insert into consists (coid, flid, fname, rname) values (51, 11, 'Sauce', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (52, 12, 'Sauce', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (53, 13, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (61, 11, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (62, 12, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (63, 13, 'Fruit preserve', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (54, 14, 'Fruit preserve', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (55, 15, 'Common octopus', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (56, 16, 'Common octopus', 'Lombard Medical, Inc.');
@@ -2685,6 +2552,123 @@ insert into consists (coid, flid, fname, rname) values (57, 17, 'Common octopus'
 insert into consists (coid, flid, fname, rname) values (58, 18, 'Common octopus', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (59, 19, 'Scallop', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (60, 20, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (77, 11, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (78, 11, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (79, 11, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (80, 11, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (85, 11, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (86, 11, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (87, 11, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (81, 12, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (82, 12, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (83, 12, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (84, 12, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (88, 12, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (89, 12, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (90, 12, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (91, 12, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (92, 13, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (93, 13, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (94, 13, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (95, 13, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (96, 13, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (97, 13, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (98, 13, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (99, 13, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (100, 14, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (101, 14, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (102, 14, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (103, 14, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (104, 14, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (105, 14, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (106, 14, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (107, 14, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (108, 14, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (109, 15, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (110, 15, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (111, 15, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (112, 15, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (113, 15, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (114, 15, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (115, 15, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (116, 15, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (117, 15, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (118, 16, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (119, 16, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (120, 16, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (121, 16, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (122, 16, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (123, 16, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (124, 16, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (125, 16, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (126, 16, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (127, 17, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (128, 17, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (129, 17, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (130, 17, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (131, 17, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (132, 17, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (133, 17, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (134, 17, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (135, 17, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (136, 18, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (137, 18, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (138, 18, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (139, 18, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (140, 18, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (141, 18, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (142, 18, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (143, 18, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (144, 18, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (145, 19, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (146, 19, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (147, 19, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (148, 19, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (149, 19, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (150, 19, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (151, 19, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (152, 19, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (153, 19, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (154, 20, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (155, 20, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (156, 20, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (157, 20, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (158, 21, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (159, 21, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (160, 21, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (161, 22, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (162, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (163, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (164, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (165, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (166, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (167, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (168, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (169, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (170, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (171, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (172, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (173, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (174, 24, 'Potato bread', 'Tuniu Corporation');
+insert into consists (coid, flid, fname, rname) values (175, 25, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (176, 26, 'Eggplant', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (177, 26, 'Eggplant', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (178, 26, 'Eggplant', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (179, 26, 'Eggplant', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (180, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (181, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (182, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (183, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (184, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (185, 27, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (186, 28, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (187, 29, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (188, 30, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (189, 30, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (190, 30, 'Fruit preserve', 'Lombard Medical, Inc.');
+
+
+
 
 insert into customerLogin (Username, Password, cid) values ('ee', 'ee', 1);
 insert into customerLogin (Username, Password, cid) values ('hmcairt1', '1g8XThby1oku', 2);
@@ -3799,3 +3783,135 @@ from (foodlists join consists using (flid)) join foods using (fname,rname)
 group by flid
 order by flid)
 update foodlists set total_cost = x.sum from x where foodlists.flid = x.flid;
+
+--delete from delivers where did > 20;
+
+with xx as (select * from delivers)
+update foodlists set riderid = xx.riderid from xx where foodlists.did = xx.did;
+
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (1, 3, null, null, 41.09, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (2, 8, null, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (3, 4, 58, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (4, 12, null, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (5, 18, null, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (6, 18, 100, 64, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (7, 13, 25, 63, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (8, 9, 67, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (9, 5, 23, null, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (10, 19, 66, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (11, 18, 66, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (12, 2, null, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (13, 10, 6, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (14, 12, 5, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (15, 4, 3, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (16, 6, 4, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (17, 16, 6, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (18, 6, null, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (19, 2, 6, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (20, 7, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (21, 27, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (22, 73, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (23, 74, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (24, 5, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (25, 16, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (26, 8, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (27, 1, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (28, 10, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (29, 20, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (30, 0, 1, 3, null, null);
+
+
+
+UPDATE foodlists
+SET promoid = (SELECT promoid 
+FROM restaurants
+WHERE foodlists.restaurant_name = restaurants.rname);
+
+with w as (
+    Select *
+    from foodlists JOIN delivers USING (did) JOIN deliverpromotions using (pid)
+)
+
+update foodlistcost
+set pid = (SELECT w.pid
+from w
+WHERE w.flid = foodlistcost.flid);
+
+with w as (
+    Select *
+    from foodlists
+	)
+
+update foodlistcost
+set promoid = (SELECT w.promoid from w where w.flid = foodlistcost.flid);
+
+
+with t as (
+SELECT coalesce(count(*),0) as no, flid
+    FROM consists
+    GROUP BY flid
+
+
+)
+
+, w as (
+    SELECT foodlists.flid as flid, foodlists.did as did, t.no as no
+    FROM t JOIN foodlists USING (flid)
+)
+
+UPDATE foodlistCost
+SET deliveryfee = 5 * t.no 
+from t
+where t.flid = foodlistCost.flid;
+
+with t as (
+SELECT coalesce(count(*),0) as no, flid
+    FROM consists
+    GROUP BY flid
+
+
+)
+
+, w as (
+    SELECT foodlists.flid as flid, foodlists.did as did, t.no as no
+    FROM t JOIN foodlists USING (flid)
+)
+
+UPDATE Delivers
+SET deliveryfee = 5 * w.no
+from w
+where w.did = delivers.did;
+
+with q as (
+    SELECT flid
+FROM promotions JOIN restaurants USING (promoid) JOIN foodlists ON (foodlists.restaurant_name = restaurants.rname)
+WHERE (startdate > order_time) OR (enddate < order_time)
+)
+
+UPDATE foodlistCost
+SET promoid = null
+WHERE exists
+(
+    Select 1
+    from q
+    where q.flid = foodlistCost.flid
+);
+
+
+with q as (
+    SELECT flid
+FROM promotions JOIN restaurants USING (promoid) JOIN foodlists ON (foodlists.restaurant_name = restaurants.rname)
+WHERE (startdate > order_time) OR (enddate < order_time)
+)
+
+
+UPDATE foodlists
+SET promoid = null
+WHERE exists
+(
+    Select 1
+    from q
+    where q.flid = foodlists.flid
+)
+
+;

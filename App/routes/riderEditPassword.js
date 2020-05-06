@@ -16,9 +16,9 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'update customerlogin set password = \'';
-var sql_query2 = ' where cid = ';
-var sql_query3 = 'select * from customerLogin where cid = ';
+var sql_query = 'update riderlogin set password = \'';
+var sql_query2 = ' where riderid = ';
+var sql_query3 = 'select * from riderLogin where riderid = ';
 var sql_query4 = ' and password = \'';
 // GET
 router.get('/', function (req, res, next) {
@@ -26,15 +26,15 @@ router.get('/', function (req, res, next) {
 	sess.changepwsuccess = 0;
 	console.log('LOL is ' + sess.id);
 	if (sess.login != 1) {
-		res.redirect('/customer');
+		res.redirect('/rider');
 	}
 
-	else if (sess.login == 1 && sess.customer != 1) {
-		sess.login = 0;
-		res.redirect('/customer');
+	else if (sess.login == 1 && sess.rider != 1) {
+                sess.login = 0;
+		res.redirect('/rider');
 	}
 	else {
-		res.render('customerEditPassword', { title: 'Modifying Database', error: null });
+		res.render('riderEditPassword', { title: 'Modifying Database', error: null });
 	}
 });
 
@@ -54,13 +54,13 @@ router.post('/', function (req, res, next) {
 			sess = req.session;
 			var errormessage = err.stack;
 			sess.error = errormessage;
-			res.redirect('/customerEditPassword');
+			res.redirect('/riderEditPassword');
 		} else {
 			console.log("check pw querry = " + check_password);
 			sess.numrows = data.rowCount;
 			console.log("sess.numrows = " + sess.numrows);
 			if (sess.numrows == 0) {
-				res.redirect('/customerEditPassword');
+				res.redirect('/riderEditPassword');
 			} else {
 				pool.query(update_query, (err, data2) => {
 					if (err) {
@@ -68,12 +68,12 @@ router.post('/', function (req, res, next) {
 						sess = req.session;
 						var errormessage = err.stack;
 						sess.error = errormessage;
-						res.redirect('/customerEditPassword');
+						res.redirect('/riderEditPassword');
 					} else {
 						console.log("update query = " + update_query);
 						sess.numrows = -1;
 						sess.changepwsuccess = 1;
-						res.redirect('/customerProfile');
+						res.redirect('/riderProfile');
 					}
 				});
 			}

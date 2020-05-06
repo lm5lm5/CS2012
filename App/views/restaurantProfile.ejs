@@ -28,17 +28,38 @@
 	<p><%= sess.rname%></p><br />
 
 	<p>you can add new food and change new promotion!</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<!-- <th scope="col">Restaurant</th> -->
+				<th scope="col">Promotions id</th>
+				<th scope="col">Discount</th>
+				<th scope="col">From</th>
+				<th scope="col">To</th>
+				<th scope="col">minimum Cost</th>
+				<!-- <th scope="col">promotions percent</th> -->
+			</tr>
+		</thead>
+		<tbody>
+			<% for(var i=0; i<1; i++) { %>
+			<tr>
+				<!-- <td><%= restaurantdata[i].rname%></td> -->
+				<td><%= restaurantdata[i].promoid%></td>
+				<td><%= restaurantdata[i].discount + '%'%></td>
+				<td><%= restaurantdata[i].startdate%></td>
+				<td><%= restaurantdata[i].enddate%></td>
+				<td><%= restaurantdata[i].minimalcost%></td>
+			</tr>
+			<% } %>
+		</tbody>
+	</table>
 		<table class="table">
 			<thead>
 				<tr>
 					<!-- <th scope="col">Restaurant</th> -->
 					<th scope="col">Food</th>
-					<th scope="col">price</th>
-					<th scope="col">promotions id</th>
-					<th scope="col">promotions discount</th>
-					<th scope="col">promotions start</th>
-					<th scope="col">promotions end</th>
-					<th scope="col">minimum Cost</th>
+					<th scope="col">Price($)</th>
+					<th scope="col">Daily limit</th>
 					<!-- <th scope="col">promotions percent</th> -->
 				</tr>
 			</thead>
@@ -48,11 +69,7 @@
 					<!-- <td><%= restaurantdata[i].rname%></td> -->
 					<td><%= restaurantdata[i].fname%></td>
 					<td><%= restaurantdata[i].price%></td>
-					<td><%= restaurantdata[i].promoid%></td>
-					<td><%= restaurantdata[i].discount%></td>
-					<td><%= restaurantdata[i].startdate%></td>
-					<td><%= restaurantdata[i].enddate%></td>
-					<td><%= restaurantdata[i].minimalcost%></td>
+					<td><%= restaurantdata[i].dailylimit%></td>
 				</tr>
 				<% } %>
 			</tbody>

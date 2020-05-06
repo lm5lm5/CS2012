@@ -61,6 +61,9 @@
 				<th scope="col">From</th>
 				<th scope="col">Date</th>
 				<th scope="col">Review your order</th>
+				<th scope="col">Your review</th>
+				<th scope="col">Rate your order</th>
+				<th scope="col">Your rating</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -79,9 +82,40 @@
 				<td>					
 					<form method="POST" action="reviewFoodList" name="reviewFoodList">
 						<input type="hidden" name="reviewFlid" value="<%= customerOrderData[i].flid%>" />
+						<input type="hidden" name="entering" value="true" />
 						<button type="submit" class="btn btn-primary">Click to review your order</button>
 					</form>
 				</td>
+				<td><%= customerOrderData[i].review%></td>
+				<td>					
+					<form method="POST" action="rateFoodList" name="rateFoodList">
+						<div class="form-group" div id="group2">
+							<label for="1">1</label>
+							<input type="radio" value="1" name="group2" checked="checked">
+							<label for="2">2</label>
+							<input type="radio" value="2" name="group2">
+							<label for="3">3</label>
+							<input type="radio" value="3" name="group2">
+							<label for="4">4</label>
+							<input type="radio" value="4" name="group2">
+							<label for="5">5</label>
+							<input type="radio" value="5" name="group2">
+							<label for="6">6</label>
+							<input type="radio" value="6" name="group2">
+							<label for="7">7</label>
+							<input type="radio" value="7" name="group2">
+							<label for="8">8</label>
+							<input type="radio" value="8" name="group2">
+							<label for="9">9</label>
+							<input type="radio" value="9" name="group2">
+							<label for="10">10</label>
+							<input type="radio" value="10" name="group2">
+						</div>
+						<input type="hidden" name="rateDid" value="<%= customerOrderData[i].did%>" />
+						<button type="submit" class="btn btn-primary">Rate!</button>
+					</form>
+				</td>
+				<td><%= customerOrderData[i].rating%></td>
 			</tr>
 			<% } %>
 		</tbody>

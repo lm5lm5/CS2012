@@ -24,6 +24,7 @@ var sql_ifflid = 'SELECT * FROM customer join foodlists USING (cid) join consist
 
 router.get('/', function (req, res, next) {
   sess = req.session;
+  sess.rewardnumbertobuy = null;
   if (sess.flid == null) {
 
     if (sess.chosenFood == null) {
@@ -371,8 +372,8 @@ router.post('/', function (req, res, next) {
 
   else if (req.body.action == "Checkout") {
 
-    var urlthing = `/checkout?points=` + req.body.rewardnumbertobuy;
-    res.redirect(urlthing);
+    sess.rewardnumbertobuy = req.body.rewardnumbertobuy;
+    res.redirect(`/checkout`);
 
   }
 });

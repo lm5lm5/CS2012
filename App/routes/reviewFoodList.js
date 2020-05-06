@@ -25,34 +25,46 @@ router.get('/', function (req, res, next) {
 
 // POST
 router.post('/', function (req, res, next) {
-        // Retrieve Information
-        sess = req.session;
-        var flid = req.body.reviewFlid;
-        var feedback = req.body.feedback;
-        // Construct Specific SQL Query
-        var delete_query = sql_query + flid;
-        console.log("deletequery = " + delete_query);
-        var insert_query = sql_query2 + feedback + '\',' + flid + ')';
-        console.log("insertquery = " + insert_query);
-        if (feedback == null || feedback == 'undefined' || flid == 'undefined' || flid == null) {
-                res.render('reviewFoodList');
+
+        console.log(req.body.entering + " is req body entering value");
+
+        if (req.body.entering == "true") {
+                var reviewFlid = req.body.reviewFlid;
+                console.log("I am here");
+                res.render('reviewFoodList', { reviewFlid: reviewFlid})
+
         } else {
-                pool.query(delete_query, (err, data) => {
-                        pool.query(insert_query, (err, data2) => {
-                                if (err) {
-                                        console.log(err.stack);
-                                        sess = req.session;
-                                        var errormessage = err.stack;
-                                        sess.error = errormessage;
-                                        res.redirect('/customerProfile');
-                                }
-                                else {
-                                        sess = req.session;
-                                        sess.error = null;
-                                        res.redirect('/customerProfile');
-                                }
+                // Retrieve Information
+                sess = req.session;
+                var flid = req.body.reviewFlid;
+                console.log("flid  is" + flid);
+                var feedback = req.body.feedback;
+                // Construct Specific SQL Query
+                var delete_query = sql_query + flid;
+                console.log("deletequery = " + delete_query);
+                var insert_query = sql_query2 + feedback + '\',' + flid + ')';
+                console.log("insertquery = " + insert_query);
+                if (feedback == null || feedback == 'undefined' || flid == 'undefined' || flid == null) {
+                        res.render('reviewFoodList', { reviewFlid: reviewFlid});
+                } else {
+                        pool.query(delete_query, (err, data) => {
+                                pool.query(insert_query, (err, data2) => {
+                                        if (err) {
+                                                console.log(err.stack);
+                                                sess = req.session;
+                                                var errormessage = err.stack;
+                                                sess.error = errormessage;
+                                                res.redirect('/customerProfile');
+                                        }
+                                        else {
+                                                sess = req.session;
+                                                sess.error = null;
+                                                res.redirect('/customerProfile');
+                                        }
+                                });
                         });
-                });
+                }
+
         }
 });
 

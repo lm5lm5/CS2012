@@ -14,6 +14,19 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </head>
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="/">Food delivery shop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto"></ul>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0" form method="post" action="customerProfile">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+      </div>
+    </nav>
     <h1>CS2102 Starter Guide <%= title %></h1>
     <p>Welcome to CS2102 Starter Guide <%= data %></p><br />
     <p>I am a:</p>
@@ -23,6 +36,6 @@
     <p><a href="/rider">Delivery rider</a></p>
     <p></p>
     <p>I would like to:</p>
-    <p><a href="/orderFood">Order food</a></p>
+    <p><a href="/orderFood" class="btn btn-outline-primary">Order food</a></p>
   </body>
 </html>

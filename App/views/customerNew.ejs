@@ -23,8 +23,21 @@
 	</script>
   
   <% } %>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+	<a class="navbar-brand" href="/">Food delivery shop</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto"></ul>
+	  </ul>
+	  <form class="form-inline mt-2 mt-md-0" form method="post" action="customerProfile">
+		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+	  </form>
+	</div>
+  </nav>
     <h1>CS2102: <%= title%></h1>
-		<form id="html_form" action="customerNew" role="form" method="post">
+		<form id="html_form" action="customerNew" role="form" method="post" class="needs-validation">
 			<div class="form-group">
 				<label for="username">Username</label>
 				<input type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="Enter your username">
@@ -40,7 +53,7 @@
 				<input type="text" class="form-control" id="ccNo" name="ccNo" aria-describedby="ccNo" placeholder="Enter your cc number">
 				<small id="matricHelp" class="form-text text-muted">It is 8 digits long</small>
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Submit</button>
 		</form>
 		<p><a href="/customer">Click here to go back</a></p>
 		

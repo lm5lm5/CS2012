@@ -23,6 +23,8 @@
 			<div class="form-group">
 				<label for="feedback">Give us your feedback</label>
 				<input type="feedback" class="form-control" id="feedback" name="feedback" aria-describedby="matricHelp" placeholder="Enter your feedback here">
+				<input type="hidden" name="entering" value="false" />
+				<input type="hidden" name="reviewFlid" value= <%= reviewFlid %> />
 				<small id="matricHelp" class="form-text text-muted">Thank you for your purchase</small>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
