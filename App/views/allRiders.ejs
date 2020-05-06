@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-		<a class="navbar-brand" href="#">Food delivery shop</a>
+		<a class="navbar-brand" href="#">CS2102 Food delivery service</a>
 	  </nav>
 <head>
     <!-- Page Title -->
@@ -36,8 +36,7 @@
         <th scope="col">Status</th>
         <th scope="col">Number of deliveries</th>
         <th scope="col">Total weekly working hours</th>
-        <th scope="col">Weekly salary</th>
-        <th scope="col">Total salary</th>
+        <th scope="col">Base monthly salary</th>
     </tr>
     </thead>
     <tbody>
@@ -49,7 +48,6 @@
             <td><%= riderdata[i].numofdeliveries%></td>
             <td><%= riderdata[i].totalhours%></td>
             <td><%= riderdata[i].salary%></td>
-            <td><%= riderdata[i].totalsalary%></td>
         </tr>
     <% } %>
     </tbody>
