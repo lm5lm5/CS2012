@@ -73,6 +73,7 @@
 					<th scope="col">Food</th>
 					<th scope="col">Price($)</th>
 					<th scope="col">Daily limit</th>
+					<th scope="col">isavaiable</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -81,6 +82,13 @@
 					<td><%= restaurantdata[i].fname%></td>
 					<td><%= restaurantdata[i].price%></td>
 					<td><%= restaurantdata[i].dailylimit%></td>
+					<td>
+						<% if (restaurantdata[i].isavailable == true) { %>
+						Yes
+						<% } else { %>
+						No
+						<% }%>
+					</td>
 				</tr>
 				<% } %>
 			</tbody>
