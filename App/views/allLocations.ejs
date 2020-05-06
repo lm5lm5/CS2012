@@ -3,7 +3,7 @@
 
 <head>
     <!-- Page Title -->
-    <title>Manager</title>
+    <title>Locations</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 
     <!-- CSS for Styling -->
@@ -21,23 +21,31 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
 </head>
 
 <body>
-<h1>Welcome, manager <%= sess.managername %> </h1>
-<p><a href="/allOrders">View all orders</a></p>
-<p><a href="/orderStatistics">Check and view order statistics</a></p>
-<p><a href="/allRiders">View all riders</a></p>
-<p><a href="/riderInfo">Check and view rider statistics</a></p>
-<p><a href="/allCustomers">View all customers</a></p>
-<p><a href="/allLocations">View all locations</a></p>
-<p><a href="/deliveryStatistics">View delivery statistics (not completed)</a></p>
-<!--<p><a href="/managerEditPassword">Click here to change your password</a></p>-->
-<form method="post" action="managerProfile">
-    <button type="submit" class="btn btn-primary">Log out</button>
-</form>
+<h1>Location list</h1>
+<p><a href="/managerProfile">Click here to move back</a></p>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Location name</th>
+        <th scope="col">Number of orders placed</th>
+        <th scope="col">Date of the latest order</th>
+        <th scope="col">Total cost of these orders</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i = 0; i < orderdata.length; i++) { %>
+        <tr>
+            <td><%= orderdata[i].delivery_location%></td>
+            <td><%= orderdata[i].order%></td>
+            <td><%= orderdata[i].lastest%></td>
+            <td><%= orderdata[i].cost%></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
 </body>
 
 </html>

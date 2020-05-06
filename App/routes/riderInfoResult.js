@@ -7,6 +7,7 @@ router.get('/', function (req, res, next) {
     if (sess.managername == null || sess.mid == null) {
         console.log("manager not logged in yet");
         res.redirect('/manager');
+        return;
     }
     res.render('riderInfoResult', {riderdata: sess.riderdata, riderdata2: sess.riderdata2,
         startdate: sess.start, enddate: sess.end})

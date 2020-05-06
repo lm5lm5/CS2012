@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
     if (sess.managername == null || sess.mid == null) {
         console.log("manager not logged in yet");
         res.redirect('/manager');
+        return;
     }
     res.render('orderStatistics', {})
 });
