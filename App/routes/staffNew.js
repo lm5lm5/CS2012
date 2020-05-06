@@ -72,7 +72,7 @@ router.post('/', function (req, res, next) {
 	pool.query(insert_query, (err, data) => {
 		if (err) {
 			console.log(err.stack);
-			//alert(err.stack);
+			// alert(err.stack);
 			sess = req.session;
 			var errormessage = err.stack;
 			sess.error = errormessage;

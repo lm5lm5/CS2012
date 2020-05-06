@@ -69,8 +69,9 @@ router.post('/', function (req, res, next) {
 				var data = data.rows;
 				sess.rname = data[0].restaurant_name;
 				sess.staffname = data[0].username;
+				// sess.password = data[0].password;
+				sess.user = data[0].staffid;
 
-				// sess.user = data[0].staffid;
 				// sess.user = data[0].staffid;
 				console.log("data[0].Restaurant_name: " + sess.rname);
 				console.log("data[0].username: " + sess.staffname);
