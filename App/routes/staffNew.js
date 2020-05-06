@@ -92,7 +92,7 @@ router.post('/', function (req, res, next) {
 				data23 = data3[0].staffid;
 				req.session.user = data23;
 				console.log(req.session.user);
-				res.redirect('/');
+				res.redirect('/staff');
 			});
 		}
 	});
