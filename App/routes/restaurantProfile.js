@@ -22,7 +22,7 @@ var sql2_query = 'with x as(select r.rname, r.promoid, f.fname, f.dailylimit, r.
 router.get('/', function (req, res, next) {
   sess = req.session;
   console.log("sess.rname " + sess.rname);
-  var sql_query2 = sql_query + sess.rname + '\'';
+  var sql_query2 = sql_query + sess.rname + '\'' + 'order by fname';
   var sql2_query2 = sql_query + sess.rname + '\'';
   console.log("myquery: " + sql_query2);
   console.log("sess.username: " + sess.username);

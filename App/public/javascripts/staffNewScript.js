@@ -9,7 +9,7 @@ function check(event) {
 //"wen shufa" "wen shufa "
 	// Simple Check
 	if(username.length == 0 || password.length == 0 || restaurant.length == 0) {
-		alert("Username or password or restaurant name missing");
+		alert("pls fill up all missing box");
 		event.preventDefault();
 		event.stopPropagation();
 		return false;

@@ -41,11 +41,11 @@ router.get('/', function (req, res, next) {
 	sess = req.session;
 	if (sess.error && sess.error != null && sess.errortype == 'usernamewrong') {
 		console.log("HEREERERERE");
-		res.render('addPromotion', { title: 'Add new promotion', error: sess.error});
+		res.render('addPromotion', { title: 'Add a new promotion', error: sess.error});
 		sess.error = null;
 	}
 	else {
-		res.render('addPromotion', { title: 'Add new promotion', error: null });
+		res.render('addPromotion', { title: 'Add a new promotion', error: null });
 	}
 });
 
@@ -91,24 +91,6 @@ router.post('/', function (req, res, next) {
 		}
 		else {
       res.redirect('/restaurantProfile');
-			// sess = req.session;
-			// sess.rname = 1;
-			// sess.staffname = 1;
-      // sess.error = null;
-      // console.log("------------------------------------------------------------------------------");
-
-			// var sql_query = 'SELECT Cid FROM customerLogin WHERE Username = \'';
-			// insert_query = sql_query + username + '\'';
-      // var data23;
-      
-			// pool.query(insert_query, (err, data2) => {
-			// 	var data3 = data2.rows;
-			// 	data23 = data3[0].cid;
-			// 	req.session.user = data23;
-      //   console.log(req.session.user);
-      //   console.log("created new food");
-			// 	res.redirect('/');
-			// });
 			
 		}
 
