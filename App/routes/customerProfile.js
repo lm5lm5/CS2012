@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'select * from foodlists where payment_method IS NOT NULL AND cid = ';
+var sql_query = 'select * from foodlists left join reviews using (flid) where payment_method IS NOT NULL AND cid = ';
 
 var sql_query2 = 'select * from customer where cid = ';
 
