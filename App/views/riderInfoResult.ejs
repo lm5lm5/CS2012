@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Page Title -->
+    <title>Rider statistics</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+    <!-- CSS for Styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+
+    <!-- JavaScript for Interactivity -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<h1>Rider Statistics from <%= startdate %> to <%= enddate %> (exclusive)</h1>
+<p><a href="/riderInfo">Click here to move back</a></p>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Rider Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Number of deliveries</th>
+        <th scope="col">Total weekly working hours</th>
+        <th scope="col">Weekly salary</th>
+        <th scope="col">Total salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i=0; i<riderdata.length; i++) { %>
+        <tr>
+            <td><%= riderdata[i].riderid%></td>
+            <td><%= riderdata[i].ridername%></td>
+            <td><%= riderdata[i].status%></td>
+            <td><%= riderdata[i].numofdeliveries%></td>
+            <td><%= riderdata[i].totalhours%></td>
+            <td><%= riderdata[i].salary%></td>
+            <td><%= riderdata[i].totalsalary%></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Order id</th>
+        <th scope="col">Customer id</th>
+<!--        <th scope="col">Customer username</th>-->
+        <th scope="col">Order date</th>
+        <th scope="col">Delivery fee</th>
+        <th scope="col">Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i = 0; i < riderdata2.length; i++) { %>
+        <tr>
+            <td><%= riderdata2[i].flid%></td>
+            <td><%= riderdata2[i].cid%></td>
+<!--            <td><%= riderdata2[i].username%></td>-->
+            <td><%= riderdata2[i].order_date%></td>
+            <td><%= riderdata2[i].deliveryfee%></td>
+            <td><%= riderdata2[i].ratingtext%></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+
+
+</body>
+
+</html>

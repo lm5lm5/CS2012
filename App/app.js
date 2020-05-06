@@ -61,6 +61,7 @@ var managerOrderStatsRouter = require('./routes/orderStatistics');
 var managerOrderStatsResultRouter = require('./routes/orderStatisticsResult');
 var managerViewRiderRouter = require('./routes/allRiders');
 var managerRiderStatsRouter = require('./routes/riderInfo');
+var managerRiderStatsResultRouter = require('./routes/riderInfoResult');
 var managerDeliveryStatsRouter = require('./routes/deliveryStatistics');
 
 var addFoodRouter = require('./routes/addFood');
@@ -156,6 +157,7 @@ app.use('/orderStatistics', managerOrderStatsRouter);
 app.use('/orderStatisticsResult', managerOrderStatsResultRouter);
 app.use('/allRiders', managerViewRiderRouter);
 app.use('/riderInfo', managerRiderStatsRouter);
+app.use('/riderInfoResult', managerRiderStatsResultRouter);
 app.use('/deliveryStatistics', managerDeliveryStatsRouter);
 
 // catch 404 and forward to error handler

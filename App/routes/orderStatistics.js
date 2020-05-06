@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
     console.log("month: " + month);
 
     var start, end;
-    if (month.length === 0) {
+    if (startdate !== 0 && enddate !== 0) {
         start = startdate;
         end = enddate;
     } else {
