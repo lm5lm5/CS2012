@@ -23,6 +23,13 @@
 		crossorigin="anonymous"></script>
 </head>
 
+<% if (sess.changepwsuccess == 1) { %>
+	<script>
+		alert("Password changed successfully");
+		sess.changepwsuccess = 0;
+	</script>
+	<% } %>	
+
 <body>
 	<h1>Welcome, <%= sess.name%></h1>
 	<p>Your weekly summary</p><br />
@@ -52,6 +59,7 @@
 			</tbody>
 		</table>
 	<p><a href="/riderPastDeliveries">Click here to view your past deliveries</a></p>
+	<p><a href="/riderEditPassword">Click here to change your password</a></p>
 	<form method="post" action="riderProfile">
 		<button type="submit" class="btn-link">Click to log out</button>
 	    </form>
