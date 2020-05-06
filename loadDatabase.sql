@@ -2633,7 +2633,6 @@ insert into consists (coid, flid, fname, rname) values (154, 20, 'Scallop', 'Lom
 insert into consists (coid, flid, fname, rname) values (155, 20, 'Common octopus', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (156, 20, 'Common octopus', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (157, 20, 'Sauce', 'Lombard Medical, Inc.');
-<<<<<<< HEAD
 insert into consists (coid, flid, fname, rname) values (158, 21, 'Sauce', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (159, 21, 'Fruit preserve', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (160, 21, 'Common octopus', 'Lombard Medical, Inc.');
@@ -2670,22 +2669,6 @@ insert into consists (coid, flid, fname, rname) values (190, 30, 'Fruit preserve
 
 
 
-=======
-insert into consists (coid, flid, fname, rname) values (158, 20, 'Common octopus', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (159, 20, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (160, 20, 'Common octopus', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (161, 20, 'Sauce', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (162, 21, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (163, 22, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (164, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (165, 24, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (166, 25, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (167, 26, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (168, 27, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (169, 28, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (170, 29, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (171, 30, 'Fruit preserve', 'Lombard Medical, Inc.');
->>>>>>> 74ba44bc72362bc83aff1f94bd2911929a384b30
 
 insert into customerLogin (Username, Password, cid) values ('ee', 'ee', 1);
 insert into customerLogin (Username, Password, cid) values ('hmcairt1', '1g8XThby1oku', 2);
