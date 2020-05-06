@@ -1,36 +1,3 @@
-// var express = require('express');
-// var router = express.Router();
-
-// const { Pool } = require('pg')
-// /* --- V7: Using Dot Env ---
-// const pool = new Pool({
-//   user: 'postgres',
-//   host: 'localhost',
-//   database: 'postgres',
-//   password: '********',
-//   port: 5432,
-// })
-// */
-// const pool = new Pool({
-//   connectionString: process.env.DATABASE_URL
-// });
-
-// /* SQL Query */
-// // var sql_query = 'select did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, rating from delivers d where d.riderid = ';
-// router.get('/', function (req, res, next) {
-//   sess = req.session;
-//   console.log("sess.staffname is = " + sess.staffname);
-//   console.log("sess.rname is = " + sess.rname);
-//   // var sql_query2 = sql_query + sess.user;
-//   // console.log("myquery2 " + sql_query2);
-//   pool.query(sql_query2, (err, data) => {
-// 		// res.render('riderPastDeliveries', {deliverydata: data.rows });
-// 	});
-// });
-
-// module.exports = router;
-
-
 var express = require('express');
 var router = express.Router();
 
@@ -77,7 +44,9 @@ call addFood(`;
 // GET
 router.get('/', function (req, res, next) {
 	sess = req.session;
-	if (sess.error && sess.error != null && sess.errortype == 'usernamewrong') {
+	console.log("-----------------------------------------------------------------");
+	console.log("sess.error" + sess.error);
+	if (sess.error && sess.error != null && sess.errortype == 'duplicatefname') {
 		console.log("HEREERERERE");
 		res.render('addFood', { title: 'Add new food', error: sess.error});
 		sess.error = null;
@@ -107,12 +76,11 @@ router.post('/', function (req, res, next) {
 
 	pool.query(insert_query, (err, data) => {
 		if (err) {
-			console.log(err.stack);
-			//alert(err.stack);
+			console.log("err.stack: " + err.stack);
 			sess = req.session;
-			var errormessage = err.stack;
+			var errormessage = "This food is already in menu, pls add another food";
 			sess.error = errormessage;
-			sess.errortype = 'foodnamewrong';
+			sess.errortype = 'duplicatefname';
 			res.redirect('/addFood');
 		}
 		else {
