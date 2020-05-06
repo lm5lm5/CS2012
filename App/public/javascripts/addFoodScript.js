@@ -13,10 +13,4 @@ function check(event) {
 		return false;
 	}
 
-	if(isavailable != "true" && isavailable != "false") {
-		alert("pls enter true or false in isavailable box");
-		event.preventDefault();
-		event.stopPropagation();
-		return false;
-	}
 }
