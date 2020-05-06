@@ -104,7 +104,7 @@ router.post('/', function (req, res, next) {
 			console.log(err.stack);
 			//alert(err.stack);
 			sess = req.session;
-			var errormessage = err.stack;
+			var errormessage = "pls choose a different username";
 			sess.error = errormessage;
 			sess.errortype = 'usernamewrong';
 			res.redirect('/riderNew');
