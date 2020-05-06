@@ -11,7 +11,7 @@ const pool = new Pool({
 var sql_query = 'select *, (select count(distinct(flid)) from foodlists F where F.cid = C.cid) as order, '
     + 'coalesce((select sum(total_cost) from foodlists F where F.cid = C.cid), 0) as cost, '
     + 'coalesce((select max(total_cost) from foodlists F where F.cid = C.cid), 0) as max '
-    + 'from customer C natural join customerlogin';
+    + 'from customer C natural join customerlogin order by cid';
 
 router.get('/', function (req, res, next) {
     sess = req.session;

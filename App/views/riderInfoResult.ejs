@@ -29,17 +29,18 @@
 <body>
 <h1>Rider Statistics from <%= startdate %> to <%= enddate %> (exclusive)</h1>
 <p><a href="/riderInfo">Click here to move back</a></p>
-<table class="table">
+<table class="table" style="text-align:center;">
     <thead>
     <tr>
-        <th scope="col">Rider Id</th>
+        <th scope="col">Rider id</th>
         <th scope="col">Name</th>
-        <th scope="col">Status</th>
+        <th scope="col" style="width:120px">Status</th>
         <th scope="col">Number of deliveries</th>
         <th scope="col">Number of customers served</th>
         <th scope="col">Average rating</th>
         <th scope="col">Total weekly working hours</th>
         <th scope="col">Base monthly salary</th>
+        <th scope="col">Salary earned from delivery</th>
     </tr>
     </thead>
     <tbody>
@@ -53,6 +54,7 @@
             <td><%= riderdata3[0].rating + ' / 10'%></td>
             <td><%= riderdata[i].totalhours%></td>
             <td><%= riderdata[i].salary%></td>
+            <td><%= riderdata3[0].num * 5%></td>
         </tr>
     <% } %>
     </tbody>
