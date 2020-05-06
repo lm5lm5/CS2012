@@ -25,6 +25,8 @@ router.get('/', function (req, res, next) {
   var sql_query2 = sql_query + sess.rname + '\'';
   var sql2_query2 = sql_query + sess.rname + '\'';
   console.log("myquery: " + sql_query2);
+  console.log("sess.username: " + sess.username);
+  
   // console.log("minicost: " + sess.minimalcost);
   pool.query(sql_query2, (err, data) => {
     pool.query(sql2_query2, (err, data2) => {
@@ -35,6 +37,8 @@ router.get('/', function (req, res, next) {
 	  });
   });
 });
+
+
 
 module.exports = router;
  

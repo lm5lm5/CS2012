@@ -148,3 +148,65 @@ BEFORE UPDATE ON holds
 FOR EACH ROW
 EXECUTE PROCEDURE func_check_holds();
 
+-- restaurant constraint triggers
+CREATE OR replace FUNCTION check_food_restuarant_constraint() RETURNS TRIGGER
+  AS $$
+  
+  declare 
+      rnamething varchar(100);
+  
+  Begin
+  
+  SELECT c.rname into rnamething
+  FROM consists c
+  WHERE c.flid = new.flid
+  AND c.rname <> new.rname;
+  
+  if rnamething is not null then
+      raise exception 'You added a food from this restuarant %. This restuarant is not the same as the other food restuarant in your foodlist!', new.rname;
+  end if;
+  return null;
+  
+  
+  END
+  
+  $$ language plpgsql;
+  
+  Drop trigger if exists check_food_restuarant_trigger on consists;
+  CREATE trigger check_food_restuarant_trigger
+  AFTER INSERT OR UPDATE on consists
+  For each row
+  Execute FUNCTION check_food_restuarant_constraint();
+  
+  
+  CREATE OR replace FUNCTION check_food_availability_constraint() RETURNS TRIGGER
+  AS $$
+  
+  declare 
+      availabilityCheck boolean;
+  
+  Begin
+  
+  SELECT f.isavailable into availabilityCheck
+  FROM consists c, foods f
+  WHERE new.fname = f.fname
+  AND new.rname = f.rname
+  AND c.coid = new.coid
+  AND c.fname = f.fname;
+  
+  if availabilityCheck = FALSE then
+      raise exception 'You added a non-available food %!', new.fname;
+  end if;
+  return null;
+  
+  
+  END
+  
+  $$ language plpgsql;
+  
+  
+  Drop trigger if exists check_food_availability_trigger on consists;
+  CREATE trigger check_food_availability_trigger
+  AFTER INSERT OR UPDATE on consists
+  For each row
+  Execute FUNCTION check_food_availability_constraint();

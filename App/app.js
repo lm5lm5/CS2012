@@ -52,6 +52,13 @@ var riderEditPasswordRouter = require('./routes/riderEditPassword');
 
 var staffRouter = require('./routes/staff');
 var staffNewRouter = require('./routes/staffNew');
+var staffEditPasswordRouter = require('./routes/staffEditPassword');
+var addFoodRouter = require('./routes/addFood');
+var addPromotionRouter = require('./routes/addPromotion');
+var restaurantProfileRouter = require('./routes/restaurantProfile');
+var monthlySummaryRouter = require('./routes/monthlySummary');
+var printMonthlySummaryRouter = require('./routes/printMonthlySummary');
+var printPromotionSummaryRouter = require('./routes/printPromotionSummary');
 
 var managerRouter = require('./routes/manager');
 var managerNewRouter = require('./routes/managerNew');
@@ -65,16 +72,6 @@ var managerRiderStatsResultRouter = require('./routes/riderInfoResult');
 var managerDeliveryStatsRouter = require('./routes/deliveryStatistics');
 var managerViewCustomerRouter = require('./routes/allCustomers');
 var managerViewLocationRouter = require('./routes/allLocations');
-
-var addFoodRouter = require('./routes/addFood');
-var addPromotionRouter = require('./routes/addPromotion');
-
-
-var restaurantProfileRouter = require('./routes/restaurantProfile');
-var monthlySummaryRouter = require('./routes/monthlySummary');
-var printMonthlySummaryRouter = require('./routes/printMonthlySummary');
-var printPromotionSummaryRouter = require('./routes/printPromotionSummary');
-
 
 var app = express();
 
@@ -150,6 +147,7 @@ app.use('/addPromotion', addPromotionRouter);
 app.use('/monthlySummary', monthlySummaryRouter);
 app.use('/printMonthlySummary', printMonthlySummaryRouter);
 app.use('/printPromotionSummary', printPromotionSummaryRouter);
+app.use('/staffEditPassword',staffEditPasswordRouter);
 
 app.use('/manager', managerRouter);
 app.use('/managerNew', managerNewRouter);

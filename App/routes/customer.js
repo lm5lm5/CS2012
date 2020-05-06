@@ -22,19 +22,26 @@ var sql_query2 = '\' AND password = \'';
 // GET
 router.get('/', function (req, res, next) {
 	sess = req.session;
-	var errorcheck = sess.error;
-	var errortypecheck = sess.errortype
-	if (errorcheck && errorcheck != null && errortypecheck == 'cidexist') {
-		console.log("HEREERERERE");
-
-		sess.error = null;
-		sess.errortype = null;
-
-		res.render('customer', { title: 'Customer login', error: errorcheck});
-		
+	if (sess.user && sess.user != null) {
+		console.log("here?")
+		res.redirect("/customerProfile");
 	}
 	else {
-		res.render('customer', { title: 'Customer login', error: null });
+		console.log("Wha why?")
+		var errorcheck = sess.error;
+		var errortypecheck = sess.errortype
+		if (errorcheck && errorcheck != null && errortypecheck == 'cidexist') {
+			console.log("HEREERERERE");
+
+			sess.error = null;
+			sess.errortype = null;
+
+			res.render('customer', { title: 'Customer login', error: errorcheck });
+
+		}
+		else {
+			res.render('customer', { title: 'Customer login', error: null });
+		}
 	}
 	//req.session.destroy();
 });
@@ -64,7 +71,7 @@ router.post('/', function (req, res, next) {
 			console.log(data.length);
 			console.log(data.rows);
 			console.log(data.rowCount);
-			if (data.rowCount == 1){
+			if (data.rowCount == 1) {
 				sess = req.session;
 				sess.login = 1;
 				sess.customer = 1;
@@ -79,7 +86,7 @@ router.post('/', function (req, res, next) {
 				sess.error = "Username or password wrong";
 				sess.errortype = 'cidexist';
 				res.redirect('/customer');
-				
+
 			}
 		}
 

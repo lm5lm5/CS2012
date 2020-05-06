@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+		<a class="navbar-brand" href="#">Food delivery shop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto"></ul>
+			</ul>
+			<form class="form-inline mt-2 mt-md-0" form method="post" action="staff">
+				<input type="hidden" name="diff" value="res">
+			  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+			</form>
+		  </div>
+	  </nav>
 		<!-- Page Title -->
     <title>CS2102 Modifying Database</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -14,7 +28,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 		<!-- ADDED JavaScript -->
-		<script src="javascripts/CustomerScript.js"></script>
+		<script src="javascripts/addFoodScript.js"></script>
 
   </head>
   <body>
@@ -27,32 +41,28 @@
     <h1><%= title%></h1>
 		<form id="html_form" action="addFood" role="form" method="post">
                         <div class="form-group">
-				<label for="name">fname</label>
-				<input type="text" class="form-control" id="fname" name="fname" aria-describedby="fname" placeholder="Enter the food name">
+				<label for="name">Food name</label>
+				<input type="text" class="form-control" id="fname" name="fname" aria-describedby="fname" placeholder="Enter a new food name">
 				<small id="matricHelp" class="form-text text-muted">Whats your name?</small>
                         </div>
                         <div class="form-group">
-				<label for="name">dailylimit</label>
-				<input type="text" class="form-control" id="dailylimit" name="dailylimit" aria-describedby="dailylimit" placeholder="Enter your name">
-				<small id="matricHelp" class="form-text text-muted">Whats your name?</small>
+				<label for="name">Daily limit</label>
+				<input type="number" class="form-control" id="dailylimit" name="dailylimit" aria-describedby="dailylimit" placeholder="Enter the daily limit"min="1"max="1000">
+				<small id="matricHelp" class="form-text text-muted">Whats daily limit?</small>
                         </div>
-                        <div class="form-group">
-				<label for="name">isavailable</label>
-				<input type="boolean" class="form-control" id="isavailable" name="isavailable" aria-describedby="isavailable" placeholder="Enter your name">
-				<small id="matricHelp" class="form-text text-muted">Whats your name?</small>
+			<div class="form-group">
+				<label for="username">Category</label>
+				<input type="text" class="form-control" id="category" name="category" aria-describedby="category" placeholder="Enter the food category">
+				<small id="matricHelp" class="form-text text-muted">Whats the food category</small>
 			</div>
 			<div class="form-group">
-				<label for="username">category</label>
-				<input type="text" class="form-control" id="category" name="category" aria-describedby="category" placeholder="Enter your username">
-				<small id="matricHelp" class="form-text text-muted">Remember your username</small>
-			</div>
-			<div class="form-group">
-				<label for="password">price</label>
-				<input type="integer" class="form-control" id="price" name="price" aria-describedby="price" placeholder="Enter your password">
-				<small id="matricHelp" class="form-text text-muted">Don't forget your password</small>
+				<label for="password">Price</label>
+				<input type="decimal" class="form-control" id="price" name="price" aria-describedby="price" placeholder="Enter the food price"min="1"max="1000">
+				<small id="matricHelp" class="form-text text-muted">whats the food price</small>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
+		<p><a href='\restaurantProfile'>Click here to go back</a></p>
 		
 		<script>
 			(function() {

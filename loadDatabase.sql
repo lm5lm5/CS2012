@@ -1228,20 +1228,19 @@ insert into foods (fname, rname, dailylimit, isavailable, category, price) value
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Potato puffs', 'CGI Group, Inc.', 78, false, 'category_2', 33.7);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Jute', 'Willamette Valley Vineyards, Inc.', 85, false, 'category_10', 40.93);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Beluga whale', 'Laboratory Corporation of America Holdings', 78, true, 'category_5', 16.16);
-insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Globe artichoke', 'Cumberland Pharmaceuticals Inc.', 79, false, 'category_1', 86.49);
+insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Globe artichoke', 'Cumberland Pharmaceuticals Inc.', 0, false, 'category_1', 86.49);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Opium poppy', 'Royal Caribbean Cruises Ltd.', 17, true, 'category_10', 76.91);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Fruit preserve', 'Lombard Medical, Inc.', 19, true, 'category_6', 33.94);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Scallop', 'Lombard Medical, Inc.', 91, false, 'category_9', 46.82);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Red rice', 'Callon Petroleum Company', 30, false, 'category_7', 58.66);
-insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Fenugreek', 'Callon Petroleum Company', 33, true, 'category_5', 84.4);
+insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Fenugreek', 'Callon Petroleum Company', 0, true, 'category_5', 84.4);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Natto', 'CGI Group, Inc.', 26, false, 'category_6', 26.57);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Ostrich', 'WEC Energy Group, Inc.', 73, false, 'category_8', 78.11);
 insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Sugar substitute', 'Incyte Corporation', 34, true, 'category_2', 80.57);
-insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Eggs', 'Bed Bath & Beyond Inc.', 53, false, 'category_3', 27.59);
+insert into foods (fname, rname, dailylimit, isavailable, category, price) values ('Eggs', 'Bed Bath & Beyond Inc.', 0, true, 'category_3', 27.59);
 
-
-
-
+update foods set isavailable = true where dailylimit > 0;
+update foods set isavailable = false where dailylimit = 0;
 
 insert into comprises (mwsid, shiftdayid, shifthourid) values (1, 1, 1);
 insert into comprises (mwsid, shiftdayid, shifthourid) values (2, 1, 2);

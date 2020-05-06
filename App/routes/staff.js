@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'SELECT restaurant_name, Username FROM staffLogin WHERE Username = \'';
+var sql_query = 'SELECT restaurant_name, Username, staffid FROM staffLogin WHERE Username = \'';
 var sql_query2 = '\' AND password = \'';
 var sql_query3 = '\' AND Restaurant_name = \'';
 
@@ -40,52 +40,64 @@ router.post('/', function (req, res, next) {
 	var username = req.body.username;
 	var password = req.body.password;
 	var Restaurant_name = req.body.Restaurant_name;
+	var hidden = req.body.diff;
+	if(hidden == "res"){
+		req.session.destroy();
+		res.redirect('/staff');
+	}
+	else
+	{
 
-	// Construct Specific SQL Query
-	var insert_query = sql_query + username + sql_query2 + password + sql_query3 + Restaurant_name + '\'';
-	console.log(insert_query);
+		// Construct Specific SQL Query
+		var insert_query = sql_query + username + sql_query2 + password + sql_query3 + Restaurant_name + '\'';
+		console.log(insert_query);
 
 
-	pool.query(insert_query, (err, data) => {
-		if (err) {
-			console.log(err.stack);
-			//alert(err.stack);
-			sess = req.session;
-			var errormessage = err.stack;
-			sess.error = errormessage;
-			sess.errortype = 'staffidexist';
-			res.redirect('/staff');
-		}
-		else {
-			console.log("insert_query: " + insert_query);
-			console.log("data.length: " + data.length);
-			console.log("data.rows: " + data.rows);
-			console.log("data.rowcount: " + data.rowCount);
-			if (data.rowCount == 1){
+		pool.query(insert_query, (err, data) => {
+			if (err) {
+				console.log(err.stack);
+				//alert(err.stack);
 				sess = req.session;
-				sess.login = 1;
-				sess.staff = 1;
-				sess.error = null;
-				var data = data.rows;
-				sess.rname = data[0].restaurant_name;
-				sess.staffname = data[0].username;
-
-				// sess.user = data[0].staffid;
-				// sess.user = data[0].staffid;
-				console.log("data[0].Restaurant_name: " + sess.rname);
-				console.log("data[0].username: " + sess.staffname);
-				res.redirect('/restaurantProfile')
-			}
-			else {
-				sess = req.session;
-				sess.error = "Resturant name or Username or password wrong";
+				var errormessage = err.stack;
+				sess.error = errormessage;
 				sess.errortype = 'staffidexist';
 				res.redirect('/staff');
-				
 			}
-		}
+			else {
+				console.log("insert_query: " + insert_query);
+				console.log("data.length: " + data.length);
+				console.log("data.rows: " + data.rows);
+				console.log("data.rowcount: " + data.rowCount);
+				if (data.rowCount == 1){
+					sess = req.session;
+					sess.login = 1;
+					sess.staff = 1;
+					sess.error = null;
+					var data = data.rows;
+					sess.rname = data[0].restaurant_name;
+					sess.staffname = data[0].username;
+					// sess.password = data[0].password;
+					sess.staffid = data[0].staffid;
 
-	});
-});
+					// sess.user = data[0].staffid;
+					console.log("data[0].Restaurant_name: " + sess.rname);
+					console.log("data[0].username: " + sess.staffname);
+					console.log("data[0].staffid: " + sess.staffid);
+					res.redirect('/restaurantProfile')
+				}
+				else {
+					
+					sess = req.session;
+					sess.error = "Resturant name or Username or password wrong";
+					sess.errortype = 'staffidexist';
+					res.redirect('/staff');
+					
+				}
+			}
+
+		});
+	}
+}
+);
 
 module.exports = router;

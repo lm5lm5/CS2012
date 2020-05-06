@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	
   <head>
 		<!-- Page Title -->
     <title>CS2102 Modifying Database</title>
@@ -25,16 +26,6 @@
   <% } %>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 	<a class="navbar-brand" href="#">Food delivery shop</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-	  <span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarCollapse">
-	  <ul class="navbar-nav mr-auto"></ul>
-	  </ul>
-	  <form class="form-inline mt-2 mt-md-0" form method="post" action="customerProfile">
-		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
-	  </form>
-	</div>
   </nav>
     <h1>CS2102: <%= title%></h1>
 		<form id="html_form" action="staff" role="form" method="post">
@@ -53,6 +44,7 @@
 				<input type="password" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Enter your password">
 				<small id="matricHelp" class="form-text text-muted">Put your password here</small>
 			</div>
+			<input type="hidden" name="diff" value="staff">
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 

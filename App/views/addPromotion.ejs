@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+		<a class="navbar-brand" href="#">Food delivery shop</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto"></ul>
+			</ul>
+			<form class="form-inline mt-2 mt-md-0" form method="post" action="staff">
+				<input type="hidden" name="diff" value="res">
+			  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+			</form>
+		  </div>
+	  </nav>
   <head>
 		<!-- Page Title -->
     <title>CS2102 Modifying Database</title>
@@ -14,7 +28,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 		<!-- ADDED JavaScript -->
-		<script src="javascripts/CustomerScript.js"></script>
+		<script src="javascripts/dateScript.js"></script>
 
   </head>
   <body>
@@ -27,13 +41,13 @@
     <h1><%= title%></h1>
 		<form id="html_form" action="addPromotion" role="form" method="post">
                         <div class="form-group">
-				<label for="name">descriptionpromo</label>
+				<label for="name">Description</label>
 				<input type="text" class="form-control" id="descriptionpromo" name="descriptionpromo" aria-describedby="descriptionpromo" placeholder="Enter the promotion name">
 				<small id="matricHelp" class="form-text text-muted">Whats your name?</small>
                         </div>
                         <div class="form-group">
 				<label for="name">discount</label>
-				<input type="Integer" class="form-control" id="discount" name="discount" aria-describedby="discount" placeholder="Enter your name">
+				<input type="number" class="form-control" id="discount" name="discount" aria-describedby="discount" placeholder="Enter your name"min="1" max="99">
 				<small id="matricHelp" class="form-text text-muted">Whats your name?</small>
                         </div>
                         <div class="form-group">
@@ -49,6 +63,7 @@
 
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
+		<p><a href='\restaurantProfile'>Click here to go back</a></p>
 		
 		<script>
 			(function() {
