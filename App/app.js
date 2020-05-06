@@ -70,6 +70,9 @@ var managerViewRiderRouter = require('./routes/allRiders');
 var managerRiderStatsRouter = require('./routes/riderInfo');
 var managerRiderStatsResultRouter = require('./routes/riderInfoResult');
 var managerDeliveryStatsRouter = require('./routes/deliveryStatistics');
+var managerViewCustomerRouter = require('./routes/allCustomers');
+//var managerCustomerStatisticsRouter = require('./routes/customerStatistics');
+var managerViewLocationRouter = require('./routes/allLocations');
 
 var app = express();
 
@@ -157,6 +160,9 @@ app.use('/allRiders', managerViewRiderRouter);
 app.use('/riderInfo', managerRiderStatsRouter);
 app.use('/riderInfoResult', managerRiderStatsResultRouter);
 app.use('/deliveryStatistics', managerDeliveryStatsRouter);
+app.use('/allCustomers', managerViewCustomerRouter);
+//app.use('/customerStatistics', managerCustomerStatisticsRouter)
+app.use('/allLocations', managerViewLocationRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

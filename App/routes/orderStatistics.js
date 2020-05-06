@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
     if (sess.managername == null || sess.mid == null) {
         console.log("manager not logged in yet");
         res.redirect('/manager');
+        return;
     }
     res.render('orderStatistics', {})
 });
@@ -34,10 +35,12 @@ router.post('/', function (req, res, next) {
     console.log("month: " + month);
 
     var start, end;
-    if (startdate !== 0 && enddate !== 0) {
+    if (startdate.length !== 0 && enddate.length !== 0) {
+        //console.log("dates");
         start = startdate;
         end = enddate;
     } else {
+        //console.log("month");
         var yyyy = month.split('-')[0];
         var mm = month.split('-')[1];
         start = month + '-01';

@@ -3,7 +3,7 @@ function check(event) {
     var startDate  = document.getElementById('startdate').value;
     var endDate  = document.getElementById('enddate').value;
     var month  = document.getElementById('month').value;
-    var rid = document.getElementById('rid').value;
+    var id = document.getElementById('id').value;
 
     // Simple Check
     if((startDate.length === 0 || endDate.length === 0) && month.length === 0) {
@@ -12,8 +12,8 @@ function check(event) {
         event.stopPropagation();
         return false;
     }
-    if(rid.length === 0) {
-        alert("Rider id missing");
+    if(id.length === 0) {
+        alert("Id missing");
         event.preventDefault();
         event.stopPropagation();
         return false;

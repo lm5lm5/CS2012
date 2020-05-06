@@ -14,7 +14,7 @@ var sql_query2 = '\' AND password = \'';
 // GET
 router.get('/', function (req, res, next) {
     sess = req.session;
-    if (sess.error && sess.error != null && sess.errortype == 'cidexist') {
+    if (sess.error && sess.errortype === 'wrongnameorpassword') {
         console.log("error: incorrect account info");
         res.render('manager', {title: 'Manager login', error: sess.error});
         sess.error = null;
@@ -61,7 +61,7 @@ router.post('/', function (req, res, next) {
             } else {
                 sess = req.session;
                 sess.error = "Username or password wrong";
-                sess.errortype = 'midexist';
+                sess.errortype = 'wrongnameorpassword';
                 res.redirect('/manager');
             }
         }

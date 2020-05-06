@@ -36,9 +36,10 @@
         <th scope="col">Name</th>
         <th scope="col">Status</th>
         <th scope="col">Number of deliveries</th>
+        <th scope="col">Number of customers served</th>
+        <th scope="col">Average rating</th>
         <th scope="col">Total weekly working hours</th>
-        <th scope="col">Weekly salary</th>
-        <th scope="col">Total salary</th>
+        <th scope="col">Base monthly salary</th>
     </tr>
     </thead>
     <tbody>
@@ -47,10 +48,11 @@
             <td><%= riderdata[i].riderid%></td>
             <td><%= riderdata[i].ridername%></td>
             <td><%= riderdata[i].status%></td>
-            <td><%= riderdata[i].numofdeliveries%></td>
+            <td><%= riderdata3[0].num%></td>
+            <td><%= riderdata3[0].customer%></td>
+            <td><%= riderdata3[0].rating + ' / 10'%></td>
             <td><%= riderdata[i].totalhours%></td>
             <td><%= riderdata[i].salary%></td>
-            <td><%= riderdata[i].totalsalary%></td>
         </tr>
     <% } %>
     </tbody>
@@ -72,7 +74,6 @@
         <tr>
             <td><%= riderdata2[i].flid%></td>
             <td><%= riderdata2[i].cid%></td>
-<!--            <td><%= riderdata2[i].username%></td>-->
             <td><%= riderdata2[i].order_date%></td>
             <td><%= riderdata2[i].deliveryfee%></td>
             <td><%= riderdata2[i].ratingtext%></td>

@@ -16,6 +16,7 @@ router.get('/', function (req, res, next) {
     if (sess.managername == null || sess.mid == null) {
         console.log("manager not logged in yet");
         res.redirect('/manager');
+        return;
     }
     console.log("myquery " + sql_query2);
     pool.query(sql_query2, (err, data) => {

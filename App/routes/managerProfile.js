@@ -12,16 +12,14 @@ const {Pool} = require('pg')
 
 router.get('/', function (req, res, next) {
     sess = req.session;
-    if (sess.managername === 'undefined' || sess.managername === null
-        || sess.mid === null || sess.mid === 'undefined') {
+    console.log(sess.managername);
+    console.log(sess.mid);
+    if (sess.managername == null || sess.mid == null) {
         console.log("manager not logged in yet");
         res.redirect('/manager');
+        return;
     }
-    // var sql_query2 = sql_query + sess.username + '\'';
-    // console.log("myquery " + sql_query2);
-    // pool.query(sql_query2, (err, data) => {
     res.render('managerProfile', {})
-    // });
 });
 
 router.post('/', function (req, res, next) {

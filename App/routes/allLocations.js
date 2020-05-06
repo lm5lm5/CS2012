@@ -8,7 +8,9 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'select *, order_time::text as order_date from foodlists natural join customerlogin natural join Riders order by flid';
+var sql_query = 'select delivery_location, count(distinct flid) as order, sum(total_cost) as cost, '
+    + 'max(order_time)::text as lastest from foodlists '
+    + 'group by delivery_location order by delivery_location';
 
 router.get('/', function (req, res, next) {
     sess = req.session;
@@ -22,7 +24,7 @@ router.get('/', function (req, res, next) {
         if (err) {
             res.redirect('managerProfile');
         } else {
-            res.render('allOrders', {orderdata: data.rows})
+            res.render('allLocations', {orderdata: data.rows})
         }
     });
 });
