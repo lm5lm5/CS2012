@@ -2,14 +2,12 @@ function check(event) {
     // Get Values
     var startDate  = document.getElementById('startdate').value;
     var endDate  = document.getElementById('enddate').value;
+    var month  = document.getElementById('month').value;
     var rid = document.getElementById('rid').value;
-    console.log("start: " + startDate);
-    console.log("end: " + endDate);
-    console.log("rid: " + rid);
 
     // Simple Check
-    if(startDate.length === 0 || endDate.length === 0) {
-        alert("Date missing");
+    if((startDate.length === 0 || endDate.length === 0) && month.length === 0) {
+        alert("Date/Month missing");
         event.preventDefault();
         event.stopPropagation();
         return false;
@@ -20,5 +18,4 @@ function check(event) {
         event.stopPropagation();
         return false;
     }
-    alert("--- Your Input ---\nStart: " + startDate + "\nEnd: " + endDate + "\nRid: " + rid);
 }

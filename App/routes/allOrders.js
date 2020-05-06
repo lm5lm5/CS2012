@@ -18,6 +18,7 @@ router.get('/', function (req, res, next) {
     }
     console.log("myquery " + sql_query);
     pool.query(sql_query, (err, data) => {
+        console.log(data.rows);
         res.render('allOrders', {orderdata: data.rows})
     });
 });
