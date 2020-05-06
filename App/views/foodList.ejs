@@ -25,15 +25,23 @@
 					<th scope="col">Quantity</th>
 					<th scope="col">Price(each)</th>
 					<th scope="col">From</th>
+					<th scope="col">Delivery location</th>
+					<th scope="col">Time delivered</th>
+					<th scope="col">Delivery Id</th>
+					<th scope="col">Delivered by</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody>//at least the delivery location, the time delivery man reached, the did value and the rider name
 				<% for(var i=0; i<foodListData.length; i++) { %>
 				<tr>
 					<td><%= foodListData[i].fname%></td>
 					<td><%= foodListData[i].count%></td>
 					<td><%= foodListData[i].price%></td>
 					<td><%= foodListData[i].rname%></td>
+					<td><%= foodListData[i].delivery_location%></td>
+					<td><%= foodListData[i].riderdeliverorder%></td>
+					<td><%= foodListData[i].did%></td>
+					<td><%= foodListData[i].ridername%></td>
 				</tr>
 				<% } %>
 			</tbody>

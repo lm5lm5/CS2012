@@ -16,9 +16,7 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'with y as (with x as (select sum(price), flid from (foodlists join consists using (flid)) join foods using (fname,rname) group by flid order by flid) select cid, flid, fname, rname, price, order_time, sum, count(*) from ((foodlists join consists using (flid)) join foods using (fname,rname)) join x using (flid) group by cid ,flid, fname, rname, price, order_time, sum) select * from y where cid = ';
-
- 
+var sql_query = 'with y as (with x as (select sum(price), flid from (foodlists join consists using (flid)) join foods using (fname,rname) group by flid order by flid) select delivery_location, cid, flid, fname, rname, price, order_time, sum, count(*), did from ((foodlists join consists using (flid)) join foods using (fname,rname)) join x using (flid) group by cid ,flid, fname, rname, price, order_time, sum) select * from (y join delivers using (did)) join riders using (riderid) where cid = ';
 
 router.get('/', function(req, res, next) {
 		res.render('foodList');
