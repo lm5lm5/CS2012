@@ -58,6 +58,16 @@ router.post('/', function (req, res, next) {
   var discount = req.body.discount;
   var startdate = req.body.startdate;
   var enddate = req.body.enddate;
+
+  function endAfterStart(start,end){
+	return new Date(start.split('/').reverse().join('/')) <
+			new Date(end.split('/').reverse().join('/'));
+  }
+//   alert(endAfterStart(startdate,enddate)); //=> true
+
+// consile.log("check start and end: " + endAfterStart(startdate,enddate));
+
+
 //   var price = req.body.price;
   var restaruantname = sess.rname;
 

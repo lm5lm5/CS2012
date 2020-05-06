@@ -14,7 +14,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 		<!-- ADDED JavaScript -->
-		<script src="javascripts/CustomerScript.js"></script>
+		<script src="javascripts/dateScript.js"></script>
 
   </head>
   <body>
@@ -27,13 +27,13 @@
     <h1><%= title%></h1>
 		<form id="html_form" action="addPromotion" role="form" method="post">
                         <div class="form-group">
-				<label for="name">descriptionpromo</label>
+				<label for="name">Description</label>
 				<input type="text" class="form-control" id="descriptionpromo" name="descriptionpromo" aria-describedby="descriptionpromo" placeholder="Enter the promotion name">
 				<small id="matricHelp" class="form-text text-muted">Whats your name?</small>
                         </div>
                         <div class="form-group">
 				<label for="name">discount</label>
-				<input type="Integer" class="form-control" id="discount" name="discount" aria-describedby="discount" placeholder="Enter your name">
+				<input type="number" class="form-control" id="discount" name="discount" aria-describedby="discount" placeholder="Enter your name"min="1" max="99">
 				<small id="matricHelp" class="form-text text-muted">Whats your name?</small>
                         </div>
                         <div class="form-group">
