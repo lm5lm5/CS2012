@@ -148,7 +148,7 @@ BEFORE UPDATE ON holds
 FOR EACH ROW
 EXECUTE PROCEDURE func_check_holds();
 
--- restaurant constraint triggers
+-- restaurant constraints triggers
 CREATE OR replace FUNCTION check_food_restuarant_constraint() RETURNS TRIGGER
   AS $$
   
@@ -210,3 +210,39 @@ CREATE OR replace FUNCTION check_food_restuarant_constraint() RETURNS TRIGGER
   AFTER INSERT OR UPDATE on consists
   For each row
   Execute FUNCTION check_food_availability_constraint();
+
+
+-- check cost
+  CREATE OR replace FUNCTION check_food_cost_constraint() RETURNS TRIGGER
+  AS $$
+  
+  declare 
+      total_cost numeric;
+      minimum_cost numeric;
+  
+  Begin
+  
+  SELECT r.minimalCost into minimum_cost
+  FROM restaurants r
+  WHERE new.restaurant_name = r.rname;
+
+  SELECT fl.Total_cost into total_cost
+  FROM foodlists fl
+  WHERE new.flid = fl.flid;
+  
+  if total_cost < minimum_cost then
+      raise exception 'Total cost is too small!';
+  end if;
+  return null;
+  
+  
+  END
+  
+  $$ language plpgsql;
+  
+  
+  Drop trigger if exists check_food_cost_trigger on foodlists;
+  CREATE trigger check_food_cost_trigger
+  AFTER UPDATE OF restaurant_name ON foodlists
+  For each row
+  Execute FUNCTION check_food_cost_constraint();

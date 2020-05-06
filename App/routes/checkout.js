@@ -279,13 +279,51 @@ router.post('/', function (req, res, next) {
 	const fulldatedo_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
 
 	var rewardptsused = req.body.rewardptsused;
+	console.log("Reward points used: " + rewardptsused);
 
+	if (rewardptsused == null) {
+		rewardptsused = 0;
+	};
 	// var updatefoodlist_sql = `Update foodlist
 	// SET payment_method = '`+ payment  + `', delivery_location = '` + deliverylocation + `', order_time = ` + fulldate + `, total_cost =` + costthing + `, did = ` + did
 
 	var update_rewartpts_sql = `Update customer
-	Set reward_pts = reward_pts - ` + rewardptsused +
+	Set reward_pts = reward_pts - ` + req.body.rewardptsused +
 		` WHERE cid = ` + sess.user + `;`;
+
+	var trigger_sql = `CREATE OR replace FUNCTION check_food_cost_constraint() RETURNS TRIGGER
+	AS $$
+	
+	declare 
+		total_cost numeric;
+		minimum_cost numeric;
+	
+	Begin
+	
+	SELECT r.minimalCost into minimum_cost
+	FROM restaurants r
+	WHERE new.restaurant_name = r.rname;
+  
+	SELECT fl.Total_cost into total_cost
+	FROM foodlists fl
+	WHERE new.flid = fl.flid;
+	
+	if total_cost < minimum_cost then
+		raise exception 'Total cost is too small!';
+	end if;
+	return null;
+	
+	
+	END
+	
+	$$ language plpgsql;
+	
+	
+	Drop trigger if exists check_food_cost_trigger on foodlists;
+	CREATE trigger check_food_cost_trigger
+	AFTER UPDATE OF restaurant_name ON foodlists
+	For each row
+	Execute FUNCTION check_food_cost_constraint();`
 
 	var update_rewartpts_sql_add = `Update customer Set reward_pts = reward_pts + ` + Math.floor(originalcost / 500) + ` WHERE cid = ` + sess.user + `;`;
 
@@ -334,7 +372,7 @@ router.post('/', function (req, res, next) {
 
 
 
-		var full_sql_thing = sql_update_foodlist + sql_foodlistcost + insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
+		var full_sql_thing = trigger_sql + sql_update_foodlist + sql_foodlistcost + insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
 
 		console.log(full_sql_thing);
 
@@ -343,8 +381,21 @@ router.post('/', function (req, res, next) {
 		pool.query(full_sql_thing, (err, data2) => {
 
 
+			if (err) {
+				sess = req.session;
+				var errormessage = err.stack;
+				sess.error = errormessage;
+				sess.errortype = 'ordererror';
+				req.session.flid = null;
+				req.session.flid = null;
+				req.session.chosenFood = null;
+				req.session.rname = null;
+				sess.rewardnumbertobuy = null;
+				res.redirect('/orderFood');
+			}
+			else {
 
-			var easydelete = `
+				var easydelete = `
 			With t as (
 				SELECT coalesce(count(*),0) AS no, fname, rname FROM foodlists JOIN consists USING (flid) WHERE payment_method IS NULL GROUP BY fname,rname
 				)
@@ -356,22 +407,24 @@ router.post('/', function (req, res, next) {
 
 			DELETE FROM foodlists WHERE payment_method IS NULL;`;
 
-			pool.query(easydelete, (err, deletething) => {
-				req.session.error = null;
-				req.session.errortype = null;
-				req.session.flid = null;
-				req.session.chosenFood = null;
-				req.session.rname = null;
-				sess.rewardnumbertobuy = null;
-				res.redirect("/");
-			});
+				pool.query(easydelete, (err, deletething) => {
+					req.session.error = null;
+					req.session.errortype = null;
+					req.session.flid = null;
+					req.session.chosenFood = null;
+					req.session.rname = null;
+					sess.rewardnumbertobuy = null;
+					res.redirect("/");
+				});
 
 
+			}
 
 
 
 
 		});
+
 
 	});
 
