@@ -45,7 +45,7 @@ router.get('/', function (req, res, next) {
       console.log("HHEEEEE");
       sql_query2 = sql_query + sql_order;
       pool.query(sql_query2, (err, foodlist) => {
-        res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: false,  error: errormessage});
+        res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: false, error: errormessage });
       });
     }
     else {
@@ -127,13 +127,15 @@ router.post('/', function (req, res, next) {
   if (sess.login != 1 && sess.customer != 1) {
     res.redirect('/customer');
   }
-
-  if (req.body.action == "Add") {
-
-    console.log(req.body.numbertobuy);
+  else {
 
 
-    var big_sql = `CREATE OR replace FUNCTION check_food_restuarant_constraint() RETURNS TRIGGER
+    if (req.body.action == "Add") {
+
+      console.log(req.body.numbertobuy);
+
+
+      var big_sql = `CREATE OR replace FUNCTION check_food_restuarant_constraint() RETURNS TRIGGER
   AS $$
   
   declare 
@@ -246,16 +248,47 @@ router.post('/', function (req, res, next) {
   $$ language plpgsql;
   `
 
-    var insertfoodlist_sql = `insert into Foodlists (flid, cid, riderid, order_time, payment_method, total_cost, delivery_location, did) values (`;
+      var insertfoodlist_sql = `insert into Foodlists (flid, cid, riderid, order_time, payment_method, total_cost, delivery_location, did) values (`;
 
-    var calladdfood_sql = `call addFood(`
+      var calladdfood_sql = `call addFood(`
 
-    if (sess.flid == null) {
-      var newflid_sql = `SELECT (coalesce(max(flid), 0) + 1) AS newflid FROM foodlists;`;
-      var newflid;
-      pool.query(newflid_sql, (err, thatnewflid) => {
-        newflid = thatnewflid.rows[0].newflid;
-        var full_sql = big_sql + insertfoodlist_sql + newflid + ', ' + sess.user + `, null, null, null, 0, null, null);` + calladdfood_sql + newflid + `, '` + req.body.fname + `', '` + req.body.rname + `',` + req.body.numbertobuy + `);`;
+      if (sess.flid == null) {
+        var newflid_sql = `SELECT (coalesce(max(flid), 0) + 1) AS newflid FROM foodlists;`;
+        var newflid;
+        pool.query(newflid_sql, (err, thatnewflid) => {
+          newflid = thatnewflid.rows[0].newflid;
+          var full_sql = big_sql + insertfoodlist_sql + newflid + ', ' + sess.user + `, null, null, null, 0, null, null);` + calladdfood_sql + newflid + `, '` + req.body.fname + `', '` + req.body.rname + `',` + req.body.numbertobuy + `);`;
+          pool.query(full_sql, (err, thatnewflid) => {
+            if (err) {
+              console.log("ERROR is " + err);
+              sess = req.session;
+              var errormessage = err.stack;
+              sess.error = errormessage;
+              sess.errortype = 'ordererror';
+              res.redirect('/orderFood');
+            }
+            else {
+              sess.flid = newflid;
+              sess.chosenFood = true;
+              sess.rname = req.body.rname;
+              res.redirect("/orderFood");
+
+
+            }
+
+
+
+          });
+
+
+
+        });
+      }
+
+      else {
+        var calladdfood_sql2 = `call addFood(`
+
+        var full_sql = big_sql + calladdfood_sql2 + sess.flid + `, '` + req.body.fname + `', '` + req.body.rname + `',` + req.body.numbertobuy + `);`;
         pool.query(full_sql, (err, thatnewflid) => {
           if (err) {
             console.log("ERROR is " + err);
@@ -266,7 +299,6 @@ router.post('/', function (req, res, next) {
             res.redirect('/orderFood');
           }
           else {
-            sess.flid = newflid;
             sess.chosenFood = true;
             sess.rname = req.body.rname;
             res.redirect("/orderFood");
@@ -279,125 +311,96 @@ router.post('/', function (req, res, next) {
         });
 
 
+      }
 
-      });
     }
 
-    else {
-      var calladdfood_sql2 = `call addFood(`
+    else if (req.body.action == "Delete") {
 
-      var full_sql = big_sql + calladdfood_sql2 + sess.flid + `, '` + req.body.fname + `', '` + req.body.rname + `',` + req.body.numbertobuy + `);`;
-      pool.query(full_sql, (err, thatnewflid) => {
+      sess = req.session;
+
+      var sql_finddelete1 = `SELECT coalesce(max(coid), 0) AS coid FROM consists WHERE fname = '`
+      var sql_finddelete2 = `' AND rname = '`
+      var sql_finddelete3 = `' AND flid = `
+      var sql_fullfindelete3 = sql_finddelete1 + req.body.fname + sql_finddelete2 + req.body.rname + sql_finddelete3 + sess.flid + `;`;
+
+      console.log(sql_fullfindelete3);
+
+      pool.query(sql_fullfindelete3, (err, coidDelete) => {
         if (err) {
           console.log("ERROR is " + err);
-          sess = req.session;
-          var errormessage = err.stack;
-          sess.error = errormessage;
-          sess.errortype = 'ordererror';
-          res.redirect('/orderFood');
         }
         else {
-          sess.chosenFood = true;
-          sess.rname = req.body.rname;
-          res.redirect("/orderFood");
-
-
-        }
-
-
-
-      });
-
-
-    }
-
-  }
-
-  else if (req.body.action == "Delete") {
-
-    sess = req.session;
-
-    var sql_finddelete1 = `SELECT coalesce(max(coid), 0) AS coid FROM consists WHERE fname = '`
-    var sql_finddelete2 = `' AND rname = '`
-    var sql_finddelete3 = `' AND flid = `
-    var sql_fullfindelete3 = sql_finddelete1 + req.body.fname + sql_finddelete2 + req.body.rname + sql_finddelete3 + sess.flid + `;`;
-
-    console.log(sql_fullfindelete3);
-
-    pool.query(sql_fullfindelete3, (err, coidDelete) => {
-      if (err) {
-        console.log("ERROR is " + err);
-      }
-      else {
-        var sql_delete = `DELETE FROM consists WHERE coid =`
-        console.log("Coid is" + coidDelete.rows[0].coid);
-        var full_sql_delete = sql_delete + coidDelete.rows[0].coid + `;`;
-        pool.query(full_sql_delete, (err, thatnewflid) => {
-          if (err) {
-            console.log("ERROR is " + err);
-          }
-          else {
-            var add_sql_back = `Update foods
+          var sql_delete = `DELETE FROM consists WHERE coid =`
+          console.log("Coid is" + coidDelete.rows[0].coid);
+          var full_sql_delete = sql_delete + coidDelete.rows[0].coid + `;`;
+          pool.query(full_sql_delete, (err, thatnewflid) => {
+            if (err) {
+              console.log("ERROR is " + err);
+            }
+            else {
+              var add_sql_back = `Update foods
             Set dailylimit = dailylimit + 1
             WHERE fname = '`;
-            var add_sql_back2 = `' And rname = '`
-            var add_sql_back_full = add_sql_back + req.body.fname + add_sql_back2 + req.body.rname + `';`;
+              var add_sql_back2 = `' And rname = '`
+              var add_sql_back_full = add_sql_back + req.body.fname + add_sql_back2 + req.body.rname + `';`;
 
-            var checksql = `Update foods 
+              var checksql = `Update foods 
             Set isavailable = true 
             WHERE dailylimit > 0
             AND fname = '`
-            var checksql2 = `' AND rname = '`
-            var fullchecksql = checksql + req.body.fname + checksql2 + req.body.rname + `';`;
+              var checksql2 = `' AND rname = '`
+              var fullchecksql = checksql + req.body.fname + checksql2 + req.body.rname + `';`;
 
-            var updatecost_sql = `Update foodlists
+              var updatecost_sql = `Update foodlists
             Set total_cost = total_cost - (Select price
             from foods
             where fname = '` + req.body.fname +
-              `'and rname = '` + req.body.rname + `')
+                `'and rname = '` + req.body.rname + `')
             WHERE flid = ` + sess.flid + `;`;
 
-            var totalfullsql = add_sql_back_full + fullchecksql + updatecost_sql;
+              var totalfullsql = add_sql_back_full + fullchecksql + updatecost_sql;
 
-            console.log(totalfullsql);
+              console.log(totalfullsql);
 
-            pool.query(totalfullsql, (err, thatnewflid) => {
-              if (err) {
-                console.log("ERROR is " + err);
-              }
-              else {
-                res.redirect("/orderFood");
-              }
-
-
-
-            });
+              pool.query(totalfullsql, (err, thatnewflid) => {
+                if (err) {
+                  console.log("ERROR is " + err);
+                }
+                else {
+                  res.redirect("/orderFood");
+                }
 
 
 
-
-          }
-
-
-
-        });
-
-      }
-
-
-
-    });
+              });
 
 
 
 
-  }
+            }
 
-  else if (req.body.action == "Checkout") {
 
-    sess.rewardnumbertobuy = req.body.rewardnumbertobuy;
-    res.redirect(`/checkout`);
 
+          });
+
+        }
+
+
+
+      });
+
+
+
+
+    }
+
+    else if (req.body.action == "Checkout") {
+
+      sess.rewardnumbertobuy = req.body.rewardnumbertobuy;
+      res.redirect(`/checkout`);
+
+    }
   }
 });
 

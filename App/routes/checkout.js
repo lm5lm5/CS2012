@@ -193,9 +193,7 @@ router.post('/', function (req, res, next) {
 
 	const fulldate_withtime = `'` + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds + `'`;
 
-	var rideridthing = Math.floor(
-		Math.random() * (301 - 0) + 0
-	)
+	var rideridthing = Math.floor(Math.random() * (300 - 1 + 1)) + 1;
 
 	var insertdeliversql = `CREATE or replace procedure newdid(deliverything numeric, date1 timestamp, date2 timestamp, date3 timestamp, date4 timestamp, date5 timestamp, rideridthing integer, flidthing integer)
 	AS $$
@@ -293,55 +291,90 @@ router.post('/', function (req, res, next) {
 
 
 
-	var food_list_update = `Update foodlists SET riderid = ` + rideridthing + `, promoid = ` + promoidthing + `, order_time = ` + fulldate + `, payment_method = '` + payment + `', total_cost = ` + originalcost + `, delivery_location = '` + deliverylocation + `' WHERE flid = ` + sess.flid + `;`;
-
-
-
-	var full_sql_thing = sql_update_foodlist + sql_foodlistcost + insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
-
-	console.log(full_sql_thing);
 
 
 
 
 
+	var datecurrent = new Date();
+	var DAY = (datecurrent.getDay() + 1);
+	var HOUR = datecurrent.getHours();
 
-
-
-
-
-	pool.query(full_sql_thing, (err, data2) => {
-
-
-
-		var easydelete = `
-		With t as (
-			SELECT coalesce(count(*),0) AS no, fname, rname FROM foodlists JOIN consists USING (flid) WHERE payment_method IS NULL GROUP BY fname,rname
-			)
-			Update foods
-			SET dailylimit = dailylimit + t.no
-			FROM t
-			WHERE foods.fname = t.fname
-			AND foods.rname = t.rname;
+	var choose_rider_rows =
+		`
+	with ftr as(
+		select riderid, firsthalfstart, firsthalfend, secondhalfstart, secondhalfend, case when startday = 'Monday' then 1 when startday = 'Tuesday' then 2 when startday = 'Wednesday' then 3 when startday = 'Thursday' then 4 when startday = 'Friday' then 5 when startday = 'Saturday' then 6 when startday = 'Sunday' then 7 else 0 end startday, case when endday = 'Monday' then 8 when endday = 'Tuesday' then 9 when endday = 'Wednesday' then 10 when endday = 'Thursday' then 4 when endday = 'Friday' then 5 when endday = 'Saturday' then 6 when endday = 'Sunday' then 7 else 0 end endday
+		from ((fulltimeriders join comprises using (mwsid)) join shifthour using (shifthourid)) join shiftday using (shiftdayid))
+		select riderid from ftr
+		where (` + HOUR + ` between firsthalfstart and firsthalfend or ` + HOUR + ` between secondhalfstart and secondhalfend)
+		and (` + DAY + ` between startday and endday)
 		
-		DELETE FROM foodlists WHERE payment_method IS NULL;`;
+		UNION
+		
+		select riderid
+		from ((parttimeriders join wws using (riderid)) join holds using (wwsid)) join sessions using (sessionsid)
+		where dayofweek = ` + DAY + `
+		 and ` + HOUR + ` between startinterval and endinterval;
+	`
+	console.log(choose_rider_rows);
 
-		pool.query(easydelete, (err, deletething) => {
-			req.session.error = null;
-			req.session.errortype = null;
-			req.session.flid = null;
-			req.session.chosenFood = null;
-			req.session.rname = null;
-			sess.rewardnumbertobuy = null;
-			res.redirect("/");
+
+
+
+	pool.query(choose_rider_rows, (err, riderrows) => {
+
+		console.log("Row count is: " + riderrows.rowCount);
+
+		if (riderrows.rowCount > 0) {
+			rideridthingrowno = Math.floor(Math.random() * ((riderrows.rowCount - 1) - 0 + 1)) + 0;
+			rideridthing = riderrows.rows[rideridthingrowno].riderid;
+		}
+
+		var food_list_update = `Update foodlists SET riderid = ` + rideridthing + `, promoid = ` + promoidthing + `, order_time = ` + fulldate + `, payment_method = '` + payment + `', total_cost = ` + originalcost + `, delivery_location = '` + deliverylocation + `' WHERE flid = ` + sess.flid + `;`;
+
+
+
+		var full_sql_thing = sql_update_foodlist + sql_foodlistcost + insertdeliversql + deliveryfee + `, ` + fulldate_withtime + `, ` + fulldategr_withtime + `, ` + fulldatear_withtime + `, ` + fulldatelr_withtime + `, ` + fulldatedo_withtime + `, ` + rideridthing + `, ` + sess.flid + `);` + sql_insertlocation2 + update_rewartpts_sql + update_rewartpts_sql_add + food_list_update;
+
+		console.log(full_sql_thing);
+
+
+
+		pool.query(full_sql_thing, (err, data2) => {
+
+
+
+			var easydelete = `
+			With t as (
+				SELECT coalesce(count(*),0) AS no, fname, rname FROM foodlists JOIN consists USING (flid) WHERE payment_method IS NULL GROUP BY fname,rname
+				)
+				Update foods
+				SET dailylimit = dailylimit + t.no
+				FROM t
+				WHERE foods.fname = t.fname
+				AND foods.rname = t.rname;
+
+			DELETE FROM foodlists WHERE payment_method IS NULL;`;
+
+			pool.query(easydelete, (err, deletething) => {
+				req.session.error = null;
+				req.session.errortype = null;
+				req.session.flid = null;
+				req.session.chosenFood = null;
+				req.session.rname = null;
+				sess.rewardnumbertobuy = null;
+				res.redirect("/");
+			});
+
+
+
+
+
+
 		});
 
-
-
-
-
-
 	});
+
 });
 
 module.exports = router;

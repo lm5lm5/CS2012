@@ -23,9 +23,11 @@ var sql_query2 = '\' AND password = \'';
 router.get('/', function (req, res, next) {
 	sess = req.session;
 	if (sess.user && sess.user != null) {
+		console.log("here?")
 		res.redirect("/customerProfile");
 	}
 	else {
+		console.log("Wha why?")
 		var errorcheck = sess.error;
 		var errortypecheck = sess.errortype
 		if (errorcheck && errorcheck != null && errortypecheck == 'cidexist') {
