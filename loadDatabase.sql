@@ -1261,16 +1261,16 @@ insert into comprises (mwsid, shiftdayid, shifthourid) values (15, 4, 3);
 
 
 
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (1, 15, 46, null, '2/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, 'location1', 1);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (2, 78, 99, null, '4/5/2020', 'Bank of America Corporation', 'Credit Card', null, 'location4', 2);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (3, 26, 88, 58, '5/5/2020', 'Cumberland Pharmaceuticals Inc.', 'Cash', null, 'location11', 3);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (4, 10, 43, null, '5/1/2020', 'Adient plc', 'Cash', null, 'location2', 4);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (5, 52, 52, null, '5/5/2020', 'Comfort Systems USA, Inc.', 'Cash', null, 'location3', 5);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (6, 60, 71, 100, '3/5/2020', 'Bed Bath & Beyond Inc.', 'Cash', null, 'location8', 6);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (7, 4, 48, 25, '3/5/2020', 'California Water  Service Group Holding', 'Credit Card', null, null, 7);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (8, 93, 96, 67, '2/5/2020', 'Tuniu Corporation', 'Credit Card', null, 'location7', 8);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (9, 15, 15, 23, '4/5/2020', 'CGI Group, Inc.', 'Cash', null, 'location1', 9);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (10, 41, 23, 66, '5/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location6', 10);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (1, 15, 46, 30, '2/5/2020', 'Comfort Systems USA, Inc.', 'Credit Card', null, 'location1', 1);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (2, 78, 99, 4, '4/5/2020', 'Bank of America Corporation', 'Credit Card', null, 'location4', 2);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (3, 26, 88, 12, '5/5/2020', 'Cumberland Pharmaceuticals Inc.', 'Cash', null, 'location11', 3);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (4, 10, 43, 5, '5/1/2020', 'Adient plc', 'Cash', null, 'location2', 4);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (5, 52, 52, 30, '5/5/2020', 'Comfort Systems USA, Inc.', 'Cash', null, 'location3', 5);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (6, 60, 71, 6, '3/5/2020', 'Bed Bath & Beyond Inc.', 'Cash', null, 'location8', 6);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (7, 4, 48, 6, '3/5/2020', 'California Water  Service Group Holding', 'Credit Card', null, null, 7);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (8, 93, 96, 25, '2/5/2020', 'Tuniu Corporation', 'Credit Card', null, 'location7', 8);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (9, 15, 15, 29, '4/5/2020', 'CGI Group, Inc.', 'Cash', null, 'location1', 9);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (10, 41, 23, 25, '5/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location6', 10);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (11, 41, 23, 66, '5/1/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location10', 11);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (12, 41, 23, null, '5/2/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 12);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (13, 41, 23, 6, '5/3/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location11', 13);
@@ -1284,9 +1284,9 @@ insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name,
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (21, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 21);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (22, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 22);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (23, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 23);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (24, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 24);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (24, 41, 23, 1, '3/5/2020', 'Tuniu Corporation', 'Cash', null, 'location9', 24);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (25, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 25);
-insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (26, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 26);
+insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (26, 41, 23, 1, '3/5/2020', 'California Water  Service Group Holding', 'Cash', null, 'location9', 26);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (27, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 27);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (28, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 28);
 insert into foodlists (flid, cid, riderid, promoid, order_time, restaurant_name, payment_method, total_cost, delivery_location, did) values (29, 41, 23, 1, '3/5/2020', 'Lombard Medical, Inc.', 'Cash', null, 'location9', 29);
@@ -2633,11 +2633,42 @@ insert into consists (coid, flid, fname, rname) values (154, 20, 'Scallop', 'Lom
 insert into consists (coid, flid, fname, rname) values (155, 20, 'Common octopus', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (156, 20, 'Common octopus', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (157, 20, 'Sauce', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (158, 20, 'Common octopus', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (159, 20, 'Fruit preserve', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (160, 20, 'Common octopus', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (161, 20, 'Sauce', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (162, 20, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (158, 21, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (159, 21, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (160, 21, 'Common octopus', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (161, 22, 'Sauce', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (162, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (163, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (164, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (165, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (166, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (167, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (168, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (169, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (170, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (171, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (172, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (173, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (174, 24, 'Potato bread', 'Tuniu Corporation');
+insert into consists (coid, flid, fname, rname) values (175, 25, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (176, 26, 'Eggplant', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (177, 26, 'Eggplant', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (178, 26, 'Eggplant', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (179, 26, 'Eggplant', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (180, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (181, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (182, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (183, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (184, 26, 'Elderberry', 'California Water  Service Group Holding');
+insert into consists (coid, flid, fname, rname) values (185, 27, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (186, 28, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (187, 29, 'Scallop', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (188, 30, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (189, 30, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (190, 30, 'Fruit preserve', 'Lombard Medical, Inc.');
+
+
+
 
 insert into customerLogin (Username, Password, cid) values ('ee', 'ee', 1);
 insert into customerLogin (Username, Password, cid) values ('hmcairt1', '1g8XThby1oku', 2);
@@ -3778,9 +3809,45 @@ insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cos
 insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (18, 6, null, 3, null, null);
 insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (19, 2, 6, 3, null, null);
 insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (20, 7, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (21, 27, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (22, 73, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (23, 74, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (24, 5, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (25, 16, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (26, 8, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (27, 1, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (28, 10, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (29, 20, 1, 3, null, null);
+insert into foodlistCost (flid, reward_pts, promoid, pid, deliveryfee, final_cost) values (30, 0, 1, 3, null, null);
+
+
+
+UPDATE foodlists
+SET promoid = (SELECT promoid 
+FROM restaurants
+WHERE foodlists.restaurant_name = restaurants.rname);
+
+with w as (
+    Select *
+    from foodlists JOIN delivers USING (did) JOIN deliverpromotions using (pid)
+)
+
+update foodlistcost
+set pid = (SELECT w.pid
+from w
+WHERE w.flid = foodlistcost.flid);
+
+with w as (
+    Select *
+    from foodlists
+	)
+
+update foodlistcost
+set promoid = (SELECT w.promoid from w where w.flid = foodlistcost.flid);
+
 
 with t as (
-SELECT count(*) as no, flid
+SELECT coalesce(count(*),0) as no, flid
     FROM consists
     GROUP BY flid
 
@@ -3798,7 +3865,7 @@ from t
 where t.flid = foodlistCost.flid;
 
 with t as (
-SELECT count(*) as no, flid
+SELECT coalesce(count(*),0) as no, flid
     FROM consists
     GROUP BY flid
 
@@ -3814,3 +3881,37 @@ UPDATE Delivers
 SET deliveryfee = 5 * w.no
 from w
 where w.did = delivers.did;
+
+with q as (
+    SELECT flid
+FROM promotions JOIN restaurants USING (promoid) JOIN foodlists ON (foodlists.restaurant_name = restaurants.rname)
+WHERE (startdate > order_time) OR (enddate < order_time)
+)
+
+UPDATE foodlistCost
+SET promoid = null
+WHERE exists
+(
+    Select 1
+    from q
+    where q.flid = foodlistCost.flid
+);
+
+
+with q as (
+    SELECT flid
+FROM promotions JOIN restaurants USING (promoid) JOIN foodlists ON (foodlists.restaurant_name = restaurants.rname)
+WHERE (startdate > order_time) OR (enddate < order_time)
+)
+
+
+UPDATE foodlists
+SET promoid = null
+WHERE exists
+(
+    Select 1
+    from q
+    where q.flid = foodlists.flid
+)
+
+;
