@@ -9,7 +9,8 @@ const pool = new Pool({
 
 
 /* SQL Query */
-var sql_query = 'with deliverylist as (select *, coalesce(rating::text, \'no rating\') as ratingtext, order_time::text as order_date '
+var sql_query = 'with deliverylist as (select *, coalesce(rating::text, \'no rating\') as ratingtext, '
+    + 'order_time::text as order_date '
     + 'from foodlists natural join delivers ';
 var sql_query2 = 'where order_time >= \'';
 var sql_query3 = '\' and order_time < \'';
