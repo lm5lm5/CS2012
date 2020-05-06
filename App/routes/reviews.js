@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = `SELECT *
+var sql_query = `SELECT DISTINCT username, review
 FROM FOODs LEFT JOIN consists using (fname,rname) left join foodlists using (flid) left join reviews using (flid) left join customer using (cid) left join customerlogin using (cid)
 WHERE reviews IS NOT NULL
 AND fname = '`;
