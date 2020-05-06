@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql2_query = 'with y as (with x as(select distinct f.flId, f.restaurant_name, f.order_time, f.promoid, (select p.startDate from promotions p where f.promoid = p.promoid), (select p.endDate from promotions p where f.promoid = p.promoid) from foodlists f join customer c on f.cid=c.cid order by restaurant_name) select startdate, enddate, x.promoid from x where x.restaurant_name = \'';
+var sql2_query = 'with y as (with x as(with f as (select * from foodlists where promoid is not null) select distinct f.flId, f.restaurant_name, f.order_time, f.promoid, (select p.startDate from promotions p where f.promoid = p.promoid), (select p.endDate from promotions p where f.promoid = p.promoid) from f join customer c on f.cid=c.cid order by restaurant_name) select startdate, enddate, x.promoid from x where x.restaurant_name = \'';
 var sql2_query1 = 'select promoid, startdate, enddate, count(*), enddate - startdate durationindays, (count(*)::decimal/(enddate - startdate))::decimal ratio from y group by promoid, startdate, enddate order by startdate'
 
 router.get('/', function (req, res, next) {
