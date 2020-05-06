@@ -3,7 +3,7 @@
 
 <head>
     <!-- Page Title -->
-    <title>Order summary</title>
+    <title>Rider Statistics</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 
     <!-- CSS for Styling -->
@@ -22,13 +22,20 @@
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
     <!-- ADDED JavaScript -->
-    <script src="javascripts/checkDates.js"></script>
+    <script src="javascripts/checkDatesAndRid.js"></script>
+
 </head>
 
 <body>
 <p><a href="/managerProfile">Click here to move back</a></p>
-<h1>Please specify a time period</h1>
-<form id="html_form" action="orderStatistics" role="form" method="post">
+<h2>Please specify a rider</h2>
+<form id="html_form" action="riderInfo" role="form" method="post">
+    <div class="form-group">
+        <label for="startdate">Rider id</label>
+        <input type="text" class="form-control" id="rid" name="rid" aria-describedby="rid"
+               placeholder="rid">
+    </div>
+<h2>Please specify a time period</h2>
     <div class="form-group">
         <label for="startdate">Start date (inclusive)</label>
         <input type="date" class="form-control" id="startdate" name="startdate" aria-describedby="startdate"
@@ -38,7 +45,7 @@
         <label for="enddate">End date (exclusive)</label>
         <input type="date" class="form-control" id="enddate" name="enddate" aria-describedby="enddate"
                placeholder="end date">
-        <h1>Or specify a month</h1>
+<h2>Or specify a month</h2>
     </div>
     <div class="form-group">
         <label for="month">Month</label>

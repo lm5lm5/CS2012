@@ -3,7 +3,7 @@
 
 <head>
     <!-- Page Title -->
-    <title>Riders</title>
+    <title>Rider statistics</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 
     <!-- CSS for Styling -->
@@ -21,11 +21,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-<h1>Rider list</h1>
-<p><a href="/managerProfile">Click here to move back</a></p>
+<h1>Rider Statistics from <%= startdate %> to <%= enddate %> (exclusive)</h1>
+<p><a href="/riderInfo">Click here to move back</a></p>
 <table class="table">
     <thead>
     <tr>
@@ -52,6 +53,33 @@
     <% } %>
     </tbody>
 </table>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Order id</th>
+        <th scope="col">Customer id</th>
+<!--        <th scope="col">Customer username</th>-->
+        <th scope="col">Order date</th>
+        <th scope="col">Delivery fee</th>
+        <th scope="col">Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i = 0; i < riderdata2.length; i++) { %>
+        <tr>
+            <td><%= riderdata2[i].flid%></td>
+            <td><%= riderdata2[i].cid%></td>
+<!--            <td><%= riderdata2[i].username%></td>-->
+            <td><%= riderdata2[i].order_date%></td>
+            <td><%= riderdata2[i].deliveryfee%></td>
+            <td><%= riderdata2[i].ratingtext%></td>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
+
+
 </body>
 
 </html>
