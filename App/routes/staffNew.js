@@ -74,7 +74,7 @@ router.post('/', function (req, res, next) {
 			console.log(err.stack);
 			// alert(err.stack);
 			sess = req.session;
-			var errormessage = "choose a different user name";
+			var errormessage = "choose a valid resturant and username";
 			sess.error = errormessage;
 			sess.errortype = 'usernamewrong';
 			res.redirect('/staffNew');
