@@ -25,20 +25,34 @@ var sql_ifflid = 'SELECT * FROM customer join foodlists USING (cid) join consist
 router.get('/', function (req, res, next) {
   sess = req.session;
   sess.rewardnumbertobuy = null;
+  var errormessage = null;
+  var errorthing = null;
+
+  var errorcheck = sess.error;
+  var errortypecheck = sess.errortype;
+
+  if (errorcheck && errorcheck != null && errortypecheck == 'ordererror') {
+    errormessage = errorcheck;
+    sess.error = null;
+    sess.errortype = null;
+  }
+
+
+
   if (sess.flid == null) {
 
     if (sess.chosenFood == null) {
       console.log("HHEEEEE");
       sql_query2 = sql_query + sql_order;
       pool.query(sql_query2, (err, foodlist) => {
-        res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: false });
+        res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: false,  error: errormessage});
       });
     }
     else {
       console.log("LLLLLAAAA")
       sql_final = sql_query + sql_ifchosen + '\'' + sess.rname + '\'' + sql_order;
       pool.query(sql_final, (err, foodlist) => {
-        res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: false });
+        res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: false, error: errormessage });
       });
     }
 
@@ -57,7 +71,7 @@ router.get('/', function (req, res, next) {
 
         console.log(sql_query2);
         pool.query(sql_query2, (err, foodlist) => {
-          res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: false });
+          res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: false, error: errormessage });
         });
 
       }
@@ -78,7 +92,7 @@ router.get('/', function (req, res, next) {
               if (ownfoodlistcost.rows[0].totalthing > ownfoodlist.rows[0].minimalcost) {
                 canbuy = true;
               }
-              res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: true, ownfoodlist: ownfoodlist.rows, totalcost: ownfoodlistcost.rows[0].totalthing, minimalcost1: ownfoodlist.rows[0].minimalcost, canbuy: canbuy});
+              res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: true, ownfoodlist: ownfoodlist.rows, totalcost: ownfoodlistcost.rows[0].totalthing, minimalcost1: ownfoodlist.rows[0].minimalcost, canbuy: canbuy, error: errormessage });
             });
           }
           else {
@@ -90,7 +104,7 @@ router.get('/', function (req, res, next) {
               if (ownfoodlistcost.rows[0].totalthing > ownfoodlist.rows[0].minimalcost) {
                 canbuy = true;
               }
-              res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: true, ownfoodlist: ownfoodlist.rows, totalcost: ownfoodlistcost.rows[0].totalthing, canbuy: canbuy, minimalcost1: ownfoodlist.rows[0].minimalcost });
+              res.render('orderFood', { title: 'Food list', foodlist: foodlist.rows, flidPresent: true, ownfoodlist: ownfoodlist.rows, totalcost: ownfoodlistcost.rows[0].totalthing, canbuy: canbuy, minimalcost1: ownfoodlist.rows[0].minimalcost, error: errormessage });
             });
           }
 
@@ -115,7 +129,7 @@ router.post('/', function (req, res, next) {
   }
 
   if (req.body.action == "Add") {
-   
+
     console.log(req.body.numbertobuy);
 
 
@@ -241,14 +255,18 @@ router.post('/', function (req, res, next) {
       var newflid;
       pool.query(newflid_sql, (err, thatnewflid) => {
         newflid = thatnewflid.rows[0].newflid;
-        sess.flid = newflid;
         var full_sql = big_sql + insertfoodlist_sql + newflid + ', ' + sess.user + `, null, null, null, 0, null, null);` + calladdfood_sql + newflid + `, '` + req.body.fname + `', '` + req.body.rname + `',` + req.body.numbertobuy + `);`;
         pool.query(full_sql, (err, thatnewflid) => {
           if (err) {
             console.log("ERROR is " + err);
-            sess.flid = null;
+            sess = req.session;
+            var errormessage = err.stack;
+            sess.error = errormessage;
+            sess.errortype = 'ordererror';
+            res.redirect('/orderFood');
           }
           else {
+            sess.flid = newflid;
             sess.chosenFood = true;
             sess.rname = req.body.rname;
             res.redirect("/orderFood");
@@ -272,6 +290,11 @@ router.post('/', function (req, res, next) {
       pool.query(full_sql, (err, thatnewflid) => {
         if (err) {
           console.log("ERROR is " + err);
+          sess = req.session;
+          var errormessage = err.stack;
+          sess.error = errormessage;
+          sess.errortype = 'ordererror';
+          res.redirect('/orderFood');
         }
         else {
           sess.chosenFood = true;
@@ -319,7 +342,7 @@ router.post('/', function (req, res, next) {
             WHERE fname = '`;
             var add_sql_back2 = `' And rname = '`
             var add_sql_back_full = add_sql_back + req.body.fname + add_sql_back2 + req.body.rname + `';`;
-            
+
             var checksql = `Update foods 
             Set isavailable = true 
             WHERE dailylimit > 0
@@ -330,8 +353,8 @@ router.post('/', function (req, res, next) {
             var updatecost_sql = `Update foodlists
             Set total_cost = total_cost - (Select price
             from foods
-            where fname = '` + req.body.fname + 
-            `'and rname = '` + req.body.rname + `')
+            where fname = '` + req.body.fname +
+              `'and rname = '` + req.body.rname + `')
             WHERE flid = ` + sess.flid + `;`;
 
             var totalfullsql = add_sql_back_full + fullchecksql + updatecost_sql;
@@ -345,14 +368,14 @@ router.post('/', function (req, res, next) {
               else {
                 res.redirect("/orderFood");
               }
-      
-      
-      
-            });
-      
 
-            
-            
+
+
+            });
+
+
+
+
           }
 
 
