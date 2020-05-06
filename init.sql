@@ -149,7 +149,8 @@ create table Foodlists(
     Total_cost numeric default 0,
     Delivery_location text,
     Did integer,
-    unique(flId, Did),
+    unique(flId),
+	unique(Did),
     FOREIGN KEY (Did) REFERENCES Delivers(Did)
 );
 
