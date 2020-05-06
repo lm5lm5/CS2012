@@ -23,7 +23,7 @@
 </head>
 
 <body>
-	<% if (error != null) { %> 
+	 <% if (error != null) { %> 
 		<script>
 		alert(`<%= error  %>`)
 	</script>
@@ -202,14 +202,15 @@
 						<button type="submit" class="btn btn-outline-primary">Add</button>
 						
 					</td>
-					<% } else { %>
-					<td></td>
-					<td></td>	
-					<% } %>
+					 
 
 
 
 				</form>
+				<% } else { %>
+					<td></td>
+					<td></td>	
+					<% } %>
 
 			</tr>
 			<% } %>
