@@ -29,17 +29,25 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">Rider id</th>
-        <th scope="col">Rider name</th>
-        <th scope="col">Rider username</th>
+        <th scope="col">Rider Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Number of deliveries</th>
+        <th scope="col">Total weekly working hours</th>
+        <th scope="col">Weekly salary</th>
+        <th scope="col">Total salary</th>
     </tr>
     </thead>
     <tbody>
-    <% for(var i = 0; i < riderdata.length; i++) { %>
+    <% for(var i=0; i<riderdata.length; i++) { %>
         <tr>
             <td><%= riderdata[i].riderid%></td>
             <td><%= riderdata[i].ridername%></td>
-            <td><%= riderdata[i].username%></td>
+            <td><%= riderdata[i].status%></td>
+            <td><%= riderdata[i].numofdeliveries%></td>
+            <td><%= riderdata[i].totalhours%></td>
+            <td><%= riderdata[i].salary%></td>
+            <td><%= riderdata[i].totalsalary%></td>
         </tr>
     <% } %>
     </tbody>

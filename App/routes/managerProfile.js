@@ -12,7 +12,8 @@ const {Pool} = require('pg')
 
 router.get('/', function (req, res, next) {
     sess = req.session;
-    if (sess.managername == null || sess.mid == null) {
+    if (sess.managername === 'undefined' || sess.managername === null
+        || sess.mid === null || sess.mid === 'undefined') {
         console.log("manager not logged in yet");
         res.redirect('/manager');
     }
