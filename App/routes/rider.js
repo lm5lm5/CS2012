@@ -61,6 +61,7 @@ router.post('/', function (req, res, next) {
 			if (data.rowCount == 1){
 				sess = req.session;
 				sess.login = 1;
+				sess.rider = 1;
 				sess.error = null;
 				var data = data.rows;
 				sess.user = data[0].riderid;

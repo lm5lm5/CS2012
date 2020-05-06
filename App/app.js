@@ -42,11 +42,13 @@ var reviewRouter = require('./routes/reviews');
 var customerEditPasswordRouter = require('./routes/customerEditPassword');
 var foodListRouter = require('./routes/foodList');
 var reviewFoodListRouter = require('./routes/reviewFoodList');
+var rateFoodListRouter = require('./routes/rateFoodList');
 
 var riderRouter = require('./routes/rider');
 var riderNewRouter = require('./routes/riderNew');
 var riderProfileRouter = require('./routes/riderProfile');
 var riderPastDeliveriesRouter = require('./routes/riderPastDeliveries');
+var riderEditPasswordRouter = require('./routes/riderEditPassword');
 
 var staffRouter = require('./routes/staff');
 var staffNewRouter = require('./routes/staffNew');
@@ -125,11 +127,13 @@ app.use('/reviews',reviewRouter);
 app.use('/customerEditPassword',customerEditPasswordRouter);
 app.use('/foodList', foodListRouter);
 app.use('/reviewFoodList', reviewFoodListRouter);
+app.use('/rateFoodList', rateFoodListRouter);
 
 app.use('/rider', riderRouter);
 app.use('/riderNew', riderNewRouter);
 app.use('/riderProfile', riderProfileRouter);
 app.use('/riderPastDeliveries', riderPastDeliveriesRouter);
+app.use('/riderEditPassword', riderEditPasswordRouter);
 
 app.use('/staff', staffRouter);
 app.use('/staffNew', staffNewRouter);

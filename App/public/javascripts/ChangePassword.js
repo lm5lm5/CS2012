@@ -14,5 +14,10 @@ function check(event) {
                 event.preventDefault();
 		event.stopPropagation();
 		return false;
-        }
+        } else if(previouspw == password) {
+		alert("The new password you have re-entered is the same as your previous password!");
+                event.preventDefault();
+		event.stopPropagation();
+		return false;
+	}
 }

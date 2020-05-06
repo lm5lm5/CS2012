@@ -1073,8 +1073,8 @@ insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rider
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (7, 98.05, '2019-04-02 21:23:13', '2019-06-08 06:51:56', '2019-08-03 19:57:30', '2019-11-26 20:04:03', '2019-04-10 11:02:27', 202, 5, 17);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (8, 87.9, '2019-05-08 21:55:59', '2020-02-24 06:48:54', '2019-07-31 02:50:28', '2019-09-20 05:30:04', '2020-03-20 17:46:29', 155, 6, 75);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (9, 50.24, '2019-12-27 12:06:18', '2019-05-14 22:22:50', '2019-04-05 16:28:03', '2019-07-01 18:26:41', '2019-07-29 01:07:50', 43, 0, 71);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (10, 51.2, '2020-03-27 23:46:08', '2019-06-08 11:06:48', '2019-07-05 09:19:01', '2019-09-17 03:55:35', '2019-12-31 22:29:28', 257, 6, 74);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (11, 42.96, '2019-08-25 19:55:20', '2019-07-25 15:26:48', '2019-09-12 07:52:30', '2020-01-29 09:59:04', '2019-08-01 05:14:58', 218, 4, 41);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (10, 51.2, '2020-03-27 23:46:08', '2019-06-08 11:06:48', '2019-07-05 09:19:01', '2019-09-17 03:55:35', '2019-12-31 22:29:28', 257, null, 74);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (11, 42.96, '2019-08-25 19:55:20', '2019-07-25 15:26:48', '2019-09-12 07:52:30', '2020-01-29 09:59:04', '2019-08-01 05:14:58', 218, null, 41);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (12, 23.5, '2019-08-26 10:35:06', '2019-09-10 14:25:18', '2019-09-21 13:06:22', '2020-03-14 23:03:57', '2019-10-07 07:14:50', 179, 3, 54);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (13, 5.53, '2020-03-27 13:37:19', '2020-01-05 16:36:38', '2019-06-22 02:45:51', '2019-08-28 19:21:25', '2020-02-25 00:23:50', 252, 8, 23);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (14, 50.24, '2019-10-27 13:00:13', '2019-09-19 13:35:57', '2019-10-20 21:05:24', '2019-09-06 17:54:31', '2019-07-18 13:15:12', 163, 6, null);
@@ -1082,8 +1082,8 @@ insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rider
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (16, 8.01, '2019-12-07 03:53:50', '2020-03-13 16:42:55', '2020-01-17 01:21:36', '2019-04-12 10:03:04', '2019-10-28 15:39:32', 294, 4, 65);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (17, 89.03, '2019-08-07 17:04:00', '2019-11-08 17:05:29', '2020-02-24 03:26:14', '2019-07-05 01:54:21', '2019-11-11 08:07:11', 128, 7, null);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (18, 4.22, '2019-12-08 06:35:14', '2019-05-16 02:22:56', '2019-05-15 00:25:05', '2020-02-22 10:40:23', '2019-04-22 04:10:00', 63, 5, 65);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (19, 97.56, '2019-06-10 02:52:40', '2019-06-04 17:01:48', '2019-11-11 06:57:59', '2019-06-07 15:02:23', '2019-04-04 13:10:41', 113, 0, 3);
-insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (20, 46.22, '2020-03-05 15:25:01', '2019-11-20 04:02:15', '2019-08-28 15:51:25', '2020-01-30 22:27:33', '2019-08-15 22:34:29', 181, 8, null);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (19, 97.56, '2019-06-10 02:52:40', '2019-06-04 17:01:48', '2019-11-11 06:57:59', '2019-06-07 15:02:23', '2019-04-04 13:10:41', 113, null, 3);
+insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (20, 46.22, '2020-03-05 15:25:01', '2019-11-20 04:02:15', '2019-08-28 15:51:25', '2020-01-30 22:27:33', '2019-08-15 22:34:29', 181, null, null);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (21, 26.59, '2020-03-02 05:41:40', '2019-06-04 07:20:28', '2020-02-23 14:08:34', '2020-03-18 22:16:21', '2020-01-06 06:13:57', 91, 4, 43);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (22, 61.68, '2019-09-16 07:42:05', '2019-08-24 16:57:52', '2020-01-26 14:36:47', '2019-07-11 21:59:58', '2019-04-07 03:28:59', 300, 7, 53);
 insert into Delivers (did, deliveryfee, customerplaceorder, ridergotorest, rideratrest, riderleftrest, riderdeliverorder, riderid, rating, pid) values (23, 88.62, '2019-06-29 03:17:30', '2019-04-15 09:55:39', '2019-05-21 12:12:17', '2020-03-27 02:56:29', '2019-06-08 17:52:30', 300, 1, 63);
@@ -2637,7 +2637,16 @@ insert into consists (coid, flid, fname, rname) values (158, 20, 'Common octopus
 insert into consists (coid, flid, fname, rname) values (159, 20, 'Fruit preserve', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (160, 20, 'Common octopus', 'Lombard Medical, Inc.');
 insert into consists (coid, flid, fname, rname) values (161, 20, 'Sauce', 'Lombard Medical, Inc.');
-insert into consists (coid, flid, fname, rname) values (162, 20, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (162, 21, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (163, 22, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (164, 23, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (165, 24, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (166, 25, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (167, 26, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (168, 27, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (169, 28, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (170, 29, 'Fruit preserve', 'Lombard Medical, Inc.');
+insert into consists (coid, flid, fname, rname) values (171, 30, 'Fruit preserve', 'Lombard Medical, Inc.');
 
 insert into customerLogin (Username, Password, cid) values ('ee', 'ee', 1);
 insert into customerLogin (Username, Password, cid) values ('hmcairt1', '1g8XThby1oku', 2);
