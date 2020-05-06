@@ -61,7 +61,6 @@ router.post('/', function (req, res, next) {
 	// Retrieve Information
 	var fname = req.body.fname;
 	var dailylimit = req.body.dailylimit;
-  var isavailable = req.body.isavailable;
   var category = req.body.category;
   var price = req.body.price;
   var rname = sess.rname;
@@ -70,7 +69,7 @@ router.post('/', function (req, res, next) {
   // fname, rname, dailylimit, isavailable, category, price
   // var insert_query = sql_query + '\'' + ccNo + '\', \'' + username + '\', \'' + password + '\')';
   console.log("restaurantName: " + rname);
-	var insert_query = sql_query + '\'' + fname + '\', \'' + rname + '\', ' + dailylimit + ', ' + isavailable + ', \'' + category + '\', ' + price + ')';
+	var insert_query = sql_query + '\'' + fname + '\', \'' + rname + '\', ' + dailylimit + ', ' + 'true' + ', \'' + category + '\', ' + price + ')';
 	console.log(insert_query);
 
 
