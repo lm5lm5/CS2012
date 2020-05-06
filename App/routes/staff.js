@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 /* SQL Query */
-var sql_query = 'SELECT restaurant_name, Username FROM staffLogin WHERE Username = \'';
+var sql_query = 'SELECT restaurant_name, Username, staffid FROM staffLogin WHERE Username = \'';
 var sql_query2 = '\' AND password = \'';
 var sql_query3 = '\' AND Restaurant_name = \'';
 
