@@ -122,7 +122,7 @@ router.post('/', function (req, res, next) {
 				req.session.user = data23;
 				console.log(req.session.user);
 				console.log("created new user");
-				res.redirect('/');
+				res.redirect('/rider');
 			});
 			
 		}
