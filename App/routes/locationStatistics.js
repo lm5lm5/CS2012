@@ -51,7 +51,7 @@ router.post('/', function (req, res, next) {
         if (data.rowCount === 0) {
             console.log('no info');
             sess = req.session;
-            sess.locerror = 'Location you input does not exist, or has no orders placed on that date';
+            sess.locerror = 'Location you input has no orders placed on that date';
             res.redirect('/locationStatistics');
             return;
         }
@@ -68,7 +68,7 @@ router.post('/', function (req, res, next) {
             if (data.rowCount !== 1) {
                 console.log('no info');
                 sess = req.session;
-                sess.locerror = 'Location you input does not exist, or has no orders placed on that date';
+                sess.locerror = 'Location you input has no orders placed on that date';
                 res.redirect('/locationStatistics');
                 return;
             }
