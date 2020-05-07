@@ -14,14 +14,21 @@ var sql_query2 = '\' AND password = \'';
 // GET
 router.get('/', function (req, res, next) {
     sess = req.session;
+    console.log(sess.managername != null);
+    console.log(sess.mid != null);
     if (sess.error && sess.errortype === 'wrongnameorpassword') {
         console.log("error: incorrect account info");
         res.render('manager', {title: 'Manager login', error: sess.error});
         sess.error = null;
         sess.errortype = 'cidexist';
-    } else {
-        res.render('manager', {title: 'Manager login', error: null});
+        return;
     }
+    if (sess.managername != null && sess.mid != null) {
+        console.log("manager already logged in");
+        res.redirect('/managerProfile');
+        return;
+    }
+    res.render('manager', {title: 'Manager login', error: null});
 });
 
 // POST
