@@ -26,7 +26,7 @@ begin
 
 SELECT username into usernamecheck
 FROM staffLogin
-WHERE username = usernamething;
+WHERE username = usernamething and restaurant_name = restaurantthing;
 
 if usernamecheck IS NOT NULL then
     raise exception 'This username is taken. Choose another username!';
