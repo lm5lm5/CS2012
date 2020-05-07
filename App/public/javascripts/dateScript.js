@@ -13,7 +13,7 @@ function check(event) {
 	// Simple Check
 
 	if(Description.length == 0 || discount.length == 0 || startdate.length == 0 || enddate.length == 0) {
-		alert("pls fill up all missing box");
+		alert("You are required to fill in all fields");
 		event.preventDefault();
 		event.stopPropagation();
 		return false;

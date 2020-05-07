@@ -6,7 +6,7 @@ function check(event) {
 	
 	// Simple Check
 	if(username.length == 0 || password.length == 0 || restaurant.length == 0) {
-		alert("pls fill up all missing box");
+		alert("You are required to fill in all fields");
 		event.preventDefault();
 		event.stopPropagation();
 		return false;

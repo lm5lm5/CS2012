@@ -7,7 +7,7 @@ function check(event) {
 	var price  = document.getElementById('price').value;
 
 	if(fname.length == 0 || dailylimit.length == 0 || isavailable.length == 0 || category.length == 0 || price.length == 0) {
-		alert("pls fill up all missing box");
+		alert("You are required to fill in all fields");
 		event.preventDefault();
 		event.stopPropagation();
 		return false;
