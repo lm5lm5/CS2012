@@ -242,6 +242,7 @@ CREATE TABLE staffLogin (
     Restaurant_name text not null,
     staffid Integer,
     PRIMARY KEY (staffid),
+    unique(Restaurant_name, Username),
     foreign Key (Restaurant_name) references Restaurants(rname)
 );
 
