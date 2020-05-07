@@ -242,7 +242,7 @@ CREATE TABLE staffLogin (
     staffid Integer,
     PRIMARY KEY (staffid),
     unique(Restaurant_name, Username),
-    foreign Key (Restaurant_name) references Restaurants(rname)
+    foreign Key (Restaurant_name) references Restaurants(rname) on delete cascade
 );
 
 CREATE TABLE managerLogin (
