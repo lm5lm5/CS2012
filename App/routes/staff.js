@@ -46,7 +46,7 @@ router.post('/', function (req, res, next) {
 		res.redirect('/staff');
 	}
 	else
-	{
+	{ 
 
 		// Construct Specific SQL Query
 		var insert_query = sql_query + username + sql_query2 + password + sql_query3 + Restaurant_name + '\'';
