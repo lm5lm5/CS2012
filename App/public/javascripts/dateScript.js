@@ -20,7 +20,7 @@ function check(event) {
 	}
 
 	if(!endAfterStart(startdate,enddate)) {
-		alert("enddate cannot be earlier date");
+		alert("choose the correct start and end date");
 		event.preventDefault();
 		event.stopPropagation();
 		return false;
