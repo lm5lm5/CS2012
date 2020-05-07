@@ -3469,7 +3469,7 @@ insert into riderLogin (username, password, riderid) values ('adematteis87', 'yk
 insert into riderLogin (username, password, riderid) values ('cfuente88', 'Md11C6', 297);
 insert into riderLogin (username, password, riderid) values ('tlane89', 'OEVJsMO1i', 298);
 insert into riderLogin (username, password, riderid) values ('ftraise8a', '1pjlfkU', 299);
-insert into riderLogin (username, password, riderid) values ('ww', 'ww', 300);
+insert into riderLogin (username, password, riderid) values ('qq', 'qq', 300);
 
 
 insert into stafflogin (staffid, username, password, Restaurant_name) values (1, 'Cesare Ellerey', 'J31cAozSI', 'CGI Group, Inc.');
@@ -3477,7 +3477,7 @@ insert into stafflogin (staffid, username, password, Restaurant_name) values (2,
 insert into stafflogin (staffid, username, password, Restaurant_name) values (3, 'Xylia Wyke', 'YszsNOqM', 'Preformed Line Products Company');
 insert into stafflogin (staffid, username, password, Restaurant_name) values (4, 'Lola Fradgley', '7OgSJCjL18K', 'Bed Bath & Beyond Inc.');
 insert into stafflogin (staffid, username, password, Restaurant_name) values (5, 'Spense Steventon', 'ZLr0rOBU5', 'Novan, Inc.');
-insert into stafflogin (staffid, username, password, Restaurant_name) values (6, 'Luce Adshed', 'wdDm4vYLz8', 'Lombard Medical, Inc.');
+insert into stafflogin (staffid, username, password, Restaurant_name) values (6, 'qq', 'qq', 'Lombard Medical, Inc.');
 insert into stafflogin (staffid, username, password, Restaurant_name) values (7, 'Peyton Gosalvez', '1fbSfwK', 'Regulus Therapeutics Inc.');
 insert into stafflogin (staffid, username, password, Restaurant_name) values (8, 'Ede Anmore', 'jD6Cj8SCVKL', 'PCM, Inc.');
 insert into stafflogin (staffid, username, password, Restaurant_name) values (9, 'Barnaby Sarney', 'kQ5yWxvvoWv', 'NextEra Energy, Inc.');
