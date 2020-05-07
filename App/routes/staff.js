@@ -87,7 +87,7 @@ router.post('/', function (req, res, next) {
 				}
 				else {
 					sess = req.session;
-					sess.error = "Resturant name or Username or password wrong";
+					sess.error = "Resturant name, Username or password wrong";
 					sess.errortype = 'staffidexist';
 					res.redirect('/staff');
 					
