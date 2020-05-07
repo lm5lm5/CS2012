@@ -168,7 +168,7 @@ create table Consists(
 -- done
 CREATE TABLE Reviews (
     Review text,
-    Flid int references Foodlists(flid),
+    Flid int references Foodlists(flid) on delete cascade,
     primary key(Flid)
 );
 
@@ -232,7 +232,7 @@ CREATE TABLE riderLogin (
     riderid Integer,
     PRIMARY KEY (riderid),
     Unique(Username),
-    foreign Key (riderid) references Riders(riderid)
+    foreign Key (riderid) references Riders(riderid) on delete cascade
 );
 
 CREATE TABLE staffLogin (
@@ -242,7 +242,7 @@ CREATE TABLE staffLogin (
     staffid Integer,
     PRIMARY KEY (staffid),
     unique(Restaurant_name, Username),
-    foreign Key (Restaurant_name) references Restaurants(rname)
+    foreign Key (Restaurant_name) references Restaurants(rname) on delete cascade
 );
 
 CREATE TABLE managerLogin (
