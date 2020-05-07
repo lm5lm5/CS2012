@@ -25,4 +25,12 @@ function check(event) {
 		event.stopPropagation();
 		return false;
 	}
+
+
+	if(!(enddate > now())) {
+		alert("choose the correct start and end date");
+		event.preventDefault();
+		event.stopPropagation();
+		return false;
+	}
 }

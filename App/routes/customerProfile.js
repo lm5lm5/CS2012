@@ -22,6 +22,9 @@ var sql_query2 = 'select * from customer where cid = ';
 
 router.get('/', function (req, res, next) {
   sess = req.session;
+  var value =  sess.changepwsuccess;
+  sess.changepwsuccess = 0;
+
   var sql_query3 = sql_query + sess.user + ' order by flid';
   var sql_query4 = sql_query2 + sess.user;
   console.log("myquery " + sql_query3);
@@ -30,7 +33,7 @@ router.get('/', function (req, res, next) {
   } else {
     pool.query(sql_query3, (err, data1) => {
       pool.query(sql_query4, (err, data2) => {
-        res.render('customerProfile', { title: 'Database Connect', customerOrderData: data1.rows, customerPersonalData: data2.rows });
+        res.render('customerProfile', { title: 'Database Connect', customerOrderData: data1.rows, customerPersonalData: data2.rows, value:value });
       });
     });
   }

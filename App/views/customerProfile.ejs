@@ -26,10 +26,9 @@
 		crossorigin="anonymous"></script>
 </head>
 
-<% if (sess.changepwsuccess == 1) { %>
+<% if (value == 1) { %>
 	<script>
 		alert("Password changed successfully");
-		sess.changepwsuccess = 0;
 	</script>
 	<% } %>	
 
