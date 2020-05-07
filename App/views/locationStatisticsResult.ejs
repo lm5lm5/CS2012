@@ -5,7 +5,7 @@
 </nav>
 <head>
     <!-- Page Title -->
-    <title>Locations</title>
+    <title>Location statistics</title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 
     <!-- CSS for Styling -->
@@ -23,31 +23,57 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-<h1>Location list</h1>
-<p><a href="/managerProfile">Click here to move back</a></p>
+<h1>Location Statistics on <%=date %></h1>
+<p><a href="/locationStatistics">Click here to move back</a></p>
 <table class="table">
     <thead>
     <tr>
         <th scope="col">Location name</th>
-        <th scope="col">Number of orders placed</th>
-        <th scope="col">Date of the latest order</th>
-        <th scope="col">Total cost of these orders</th>
+        <th scope="col">Number of orders placed on this location</th>
+        <th scope="col">Total cost of orders</th>
+        <th scope="col">Maximal cost of an order</th>
     </tr>
     </thead>
     <tbody>
-    <% for(var i = 0; i < orderdata.length; i++) { %>
+        <td><%= locationdata2[0].delivery_location%></td>
+        <td><%= locationdata2[0].order%></td>
+        <td><%= locationdata2[0].cost%></td>
+        <td><%= locationdata2[0].max%></td>
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Order id</th>
+        <th scope="col">Order time</th>
+        <th scope="col">Restaurant name</th>
+        <th scope="col">Order cost</th>
+        <th scope="col">Delivery fee</th>
+        <th scope="col">Payment method</th>
+        <th scope="col">Customer rating for delivery</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i = 0; i < locationdata.length; i++) { %>
         <tr>
-            <td><%= orderdata[i].delivery_location%></td>
-            <td><%= orderdata[i].order%></td>
-            <td><%= orderdata[i].lastest%></td>
-            <td><%= orderdata[i].cost%></td>
+            <td><%= locationdata[i].flid%></td>
+            <td><%= locationdata[i].time%></td>
+            <td><%= locationdata[i].restaurant_name%></td>
+            <td><%= locationdata[i].total_cost%></td>
+            <td><%= locationdata[i].deliveryfee%></td>
+            <td><%= locationdata[i].payment_method%></td>
+            <td><%= locationdata[i].ratingtext%></td>
         </tr>
     <% } %>
     </tbody>
 </table>
+
+
 </body>
 
 </html>

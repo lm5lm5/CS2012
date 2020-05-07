@@ -56,13 +56,7 @@ router.post('/', function (req, res, next) {
     }
     // Construct Specific SQL Query
     var sql_query4 = sql_query + sql_query2 + start + sql_query3 + end + sql_query31 + id + '\') ';
-    var insert_query = sql_query4 + 'select * from deliverylist';
-    // var insert_query = sql_query4
-    //     + 'select coalesce(count(distinct flid), 0) as num, coalesce(sum(total_cost), 0) as cost, '
-    //     + 'coalesce(max(total_cost), 0) as maxcost, coalesce(count(distinct cid), 0) as customer, '
-    //     + 'coalesce(count(distinct riderid), 0) as rider '
-    //     + 'from deliverylist';
-
+    var insert_query = sql_query4 + 'select * from deliverylist order by did';
     console.log('query: ' + insert_query);
 
     pool.query(insert_query, (err, data) => {
@@ -83,11 +77,8 @@ router.post('/', function (req, res, next) {
         sess.end = end;
         console.log('start: ' + start);
         console.log('end: ' + end);
-        var insert_query2 = 'select *, (select count(distinct(flid)) from foodlists F where F.cid = C.cid) as order, '
-            + 'coalesce((select sum(total_cost) from foodlists F where F.cid = C.cid), 0) as cost, '
-            + 'coalesce((select max(total_cost) from foodlists F where F.cid = C.cid), 0) as max '
-            + 'from customer C natural join customerlogin where cid = \'' + id
-            + '\' order by cid';
+        var insert_query2 = 'select * '
+            + 'from customer C natural join customerlogin where cid = \'' + id + '\'';
         console.log('query2: ' + insert_query2);
         pool.query(insert_query2, (err, data) => {
             if (err) {
@@ -101,23 +92,22 @@ router.post('/', function (req, res, next) {
             }
             console.log(data.rows);
             sess.customerdata2 = data.rows;
-            res.redirect('/customerStatisticsResult');
-            // var insert_query3 = sql_query4 + 'select count(flid) as num, coalesce(avg(rating)::decimal(10, 2)::text, \'no rating\') as rating, '
-            //     + 'count(distinct cid) as customer from deliverylist';
-            // console.log('query3: ' + insert_query3);
-            // pool.query(insert_query3, (err, data) => {
-            //     if (err) {
-            //         console.log(err.stack);
-            //         sess = req.session;
-            //         sess.error = err.stack;
-            //         sess.errortype = 'invalid input';
-            //         res.redirect('/customerStatistics');
-            //         return;
-            //     }
-            //     console.log(data.rows);
-            //     sess.riderdata3 = data.rows;
-            //
-            // });
+            var insert_query3 = sql_query4 + 'select count(distinct flid) as num, coalesce(sum(total_cost), 0) as cost, '
+                + 'coalesce(max(total_cost), 0) as max from deliverylist';
+            console.log('query3: ' + insert_query3);
+            pool.query(insert_query3, (err, data) => {
+                if (err) {
+                    console.log(err.stack);
+                    sess = req.session;
+                    sess.error = err.stack;
+                    sess.errortype = 'invalid input';
+                    res.redirect('/customerStatistics');
+                    return;
+                }
+                console.log(data.rows);
+                sess.customerdata3 = data.rows;
+                res.redirect('/customerStatisticsResult');
+            });
         });
     });
 });

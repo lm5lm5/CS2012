@@ -56,7 +56,7 @@ router.post('/', function (req, res, next) {
     }
     // Construct Specific SQL Query
     var sql_query4 = sql_query + sql_query2 + start + sql_query3 + end + sql_query31 + id + '\') ';
-    var insert_query = sql_query4 + 'select *, to_char(customerplaceorder, \'yyyy-MM-dd HH:mm:ss\') as order, '
+    var insert_query = sql_query4 + 'select *, to_char(customerplaceorder, \'yyyy-MM-dd HH24:mm:ss\') as order, '
         + 'to_char(riderdeliverorder - customerplaceorder, \'HH24:MI:SS\') as ordertime, '
         + 'to_char(riderleftrest - customerplaceorder, \'HH24:MI:SS\') as deliverytime from deliverylist order by flid';
 
