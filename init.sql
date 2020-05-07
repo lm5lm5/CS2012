@@ -232,7 +232,7 @@ CREATE TABLE riderLogin (
     riderid Integer,
     PRIMARY KEY (riderid),
     Unique(Username),
-    foreign Key (riderid) references Riders(riderid)
+    foreign Key (riderid) references Riders(riderid) on delete cascade
 );
 
 CREATE TABLE staffLogin (
