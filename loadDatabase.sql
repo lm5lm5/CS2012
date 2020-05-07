@@ -3469,7 +3469,7 @@ insert into riderLogin (username, password, riderid) values ('adematteis87', 'yk
 insert into riderLogin (username, password, riderid) values ('cfuente88', 'Md11C6', 297);
 insert into riderLogin (username, password, riderid) values ('tlane89', 'OEVJsMO1i', 298);
 insert into riderLogin (username, password, riderid) values ('ftraise8a', '1pjlfkU', 299);
-insert into riderLogin (username, password, riderid) values ('qq', 'qq', 300);
+insert into riderLogin (username, password, riderid) values ('ww', 'ww', 300);
 
 
 insert into stafflogin (staffid, username, password, Restaurant_name) values (1, 'Cesare Ellerey', 'J31cAozSI', 'CGI Group, Inc.');
