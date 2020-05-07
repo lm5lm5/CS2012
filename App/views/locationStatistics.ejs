@@ -27,11 +27,20 @@
     <script src="javascripts/checkDateAndLocation.js"></script>
 
 </head>
+
+<% if (locerror != null) { %>
+    <script>
+        alert( `<%= locerror  %>`);
+    </script>
+
+<% } %>
+
 <body>
 <p><a href="/managerProfile">Click here to move back</a><p>
-<h2>Please select a location</h2>
-<form id="html_form" action='locationStatistics' role="form" method="post" onchange="myFunction()">
+<h3>Please select a location from the drop-down list</h3>
+<form id="html_form" action='locationStatistics' role="form" method="post" onchange = "myFunction()">
     <div class="form-group">
+        <label for="startdate">Location list</label>
         <select id="location" class="custom-select d-block w-100">
             <option value=""><%=''%></option>
             <% for(var i = 0; i < locations.length; i++) { %>
@@ -39,12 +48,11 @@
             <% } %>
         </select>
     </div>
-    <h2>Or input a location manually</h2>
     <div class="form-group">
         <input type="text" class="form-control" id="loc" name="loc" aria-describedby="loc"
-               placeholder="location name">
+               placeholder="result location name">
     </div>
-    <h2>Please specify a date</h2>
+    <h3>Please specify a date</h3>
     <div class="form-group">
         <label for="startdate">Start date</label>
         <input type="date" class="form-control" id="date" name="date" aria-describedby="date"

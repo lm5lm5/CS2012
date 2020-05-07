@@ -6,14 +6,14 @@ function check(event) {
     var id = document.getElementById('id').value;
 
     // Simple Check
-    if((startDate.length === 0 || endDate.length === 0) && month.length === 0) {
-        alert("Date/Month missing");
+    if(id.length === 0) {
+        alert("Id missing");
         event.preventDefault();
         event.stopPropagation();
         return false;
     }
-    if(id.length === 0) {
-        alert("Id missing");
+    if((startDate.length === 0 || endDate.length === 0) && month.length === 0) {
+        alert("Date/Month missing");
         event.preventDefault();
         event.stopPropagation();
         return false;

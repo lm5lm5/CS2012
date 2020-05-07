@@ -25,7 +25,10 @@ router.get('/', function (req, res, next) {
         res.redirect('/manager');
         return;
     }
-    res.render('customerStatistics', {})
+    if (sess.cuserror) {
+        res.render('customerStatistics', {cuserror: sess.cuserror});
+    }
+    res.render('customerStatistics', {cuserror: null})
 });
 
 // POST
@@ -54,6 +57,14 @@ router.post('/', function (req, res, next) {
             end = yyyy + '-' + ('0' + (parseInt(mm, 10) + 1)).slice(-2) + '-01';
         }
     }
+    if (start >= end) {
+        console.log('end date before start date');
+        sess = req.session;
+        sess.cuserror = 'End date should be after start date';
+        res.redirect('/customerStatistics');
+        return;
+    }
+
     // Construct Specific SQL Query
     var sql_query4 = sql_query + sql_query2 + start + sql_query3 + end + sql_query31 + id + '\') ';
     var insert_query = sql_query4 + 'select * from deliverylist order by did';
@@ -63,7 +74,7 @@ router.post('/', function (req, res, next) {
         if (err) {
             console.log(err.stack);
             sess = req.session;
-            sess.error = err.stack;
+            sess.cuserror = 'An id should be an integer';
             sess.errortype = 'invalid input';
             res.redirect('/customerStatistics');
             return;
@@ -71,7 +82,7 @@ router.post('/', function (req, res, next) {
         console.log(data.rows);
         console.log(data.rowCount);
         sess = req.session;
-        sess.error = null;
+        sess.cuserror = null;
         sess.customerdata = data.rows;
         sess.start = start;
         sess.end = end;
@@ -84,13 +95,20 @@ router.post('/', function (req, res, next) {
             if (err) {
                 console.log(err.stack);
                 sess = req.session;
-                var errormessage = err.stack;
-                sess.error = errormessage;
+                sess.cuserror = 'An id should be an integer';
                 sess.errortype = 'invalid input';
                 res.redirect('/customerStatistics');
                 return;
             }
             console.log(data.rows);
+            if (data.rowCount !== 1) {
+                console.log('no info');
+                sess = req.session;
+                sess.cuserror = 'Customer with your input id does not exist';
+                sess.errortype = 'cid not exist';
+                res.redirect('/customerStatistics');
+                return;
+            }
             sess.customerdata2 = data.rows;
             var insert_query3 = sql_query4 + 'select count(distinct flid) as num, coalesce(sum(total_cost), 0) as cost, '
                 + 'coalesce(max(total_cost), 0) as max from deliverylist';
@@ -99,7 +117,7 @@ router.post('/', function (req, res, next) {
                 if (err) {
                     console.log(err.stack);
                     sess = req.session;
-                    sess.error = err.stack;
+                    sess.cuserror = 'An id should be an integer';
                     sess.errortype = 'invalid input';
                     res.redirect('/customerStatistics');
                     return;

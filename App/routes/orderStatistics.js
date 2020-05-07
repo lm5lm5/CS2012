@@ -21,7 +21,10 @@ router.get('/', function (req, res, next) {
         res.redirect('/manager');
         return;
     }
-    res.render('orderStatistics', {})
+    if (sess.ordererror) {
+        res.render('orderStatistics', {ordererror: sess.ordererror});
+    }
+    res.render('orderStatistics', {ordererror: null});
 });
 
 // POST
@@ -50,6 +53,14 @@ router.post('/', function (req, res, next) {
             end = yyyy + '-' + ('0' + (parseInt(mm, 10) + 1)).slice(-2) + '-01';
         }
     }
+    if (start >= end) {
+        console.log('end date before start date');
+        sess = req.session;
+        sess.ordererror = 'End date should be after start date';
+        res.redirect('/orderStatistics');
+        return;
+    }
+
     // Construct Specific SQL Query
     var sql_query4 = sql_query + sql_query2 + start + sql_query3 + end + '\' order by flid) ';
     var insert_query = sql_query4
@@ -65,13 +76,13 @@ router.post('/', function (req, res, next) {
             console.log(err.stack);
             sess = req.session;
             var errormessage = err.stack;
-            sess.error = errormessage;
+            sess.ordererror = errormessage;
             sess.errortype = 'invalid dates';
             res.redirect('/orderStatistics');
         } else {
             console.log(data.rows);
             sess = req.session;
-            sess.error = null;
+            sess.ordererror = null;
             sess.orderdata = data.rows;
             sess.start = start;
             sess.end = end;
@@ -87,7 +98,7 @@ router.post('/', function (req, res, next) {
                     console.log(err.stack);
                     sess = req.session;
                     var errormessage = err.stack;
-                    sess.error = errormessage;
+                    sess.ordererror = errormessage;
                     res.redirect('/orderStatistics');
                 } else {
                     console.log(data.rowCount);
