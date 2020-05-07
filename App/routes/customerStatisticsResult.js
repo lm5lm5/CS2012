@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
         return;
     }
     res.render('customerStatisticsResult', {customerdata: sess.customerdata, customerdata2: sess.customerdata2,
-        startdate: sess.start, enddate: sess.end})
+        customerdata3: sess.customerdata3, startdate: sess.start, enddate: sess.end})
 });
 
 

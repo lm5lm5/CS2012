@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const {Pool} = require('pg')
-
+// GET
 router.get('/', function (req, res, next) {
     sess = req.session;
     if (sess.managername == null || sess.mid == null) {
@@ -10,7 +9,9 @@ router.get('/', function (req, res, next) {
         res.redirect('/manager');
         return;
     }
-    res.render('deliveryStatistics', {})
+    res.render('locationStatisticsResult', {locationdata: sess.locationdata, locationdata2: sess.locationdata2,
+        date: sess.date})
 });
+
 
 module.exports = router;

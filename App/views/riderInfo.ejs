@@ -24,33 +24,29 @@
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
     <!-- ADDED JavaScript -->
-    <script src="javascripts/checkDatesAndRid.js"></script>
+    <script src="javascripts/checkDatesAndId.js"></script>
 
 </head>
-
 <body>
-<p><a href="/managerProfile">Click here to move back</a></p>
-<h2>Please specify a rider</h2>
+<a href="/managerProfile">Click here to move back</a>
+<h4>Please specify a rider</h4>
 <form id="html_form" action="riderInfo" role="form" method="post">
     <div class="form-group">
         <label for="startdate">Rider id</label>
         <input type="text" class="form-control" id="id" name="id" aria-describedby="id"
                placeholder="id">
     </div>
-<h2>Please specify a time period</h2>
+<h4>Please specify a time period</h4>
     <div class="form-group">
         <label for="startdate">Start date (inclusive)</label>
         <input type="date" class="form-control" id="startdate" name="startdate" aria-describedby="startdate"
                placeholder="start date">
-    </div>
-    <div class="form-group">
         <label for="enddate">End date (exclusive)</label>
         <input type="date" class="form-control" id="enddate" name="enddate" aria-describedby="enddate"
                placeholder="end date">
-<h2>Or specify a month</h2>
     </div>
+<h4>Or specify a month</h4>
     <div class="form-group">
-        <label for="month">Month</label>
         <input type="month" class="form-control" id="month" name="month" aria-describedby="month"
                placeholder="month" step="1">
     </div>
