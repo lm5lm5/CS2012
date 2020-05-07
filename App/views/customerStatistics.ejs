@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">CS2102 Food delivery service</a>
+    <a class="navbar-brand" href="/">CS2102 Food delivery service</a>
 </nav>
 <head>
     <!-- Page Title -->
@@ -27,17 +27,22 @@
     <script src="javascripts/checkDatesAndId.js"></script>
 
 </head>
+<% if (cuserror != null) { %>
+    <script>
+        alert( `<%= cuserror  %>`);
+    </script>
 
+<% } %>
 <body>
 <a href="/managerProfile">Click here to move back</a>
-<h4>Please specify a customer</h4>
+<h3>Please specify a customer</h3>
 <form id="html_form" action="customerStatistics" role="form" method="post">
     <div class="form-group">
         <label for="startdate">Customer id</label>
         <input type="text" class="form-control" id="id" name="id" aria-describedby="id"
                placeholder="id">
     </div>
-    <h4>Please specify a time period</h4>
+    <h3>Please specify a time period</h3>
     <div class="form-group">
         <label for="startdate">Start date (inclusive)</label>
         <input type="date" class="form-control" id="startdate" name="startdate" aria-describedby="startdate"
@@ -46,7 +51,7 @@
         <input type="date" class="form-control" id="enddate" name="enddate" aria-describedby="enddate"
                placeholder="end date">
     </div>
-    <h4>Or specify a month</h4>
+    <h3>Or specify a month-year</h3>
     <div class="form-group">
         <input type="month" class="form-control" id="month" name="month" aria-describedby="month"
                placeholder="month" step="1">

@@ -18,13 +18,17 @@ router.get('/', function (req, res, next) {
         res.redirect('/manager');
         return;
     }
+
     pool.query(sql_query, (err, data) => {
         if (err) {
             res.redirect('/managerProfile');
             return;
         }
         console.log(data.rows);
-        res.render('locationStatistics', {locations: data.rows});
+        if (sess.locerror) {
+            res.render('locationStatistics', {locations: data.rows, locerror: sess.locerror});
+        }
+        res.render('locationStatistics', {locations: data.rows, locerror: null});
     });
 });
 
@@ -44,17 +48,16 @@ router.post('/', function (req, res, next) {
     console.log('query: ' + insert_query);
 
     pool.query(insert_query, (err, data) => {
-        if (err) {
-            console.log(err.stack);
+        if (data.rowCount === 0) {
+            console.log('no info');
             sess = req.session;
-            sess.error = err.stack;
-            sess.errortype = 'invalid input';
+            sess.locerror = 'Location you input has no orders placed on that date';
             res.redirect('/locationStatistics');
             return;
         }
         console.log(data.rows);
         sess = req.session;
-        sess.error = null;
+        sess.locerror = null;
         sess.locationdata = data.rows;
         sess.date = start;
         var insert_query2 = sql_query3 + ' select delivery_location, count(distinct flid) as order, '
@@ -62,6 +65,13 @@ router.post('/', function (req, res, next) {
             + 'from list where order_time = \'' + start + '\' group by delivery_location';
         console.log('query: ' + insert_query2);
         pool.query(insert_query2, (err, data) => {
+            if (data.rowCount !== 1) {
+                console.log('no info');
+                sess = req.session;
+                sess.locerror = 'Location you input has no orders placed on that date';
+                res.redirect('/locationStatistics');
+                return;
+            }
             console.log(data.rows);
             sess.locationdata2 = data.rows;
             res.redirect('/locationStatisticsResult');
@@ -72,7 +82,7 @@ router.post('/', function (req, res, next) {
         //         console.log(err.stack);
         //         sess = req.session;
         //         var errormessage = err.stack;
-        //         sess.error = errormessage;
+        //         sess.locerror = errormessage;
         //         sess.errortype = 'invalid input';
         //         res.redirect('/riderInfo');
         //         return;
@@ -88,7 +98,7 @@ router.post('/', function (req, res, next) {
         //         if (err) {
         //             console.log(err.stack);
         //             sess = req.session;
-        //             sess.error = err.stack;
+        //             sess.locerror = err.stack;
         //             sess.errortype = 'invalid input';
         //             res.redirect('/riderInfo');
         //             return;

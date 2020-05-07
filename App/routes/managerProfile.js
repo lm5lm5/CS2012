@@ -19,6 +19,10 @@ router.get('/', function (req, res, next) {
         res.redirect('/manager');
         return;
     }
+    sess.ordererror = null;
+    sess.cuserror = null;
+    sess.ridererror = null;
+    sess.locerror = null;
     res.render('managerProfile', {})
 });
 

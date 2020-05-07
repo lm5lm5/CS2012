@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-		<a class="navbar-brand" href="#">CS2102 Food delivery service</a>
+		<a class="navbar-brand" href="/">CS2102 Food delivery service</a>
 	  </nav>
 <head>
     <!-- Page Title -->
@@ -27,6 +27,14 @@
     <script src="javascripts/checkDates.js"></script>
 </head>
 
+    <% if (ordererror != null) { %>
+        <script>
+            alert( `<%= ordererror  %>`);
+
+        </script>
+
+    <% } %>
+
 <body>
 <p><a href="/managerProfile">Click here to move back</a></p>
 <h3>Please specify a time period</h3>
@@ -41,7 +49,7 @@
         <input type="date" class="form-control" id="enddate" name="enddate" aria-describedby="enddate"
                placeholder="end date">
     </div>
-    <h3>Or specify a month</h3>
+    <h3>Or specify a month-year</h3>
     <div class="form-group">
         <input type="month" class="form-control" id="month" name="month" aria-describedby="month"
                placeholder="month" step="1">
