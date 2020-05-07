@@ -45,14 +45,16 @@ call addFood(`;
 router.get('/', function (req, res, next) {
 	sess = req.session;
 	console.log("-----------------------------------------------------------------");
-	console.log("sess.error" + sess.error);
+	console.log("sess.error: " + sess.error);
+	var error = sess.error;
+	sess.error = null;
 	if (sess.error && sess.error != null && sess.errortype == 'duplicatefname') {
 		console.log("HEREERERERE");
 		res.render('addFood', { title: 'Add new food', error: sess.error});
 		sess.error = null;
 	}
 	else {
-		res.render('addFood', { title: 'Add new food', error: null });
+		res.render('addFood', { title: 'Add new food', error: error });
 	}
 });
 
