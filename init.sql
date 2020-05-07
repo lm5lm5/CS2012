@@ -168,7 +168,7 @@ create table Consists(
 -- done
 CREATE TABLE Reviews (
     Review text,
-    Flid int references Foodlists(flid),
+    Flid int references Foodlists(flid) on delete cascade,
     primary key(Flid)
 );
 
