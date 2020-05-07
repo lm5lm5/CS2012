@@ -20,6 +20,8 @@ var sql_query = 'with totalworkinghours as (with fulltimers as (with fulltime as
 
 router.get('/', function (req, res, next) {
   sess = req.session;
+  var value =  sess.changepwsuccess;
+  sess.changepwsuccess = 0;
   var sql_query2 = sql_query + sess.user;
   console.log("myquery " + sql_query2);
 
@@ -27,7 +29,9 @@ router.get('/', function (req, res, next) {
     res.redirect('/rider');
   } else {
   pool.query(sql_query2, (err, data) => {
-		res.render('riderProfile', {riderdata: data.rows });
+    console.log("==========================================");
+    console.log("vlaue is " + value);
+		res.render('riderProfile', {riderdata: data.rows, value:value });
 	}); }
 });
 
